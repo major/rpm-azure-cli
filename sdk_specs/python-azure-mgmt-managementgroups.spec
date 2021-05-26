@@ -33,7 +33,7 @@ BuildRequires:  python3-devel
 
 %install
 %pyproject_install
-%pyproject_save_files azure/mgmt/managementgroups
+%pyproject_save_files '*' +auto
 
 # %check
 # %{python3} setup.py test
