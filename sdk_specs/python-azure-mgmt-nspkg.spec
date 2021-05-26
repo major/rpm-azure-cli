@@ -18,6 +18,7 @@ Microsoft Azure Python SDK - Resource Management - Namespace Package}
 
 %package -n python3-%{srcname}
 Summary:        %{summary}
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  python3-devel
 
 %description -n python3-%{srcname} %_description
