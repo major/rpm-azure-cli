@@ -7,7 +7,7 @@ Summary:        Microsoft Azure Python SDK - Resource Management - Namespace Pac
 
 License:        MIT
 URL:            https://pypi.python.org/pypi/%{srcname}
-Source0:        %{pypi_source %{srcname} %{version} tar.gz}
+Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
