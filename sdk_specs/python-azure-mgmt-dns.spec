@@ -39,7 +39,6 @@ BuildRequires:  python3-devel
 # %{python3} setup.py test
 
 %files -n python3-%{srcname} -f %{pyproject_files}
-%doc README.md
 
 %changelog
 * Wed May 26 2021 Major Hayden <major@mhtx.net> - 8.0.0-1
