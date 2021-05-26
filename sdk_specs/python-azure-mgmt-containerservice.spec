@@ -26,7 +26,7 @@ BuildRequires:  python3-devel
 %prep
 %autosetup -n %{srcname}-%{version}
 %generate_buildrequires
-%pyproject_buildrequires
+%pyproject_buildrequires -r
 
 %build
 %pyproject_wheel
