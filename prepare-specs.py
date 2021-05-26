@@ -13,7 +13,7 @@ def get_extension(pypi_package, pypi_version):
 
     filename = next(x['filename'] for x in resp['releases'][pypi_version] if x['packagetype'] == 'sdist')
 
-    if Path(filename).suffix == 'zip':
+    if Path(filename).suffix == '.zip':
         return "zip"
 
     return "tar.gz"
