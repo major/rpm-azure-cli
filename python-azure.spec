@@ -1220,5 +1220,5 @@ done
 
 
 %changelog
-* Wed May 26 2021 Major Hayden - 0.0.1-1
+* Thu May 27 2021 Major Hayden - 20210527-1
 - First package.
