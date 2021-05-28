@@ -8,6 +8,7 @@ import requests
 
 def get_extension(pypi_package, pypi_version):
     # """Detect which file extension should be used for the package in PyPi."""
+    print(f"Checking for file extension for {pypi_package}")
     pypi_url = f"https://pypi.org/pypi/{pypi_package}/json"
     resp = requests.get(pypi_url).json()
 
@@ -37,15 +38,33 @@ filtered_columns = [
 df = pd.read_csv(sdk_csv).filter(items=filtered_columns).dropna()
 df = df.sort_values(by=['Package'])
 
+# Drop any duplicate packages.
+df = df.drop_duplicates(subset=['Package'])
+
 # Load our jinja2 template that we used to build the specs.
 with open('python-azure-sdk.template.spec', 'r') as fileh:
     template_content = fileh.read()
 template = Template(template_content)
 
-# Read the list of packages from a recent `pip freeze` on azure-cli so we
-# only package what's necessary for the CLI.
-with open('azure-sdk-allowlist.txt', 'r') as fileh:
-    allow_list = fileh.read().split('\n')
+# List of packages to skip because they have no source in pypi. 😞
+skip_list = [
+    "azure",  # deprecated
+    "azure-eventhub-checkpointstoreblob",  # not needed
+    "azure-eventhub-checkpointstoreblob-aio",  # not needed
+    "azure-cognitiveservices-speech",  # only pre-compiled wheel available
+    "azure-devtools",  # not needed
+    "azure-mgmt",  # deprecated
+    "azure-mgmt-documentdb",  # can't build wheel
+    "azure-monitor",  # can't build wheel
+    "azure-servicemanagement-legacy",  # not needed
+    "azure-storage",  # deprecated
+    "azureml-sdk",  # only pre-compiled wheel available
+    "doc-warden",  # only needed for docs
+    "msrest",  # already packaged
+    "msrestazure",  # already packaged
+    "tox-monorepo",  # only used for testing
+    "uamqp",  # not needed
+]
 
 packages = []
 
@@ -53,7 +72,11 @@ packages = []
 for i, data in df.iterrows():
 
     # Skip any packages that aren't in our pip freeze allow list.
-    if data.Package not in allow_list:
+    # if data.Package not in allow_list:
+    #     continue
+
+    # Skip any packages in the skip_list.
+    if data.Package in skip_list:
         continue
 
     # Set up data for the package.
@@ -79,9 +102,81 @@ for i, data in df.iterrows():
         )
     }
 
-    # Namespace packages don't have sitelib files.
+    # Namespace packages don't have any sitelib files to package.
     if "nspkg" in data.Package:
         del package_data['files']['sitelib']
+
+    # Extras: azure-data-nspkg
+    if data.Package == "azure-data-nspkg":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/data/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/data/__pycache__/__init__*"
+        )
+
+    # Extras: azure-datalake-store
+    if data.Package == "azure-datalake-store":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/datalake/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/datalake/__pycache__/__init__*"
+        )
+
+    # Extras: azure-digitaltwins-nspkg
+    if data.Package == "azure-digitaltwins-nspkg":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/digitaltwins/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/digitaltwins/__pycache__/__init__*"
+        )
+
+    # Extras: azure-kusto-data
+    if data.Package == "azure-kusto-data":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/kusto/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/kusto/__pycache__/__init__*"
+        )
+        package_data["files"]["pth_file"] = (
+            "%{python3_sitelib}/azure_kusto_data-*.pth"
+        )
+
+    # Extras: azure-mgmt-datalake-analytics
+    if data.Package == "azure-mgmt-datalake-analytics":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/mgmt/datalake/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/mgmt/datalake/__pycache__/__init__*"
+        )
+
+    # Extras: azure-common
+    if data.Package == "azure-common":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/profiles/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/profiles/__pycache__/__init__*"
+        )
+        package_data["files"]["base_init_multiapiclient"] = (
+            "%{python3_sitelib}/azure/profiles/multiapiclient.py"
+        )
+        package_data["files"]["base_init_pycache_multiapiclient"] = (
+            "%{python3_sitelib}/azure/profiles/__pycache__/multiapiclient*.pyc"
+        )
+
+    # Extras: azure-storage-nspkg
+    if data.Package == "azure-storage-nspkg":
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/storage/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/storage/__pycache__/__init__*"
+        )
 
     # The databoxedge package oddly has files under mgmt/datab/. 🤷🏻‍♂️
     if "databoxedge" in data.Package:
@@ -104,15 +199,26 @@ for i, data in df.iterrows():
             "%{python3_sitelib}/azure/mgmt/__pycache__/__init__*"
         )
 
-    # The mgmt-datalake-nspkg has a couple of extra things to package.
-    if "mgmt-datalake-nspkg" in data.Package:
+    # mgmt-cosmosdb extras
+    if data.Package == "azure-mgmt-cosmosdb":
         package_data["files"]["base_init"] = (
-            "%{python3_sitelib}/azure/mgmt/datalake/__init__.py"
+            "%{python3_sitelib}/azure/cosmosdb/__init__.py"
         )
         package_data["files"]["base_init_pycache"] = (
-            "%{python3_sitelib}/azure/mgmt/datalake/__pycache__/__init__*"
+            "%{python3_sitelib}/azure/cosmosdb/__pycache__/__init__*"
         )
 
+    # azure-storage-file-datalake has weird paths. 🤦🏻‍♂️
+    if "storage-file-datalake" in data.Package:
+        package_data["files"]["sitelib"] = (
+            "%{python3_sitelib}/azure/storage/filedatalake"
+        )
+
+    # azure-storage-file-share has weird paths. 🤦🏻‍♂️
+    if "storage-file-share" in data.Package:
+        package_data["files"]["sitelib"] = (
+            "%{python3_sitelib}/azure/storage/fileshare"
+        )
 
     packages.append(package_data)
 

@@ -26,8 +26,6 @@ BuildRequires:  python3-pip
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-wheel
 
-BuildRequires:  tree
-
 %if %{with check}
 # DOOT
 %endif
@@ -51,7 +49,9 @@ Summary: {{ package.summary}}
 # Extract {{ package.name }} {{ package.version }}
 %autosetup -n %{name}-%{version} -D -T -a {{ loop.index - 1 }}
 {% endfor %}
-tree -d
+
+%generate_buildrequires
+%pyproject_buildrequires
 
 %build
 # Set the directory where we collect the wheels during each step of the loop.
@@ -72,6 +72,7 @@ done
 
 %install
 %pyproject_install
+rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 %if %{with check}
 %check
@@ -86,7 +87,6 @@ done
 {% for package in packages %}
 %files {{ package.short_name }}
 {% for file_type, file_path in package.files.items() -%}
-# Packaging {{ file_type }}
 {{ file_path }}
 {% endfor %}
 {% endfor %}
