@@ -4,7 +4,7 @@ on: push
 jobs:
   build:
     container:
-      image: https://quay.io/major/fedora-packager:latest
+      image: quay.io/major/fedora-packager:latest
       options: "--privileged"
     runs-on: ubuntu-latest
     steps:
