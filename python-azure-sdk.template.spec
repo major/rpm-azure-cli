@@ -1,6 +1,8 @@
 # Enable Python dependency generation
 %{?python_enable_dependency_generator}
 
+# Missing dependencies for tests
+%bcond_with check
 
 Name:           python-azure
 Version:        20210527
@@ -18,8 +20,15 @@ BuildArch:      noarch
 
 Obsoletes:      python-azure-sdk == 5.0.0-4
 
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  python3-devel
+BuildRequires:  python3-pip
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-wheel
+
+%if %{with check}
+# DOOT
+%endif
 
 %description
 Azure SDK for Python
@@ -41,28 +50,39 @@ Summary: {{ package.summary}}
 %autosetup -n %{name}-%{version} -D -T -a {{ loop.index - 1 }}
 {% endfor %}
 
+%generate_buildrequires
+%pyproject_buildrequires
+
 %build
+# Set the directory where we collect the wheels during each step of the loop.
+BASE_WHEELDIR=$(pwd)/pyproject-wheeldir
+mkdir -vp $BASE_WHEELDIR
+
+# Get a list of python projects that we've extracted.
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
+
+# Loop over each project, build the wheel, and move the wheel into the correct
+# place.
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
-        %py3_build
+        %pyproject_wheel
+        mv pyproject-wheeldir/* $BASE_WHEELDIR
     popd
 done
 
 %install
+%pyproject_install
+rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
+
+%if %{with check}
+%check
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
-        %py3_install
+        %pytest
     popd
 done
-
-rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
-
-%files
-%{python3_sitelib}/azure/__init__.py
-%{python3_sitelib}/azure/__pycache__/__init__*
-
+%endif
 
 {% for package in packages %}
 %files {{ package.short_name }}

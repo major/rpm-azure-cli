@@ -1,6 +1,8 @@
 # Enable Python dependency generation
 %{?python_enable_dependency_generator}
 
+# Missing dependencies for tests
+%bcond_with check
 
 Name:           python-azure
 Version:        20210527
@@ -201,8 +203,15 @@ BuildArch:      noarch
 
 Obsoletes:      python-azure-sdk == 5.0.0-4
 
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  python3-devel
+BuildRequires:  python3-pip
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-wheel
+
+%if %{with check}
+# DOOT
+%endif
 
 %description
 Azure SDK for Python
@@ -1888,182 +1897,193 @@ Microsoft Azure Python SDK - Template
 %autosetup -n %{name}-%{version} -D -T -a 185
 
 
+%generate_buildrequires
+%pyproject_buildrequires
+
 %build
+# Set the directory where we collect the wheels during each step of the loop.
+BASE_WHEELDIR=$(pwd)/pyproject-wheeldir
+mkdir -vp $BASE_WHEELDIR
+
+# Get a list of python projects that we've extracted.
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
+
+# Loop over each project, build the wheel, and move the wheel into the correct
+# place.
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
-        %py3_build
+        %pyproject_wheel
+        mv pyproject-wheeldir/* $BASE_WHEELDIR
     popd
 done
 
 %install
+%pyproject_install
+rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
+
+%if %{with check}
+%check
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
-        %py3_install
+        %pytest
     popd
 done
-
-rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
-
-%files
-%{python3_sitelib}/azure/__init__.py
-%{python3_sitelib}/azure/__pycache__/__init__*
-
+%endif
 
 
 %files ai-formrecognizer
 %{python3_sitelib}/azure/ai/formrecognizer
-%{python3_sitelib}/azure_ai_formrecognizer-*.egg-info/
+%{python3_sitelib}/azure_ai_formrecognizer-*.dist-info/
 
 
 %files ai-nspkg
-%{python3_sitelib}/azure_ai_nspkg-*.egg-info/
+%{python3_sitelib}/azure_ai_nspkg-*.dist-info/
 
 
 %files ai-textanalytics
 %{python3_sitelib}/azure/ai/textanalytics
-%{python3_sitelib}/azure_ai_textanalytics-*.egg-info/
+%{python3_sitelib}/azure_ai_textanalytics-*.dist-info/
 
 
 %files appconfiguration
 %{python3_sitelib}/azure/appconfiguration
-%{python3_sitelib}/azure_appconfiguration-*.egg-info/
+%{python3_sitelib}/azure_appconfiguration-*.dist-info/
 
 
 %files applicationinsights
 %{python3_sitelib}/azure/applicationinsights
-%{python3_sitelib}/azure_applicationinsights-*.egg-info/
+%{python3_sitelib}/azure_applicationinsights-*.dist-info/
 
 
 %files batch
 %{python3_sitelib}/azure/batch
-%{python3_sitelib}/azure_batch-*.egg-info/
+%{python3_sitelib}/azure_batch-*.dist-info/
 
 
 %files cognitiveservices-anomalydetector
 %{python3_sitelib}/azure/cognitiveservices/anomalydetector
-%{python3_sitelib}/azure_cognitiveservices_anomalydetector-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_anomalydetector-*.dist-info/
 
 
 %files cognitiveservices-formrecognizer
 %{python3_sitelib}/azure/cognitiveservices/formrecognizer
-%{python3_sitelib}/azure_cognitiveservices_formrecognizer-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_formrecognizer-*.dist-info/
 
 
 %files cognitiveservices-knowledge-nspkg
-%{python3_sitelib}/azure_cognitiveservices_knowledge_nspkg-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_knowledge_nspkg-*.dist-info/
 
 
 %files cognitiveservices-knowledge-qnamaker
 %{python3_sitelib}/azure/cognitiveservices/knowledge/qnamaker
-%{python3_sitelib}/azure_cognitiveservices_knowledge_qnamaker-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_knowledge_qnamaker-*.dist-info/
 
 
 %files cognitiveservices-language-luis
 %{python3_sitelib}/azure/cognitiveservices/language/luis
-%{python3_sitelib}/azure_cognitiveservices_language_luis-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_language_luis-*.dist-info/
 
 
 %files cognitiveservices-language-nspkg
-%{python3_sitelib}/azure_cognitiveservices_language_nspkg-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_language_nspkg-*.dist-info/
 
 
 %files cognitiveservices-language-spellcheck
 %{python3_sitelib}/azure/cognitiveservices/language/spellcheck
-%{python3_sitelib}/azure_cognitiveservices_language_spellcheck-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_language_spellcheck-*.dist-info/
 
 
 %files cognitiveservices-language-textanalytics
 %{python3_sitelib}/azure/cognitiveservices/language/textanalytics
-%{python3_sitelib}/azure_cognitiveservices_language_textanalytics-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_language_textanalytics-*.dist-info/
 
 
 %files cognitiveservices-nspkg
-%{python3_sitelib}/azure_cognitiveservices_nspkg-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_nspkg-*.dist-info/
 
 
 %files cognitiveservices-personalizer
 %{python3_sitelib}/azure/cognitiveservices/personalizer
-%{python3_sitelib}/azure_cognitiveservices_personalizer-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_personalizer-*.dist-info/
 
 
 %files cognitiveservices-search-autosuggest
 %{python3_sitelib}/azure/cognitiveservices/search/autosuggest
-%{python3_sitelib}/azure_cognitiveservices_search_autosuggest-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_autosuggest-*.dist-info/
 
 
 %files cognitiveservices-search-customimagesearch
 %{python3_sitelib}/azure/cognitiveservices/search/customimagesearch
-%{python3_sitelib}/azure_cognitiveservices_search_customimagesearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_customimagesearch-*.dist-info/
 
 
 %files cognitiveservices-search-customsearch
 %{python3_sitelib}/azure/cognitiveservices/search/customsearch
-%{python3_sitelib}/azure_cognitiveservices_search_customsearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_customsearch-*.dist-info/
 
 
 %files cognitiveservices-search-entitysearch
 %{python3_sitelib}/azure/cognitiveservices/search/entitysearch
-%{python3_sitelib}/azure_cognitiveservices_search_entitysearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_entitysearch-*.dist-info/
 
 
 %files cognitiveservices-search-imagesearch
 %{python3_sitelib}/azure/cognitiveservices/search/imagesearch
-%{python3_sitelib}/azure_cognitiveservices_search_imagesearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_imagesearch-*.dist-info/
 
 
 %files cognitiveservices-search-newssearch
 %{python3_sitelib}/azure/cognitiveservices/search/newssearch
-%{python3_sitelib}/azure_cognitiveservices_search_newssearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_newssearch-*.dist-info/
 
 
 %files cognitiveservices-search-nspkg
-%{python3_sitelib}/azure_cognitiveservices_search_nspkg-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_nspkg-*.dist-info/
 
 
 %files cognitiveservices-search-videosearch
 %{python3_sitelib}/azure/cognitiveservices/search/videosearch
-%{python3_sitelib}/azure_cognitiveservices_search_videosearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_videosearch-*.dist-info/
 
 
 %files cognitiveservices-search-visualsearch
 %{python3_sitelib}/azure/cognitiveservices/search/visualsearch
-%{python3_sitelib}/azure_cognitiveservices_search_visualsearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_visualsearch-*.dist-info/
 
 
 %files cognitiveservices-search-websearch
 %{python3_sitelib}/azure/cognitiveservices/search/websearch
-%{python3_sitelib}/azure_cognitiveservices_search_websearch-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_search_websearch-*.dist-info/
 
 
 %files cognitiveservices-vision-computervision
 %{python3_sitelib}/azure/cognitiveservices/vision/computervision
-%{python3_sitelib}/azure_cognitiveservices_vision_computervision-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_vision_computervision-*.dist-info/
 
 
 %files cognitiveservices-vision-contentmoderator
 %{python3_sitelib}/azure/cognitiveservices/vision/contentmoderator
-%{python3_sitelib}/azure_cognitiveservices_vision_contentmoderator-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_vision_contentmoderator-*.dist-info/
 
 
 %files cognitiveservices-vision-customvision
 %{python3_sitelib}/azure/cognitiveservices/vision/customvision
-%{python3_sitelib}/azure_cognitiveservices_vision_customvision-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_vision_customvision-*.dist-info/
 
 
 %files cognitiveservices-vision-face
 %{python3_sitelib}/azure/cognitiveservices/vision/face
-%{python3_sitelib}/azure_cognitiveservices_vision_face-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_vision_face-*.dist-info/
 
 
 %files cognitiveservices-vision-nspkg
-%{python3_sitelib}/azure_cognitiveservices_vision_nspkg-*.egg-info/
+%{python3_sitelib}/azure_cognitiveservices_vision_nspkg-*.dist-info/
 
 
 %files common
 %{python3_sitelib}/azure/common
-%{python3_sitelib}/azure_common-*.egg-info/
+%{python3_sitelib}/azure_common-*.dist-info/
 %{python3_sitelib}/azure/profiles/__init__.py
 %{python3_sitelib}/azure/profiles/__pycache__/__init__*
 %{python3_sitelib}/azure/profiles/multiapiclient.py
@@ -2072,120 +2092,120 @@ rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 %files communication-chat
 %{python3_sitelib}/azure/communication/chat
-%{python3_sitelib}/azure_communication_chat-*.egg-info/
+%{python3_sitelib}/azure_communication_chat-*.dist-info/
 
 
 %files communication-identity
 %{python3_sitelib}/azure/communication/identity
-%{python3_sitelib}/azure_communication_identity-*.egg-info/
+%{python3_sitelib}/azure_communication_identity-*.dist-info/
 
 
 %files communication-phonenumbers
 %{python3_sitelib}/azure/communication/phonenumbers
-%{python3_sitelib}/azure_communication_phonenumbers-*.egg-info/
+%{python3_sitelib}/azure_communication_phonenumbers-*.dist-info/
 
 
 %files communication-sms
 %{python3_sitelib}/azure/communication/sms
-%{python3_sitelib}/azure_communication_sms-*.egg-info/
+%{python3_sitelib}/azure_communication_sms-*.dist-info/
 
 
 %files core
 %{python3_sitelib}/azure/core
-%{python3_sitelib}/azure_core-*.egg-info/
+%{python3_sitelib}/azure_core-*.dist-info/
 
 
 %files cosmos
 %{python3_sitelib}/azure/cosmos
-%{python3_sitelib}/azure_cosmos-*.egg-info/
+%{python3_sitelib}/azure_cosmos-*.dist-info/
 
 
 %files cosmosdb-table
 %{python3_sitelib}/azure/cosmosdb/table
-%{python3_sitelib}/azure_cosmosdb_table-*.egg-info/
+%{python3_sitelib}/azure_cosmosdb_table-*.dist-info/
 
 
 %files data-nspkg
-%{python3_sitelib}/azure_data_nspkg-*.egg-info/
+%{python3_sitelib}/azure_data_nspkg-*.dist-info/
 %{python3_sitelib}/azure/data/__init__.py
 %{python3_sitelib}/azure/data/__pycache__/__init__*
 
 
 %files datalake-store
 %{python3_sitelib}/azure/datalake/store
-%{python3_sitelib}/azure_datalake_store-*.egg-info/
+%{python3_sitelib}/azure_datalake_store-*.dist-info/
 %{python3_sitelib}/azure/datalake/__init__.py
 %{python3_sitelib}/azure/datalake/__pycache__/__init__*
 
 
 %files digitaltwins-core
 %{python3_sitelib}/azure/digitaltwins/core
-%{python3_sitelib}/azure_digitaltwins_core-*.egg-info/
+%{python3_sitelib}/azure_digitaltwins_core-*.dist-info/
 
 
 %files digitaltwins-nspkg
-%{python3_sitelib}/azure_digitaltwins_nspkg-*.egg-info/
+%{python3_sitelib}/azure_digitaltwins_nspkg-*.dist-info/
 %{python3_sitelib}/azure/digitaltwins/__init__.py
 %{python3_sitelib}/azure/digitaltwins/__pycache__/__init__*
 
 
 %files eventgrid
 %{python3_sitelib}/azure/eventgrid
-%{python3_sitelib}/azure_eventgrid-*.egg-info/
+%{python3_sitelib}/azure_eventgrid-*.dist-info/
 
 
 %files eventhub
 %{python3_sitelib}/azure/eventhub
-%{python3_sitelib}/azure_eventhub-*.egg-info/
+%{python3_sitelib}/azure_eventhub-*.dist-info/
 
 
 %files graphrbac
 %{python3_sitelib}/azure/graphrbac
-%{python3_sitelib}/azure_graphrbac-*.egg-info/
+%{python3_sitelib}/azure_graphrbac-*.dist-info/
 
 
 %files identity
 %{python3_sitelib}/azure/identity
-%{python3_sitelib}/azure_identity-*.egg-info/
+%{python3_sitelib}/azure_identity-*.dist-info/
 
 
 %files iot-device
 %{python3_sitelib}/azure/iot/device
-%{python3_sitelib}/azure_iot_device-*.egg-info/
+%{python3_sitelib}/azure_iot_device-*.dist-info/
 
 
 %files iot-hub
 %{python3_sitelib}/azure/iot/hub
-%{python3_sitelib}/azure_iot_hub-*.egg-info/
+%{python3_sitelib}/azure_iot_hub-*.dist-info/
 
 
 %files keyvault
 %{python3_sitelib}/azure/keyvault
-%{python3_sitelib}/azure_keyvault-*.egg-info/
+%{python3_sitelib}/azure_keyvault-*.dist-info/
 
 
 %files keyvault-certificates
 %{python3_sitelib}/azure/keyvault/certificates
-%{python3_sitelib}/azure_keyvault_certificates-*.egg-info/
+%{python3_sitelib}/azure_keyvault_certificates-*.dist-info/
 
 
 %files keyvault-keys
 %{python3_sitelib}/azure/keyvault/keys
-%{python3_sitelib}/azure_keyvault_keys-*.egg-info/
+%{python3_sitelib}/azure_keyvault_keys-*.dist-info/
 
 
 %files keyvault-nspkg
-%{python3_sitelib}/azure_keyvault_nspkg-*.egg-info/
+%{python3_sitelib}/azure_keyvault_nspkg-*.dist-info/
 
 
 %files keyvault-secrets
 %{python3_sitelib}/azure/keyvault/secrets
-%{python3_sitelib}/azure_keyvault_secrets-*.egg-info/
+%{python3_sitelib}/azure_keyvault_secrets-*.dist-info/
 
 
 %files kusto-data
 %{python3_sitelib}/azure/kusto/data
-%{python3_sitelib}/azure_kusto_data-*.egg-info/
+%{python3_sitelib}/azure_kusto_data-*.dist-info/
 %{python3_sitelib}/azure/kusto/__init__.py
 %{python3_sitelib}/azure/kusto/__pycache__/__init__*
 %{python3_sitelib}/azure_kusto_data-*.pth
@@ -2193,660 +2213,662 @@ rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 %files loganalytics
 %{python3_sitelib}/azure/loganalytics
-%{python3_sitelib}/azure_loganalytics-*.egg-info/
+%{python3_sitelib}/azure_loganalytics-*.dist-info/
 
 
 %files mgmt-advisor
 %{python3_sitelib}/azure/mgmt/advisor
-%{python3_sitelib}/azure_mgmt_advisor-*.egg-info/
+%{python3_sitelib}/azure_mgmt_advisor-*.dist-info/
 
 
 %files mgmt-alertsmanagement
 %{python3_sitelib}/azure/mgmt/alertsmanagement
-%{python3_sitelib}/azure_mgmt_alertsmanagement-*.egg-info/
+%{python3_sitelib}/azure_mgmt_alertsmanagement-*.dist-info/
 
 
 %files mgmt-apimanagement
 %{python3_sitelib}/azure/mgmt/apimanagement
-%{python3_sitelib}/azure_mgmt_apimanagement-*.egg-info/
+%{python3_sitelib}/azure_mgmt_apimanagement-*.dist-info/
 
 
 %files mgmt-appconfiguration
 %{python3_sitelib}/azure/mgmt/appconfiguration
-%{python3_sitelib}/azure_mgmt_appconfiguration-*.egg-info/
+%{python3_sitelib}/azure_mgmt_appconfiguration-*.dist-info/
 
 
 %files mgmt-applicationinsights
 %{python3_sitelib}/azure/mgmt/applicationinsights
-%{python3_sitelib}/azure_mgmt_applicationinsights-*.egg-info/
+%{python3_sitelib}/azure_mgmt_applicationinsights-*.dist-info/
 
 
 %files mgmt-appplatform
 %{python3_sitelib}/azure/mgmt/appplatform
-%{python3_sitelib}/azure_mgmt_appplatform-*.egg-info/
+%{python3_sitelib}/azure_mgmt_appplatform-*.dist-info/
 
 
 %files mgmt-attestation
 %{python3_sitelib}/azure/mgmt/attestation
-%{python3_sitelib}/azure_mgmt_attestation-*.egg-info/
+%{python3_sitelib}/azure_mgmt_attestation-*.dist-info/
 
 
 %files mgmt-authorization
 %{python3_sitelib}/azure/mgmt/authorization
-%{python3_sitelib}/azure_mgmt_authorization-*.egg-info/
+%{python3_sitelib}/azure_mgmt_authorization-*.dist-info/
 
 
 %files mgmt-automation
 %{python3_sitelib}/azure/mgmt/automation
-%{python3_sitelib}/azure_mgmt_automation-*.egg-info/
+%{python3_sitelib}/azure_mgmt_automation-*.dist-info/
 
 
 %files mgmt-avs
 %{python3_sitelib}/azure/mgmt/avs
-%{python3_sitelib}/azure_mgmt_avs-*.egg-info/
+%{python3_sitelib}/azure_mgmt_avs-*.dist-info/
 
 
 %files mgmt-azurestack
 %{python3_sitelib}/azure/mgmt/azurestack
-%{python3_sitelib}/azure_mgmt_azurestack-*.egg-info/
+%{python3_sitelib}/azure_mgmt_azurestack-*.dist-info/
 
 
 %files mgmt-azurestackhci
 %{python3_sitelib}/azure/mgmt/azurestackhci
-%{python3_sitelib}/azure_mgmt_azurestackhci-*.egg-info/
+%{python3_sitelib}/azure_mgmt_azurestackhci-*.dist-info/
 
 
 %files mgmt-batch
 %{python3_sitelib}/azure/mgmt/batch
-%{python3_sitelib}/azure_mgmt_batch-*.egg-info/
+%{python3_sitelib}/azure_mgmt_batch-*.dist-info/
 
 
 %files mgmt-batchai
 %{python3_sitelib}/azure/mgmt/batchai
-%{python3_sitelib}/azure_mgmt_batchai-*.egg-info/
+%{python3_sitelib}/azure_mgmt_batchai-*.dist-info/
 
 
 %files mgmt-billing
 %{python3_sitelib}/azure/mgmt/billing
-%{python3_sitelib}/azure_mgmt_billing-*.egg-info/
+%{python3_sitelib}/azure_mgmt_billing-*.dist-info/
 
 
 %files mgmt-botservice
 %{python3_sitelib}/azure/mgmt/botservice
-%{python3_sitelib}/azure_mgmt_botservice-*.egg-info/
+%{python3_sitelib}/azure_mgmt_botservice-*.dist-info/
 
 
 %files mgmt-cdn
 %{python3_sitelib}/azure/mgmt/cdn
-%{python3_sitelib}/azure_mgmt_cdn-*.egg-info/
+%{python3_sitelib}/azure_mgmt_cdn-*.dist-info/
 
 
 %files mgmt-cognitiveservices
 %{python3_sitelib}/azure/mgmt/cognitiveservices
-%{python3_sitelib}/azure_mgmt_cognitiveservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_cognitiveservices-*.dist-info/
 
 
 %files mgmt-commerce
 %{python3_sitelib}/azure/mgmt/commerce
-%{python3_sitelib}/azure_mgmt_commerce-*.egg-info/
+%{python3_sitelib}/azure_mgmt_commerce-*.dist-info/
 
 
 %files mgmt-common
 %{python3_sitelib}/azure/mgmt/common
-%{python3_sitelib}/azure_mgmt_common-*.egg-info/
+%{python3_sitelib}/azure_mgmt_common-*.dist-info/
 
 
 %files mgmt-communication
 %{python3_sitelib}/azure/mgmt/communication
-%{python3_sitelib}/azure_mgmt_communication-*.egg-info/
+%{python3_sitelib}/azure_mgmt_communication-*.dist-info/
 
 
 %files mgmt-compute
 %{python3_sitelib}/azure/mgmt/compute
-%{python3_sitelib}/azure_mgmt_compute-*.egg-info/
+%{python3_sitelib}/azure_mgmt_compute-*.dist-info/
 
 
 %files mgmt-confluent
 %{python3_sitelib}/azure/mgmt/confluent
-%{python3_sitelib}/azure_mgmt_confluent-*.egg-info/
+%{python3_sitelib}/azure_mgmt_confluent-*.dist-info/
 
 
 %files mgmt-consumption
 %{python3_sitelib}/azure/mgmt/consumption
-%{python3_sitelib}/azure_mgmt_consumption-*.egg-info/
+%{python3_sitelib}/azure_mgmt_consumption-*.dist-info/
 
 
 %files mgmt-containerinstance
 %{python3_sitelib}/azure/mgmt/containerinstance
-%{python3_sitelib}/azure_mgmt_containerinstance-*.egg-info/
+%{python3_sitelib}/azure_mgmt_containerinstance-*.dist-info/
 
 
 %files mgmt-containerregistry
 %{python3_sitelib}/azure/mgmt/containerregistry
-%{python3_sitelib}/azure_mgmt_containerregistry-*.egg-info/
+%{python3_sitelib}/azure_mgmt_containerregistry-*.dist-info/
 
 
 %files mgmt-containerservice
 %{python3_sitelib}/azure/mgmt/containerservice
-%{python3_sitelib}/azure_mgmt_containerservice-*.egg-info/
+%{python3_sitelib}/azure_mgmt_containerservice-*.dist-info/
 
 
 %files mgmt-core
 %{python3_sitelib}/azure/mgmt/core
-%{python3_sitelib}/azure_mgmt_core-*.egg-info/
+%{python3_sitelib}/azure_mgmt_core-*.dist-info/
+%{python3_sitelib}/azure/__init__.py
+%{python3_sitelib}/azure/__pycache__/__init__*
 %{python3_sitelib}/azure/mgmt/__init__.py
 %{python3_sitelib}/azure/mgmt/__pycache__/__init__*
 
 
 %files mgmt-cosmosdb
 %{python3_sitelib}/azure/mgmt/cosmosdb
-%{python3_sitelib}/azure_mgmt_cosmosdb-*.egg-info/
+%{python3_sitelib}/azure_mgmt_cosmosdb-*.dist-info/
 %{python3_sitelib}/azure/cosmosdb/__init__.py
 %{python3_sitelib}/azure/cosmosdb/__pycache__/__init__*
 
 
 %files mgmt-costmanagement
 %{python3_sitelib}/azure/mgmt/costmanagement
-%{python3_sitelib}/azure_mgmt_costmanagement-*.egg-info/
+%{python3_sitelib}/azure_mgmt_costmanagement-*.dist-info/
 
 
 %files mgmt-customproviders
 %{python3_sitelib}/azure/mgmt/customproviders
-%{python3_sitelib}/azure_mgmt_customproviders-*.egg-info/
+%{python3_sitelib}/azure_mgmt_customproviders-*.dist-info/
 
 
 %files mgmt-databox
 %{python3_sitelib}/azure/mgmt/databox
-%{python3_sitelib}/azure_mgmt_databox-*.egg-info/
+%{python3_sitelib}/azure_mgmt_databox-*.dist-info/
 
 
 %files mgmt-databoxedge
 %{python3_sitelib}/azure/mgmt/databoxedge
-%{python3_sitelib}/azure_mgmt_databoxedge-*.egg-info/
+%{python3_sitelib}/azure_mgmt_databoxedge-*.dist-info/
 %{python3_sitelib}/azure/mgmt/datab
 
 
 %files mgmt-databricks
 %{python3_sitelib}/azure/mgmt/databricks
-%{python3_sitelib}/azure_mgmt_databricks-*.egg-info/
+%{python3_sitelib}/azure_mgmt_databricks-*.dist-info/
 
 
 %files mgmt-datadog
 %{python3_sitelib}/azure/mgmt/datadog
-%{python3_sitelib}/azure_mgmt_datadog-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datadog-*.dist-info/
 
 
 %files mgmt-datafactory
 %{python3_sitelib}/azure/mgmt/datafactory
-%{python3_sitelib}/azure_mgmt_datafactory-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datafactory-*.dist-info/
 
 
 %files mgmt-datalake-analytics
 %{python3_sitelib}/azure/mgmt/datalake/analytics
-%{python3_sitelib}/azure_mgmt_datalake_analytics-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datalake_analytics-*.dist-info/
 %{python3_sitelib}/azure/mgmt/datalake/__init__.py
 %{python3_sitelib}/azure/mgmt/datalake/__pycache__/__init__*
 
 
 %files mgmt-datalake-nspkg
-%{python3_sitelib}/azure_mgmt_datalake_nspkg-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datalake_nspkg-*.dist-info/
 
 
 %files mgmt-datalake-store
 %{python3_sitelib}/azure/mgmt/datalake/store
-%{python3_sitelib}/azure_mgmt_datalake_store-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datalake_store-*.dist-info/
 
 
 %files mgmt-datamigration
 %{python3_sitelib}/azure/mgmt/datamigration
-%{python3_sitelib}/azure_mgmt_datamigration-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datamigration-*.dist-info/
 
 
 %files mgmt-datashare
 %{python3_sitelib}/azure/mgmt/datashare
-%{python3_sitelib}/azure_mgmt_datashare-*.egg-info/
+%{python3_sitelib}/azure_mgmt_datashare-*.dist-info/
 
 
 %files mgmt-deploymentmanager
 %{python3_sitelib}/azure/mgmt/deploymentmanager
-%{python3_sitelib}/azure_mgmt_deploymentmanager-*.egg-info/
+%{python3_sitelib}/azure_mgmt_deploymentmanager-*.dist-info/
 
 
 %files mgmt-devspaces
 %{python3_sitelib}/azure/mgmt/devspaces
-%{python3_sitelib}/azure_mgmt_devspaces-*.egg-info/
+%{python3_sitelib}/azure_mgmt_devspaces-*.dist-info/
 
 
 %files mgmt-devtestlabs
 %{python3_sitelib}/azure/mgmt/devtestlabs
-%{python3_sitelib}/azure_mgmt_devtestlabs-*.egg-info/
+%{python3_sitelib}/azure_mgmt_devtestlabs-*.dist-info/
 
 
 %files mgmt-digitaltwins
 %{python3_sitelib}/azure/mgmt/digitaltwins
-%{python3_sitelib}/azure_mgmt_digitaltwins-*.egg-info/
+%{python3_sitelib}/azure_mgmt_digitaltwins-*.dist-info/
 
 
 %files mgmt-dns
 %{python3_sitelib}/azure/mgmt/dns
-%{python3_sitelib}/azure_mgmt_dns-*.egg-info/
+%{python3_sitelib}/azure_mgmt_dns-*.dist-info/
 
 
 %files mgmt-edgegateway
 %{python3_sitelib}/azure/mgmt/edgegateway
-%{python3_sitelib}/azure_mgmt_edgegateway-*.egg-info/
+%{python3_sitelib}/azure_mgmt_edgegateway-*.dist-info/
 
 
 %files mgmt-eventgrid
 %{python3_sitelib}/azure/mgmt/eventgrid
-%{python3_sitelib}/azure_mgmt_eventgrid-*.egg-info/
+%{python3_sitelib}/azure_mgmt_eventgrid-*.dist-info/
 
 
 %files mgmt-eventhub
 %{python3_sitelib}/azure/mgmt/eventhub
-%{python3_sitelib}/azure_mgmt_eventhub-*.egg-info/
+%{python3_sitelib}/azure_mgmt_eventhub-*.dist-info/
 
 
 %files mgmt-frontdoor
 %{python3_sitelib}/azure/mgmt/frontdoor
-%{python3_sitelib}/azure_mgmt_frontdoor-*.egg-info/
+%{python3_sitelib}/azure_mgmt_frontdoor-*.dist-info/
 
 
 %files mgmt-hanaonazure
 %{python3_sitelib}/azure/mgmt/hanaonazure
-%{python3_sitelib}/azure_mgmt_hanaonazure-*.egg-info/
+%{python3_sitelib}/azure_mgmt_hanaonazure-*.dist-info/
 
 
 %files mgmt-hdinsight
 %{python3_sitelib}/azure/mgmt/hdinsight
-%{python3_sitelib}/azure_mgmt_hdinsight-*.egg-info/
+%{python3_sitelib}/azure_mgmt_hdinsight-*.dist-info/
 
 
 %files mgmt-healthcareapis
 %{python3_sitelib}/azure/mgmt/healthcareapis
-%{python3_sitelib}/azure_mgmt_healthcareapis-*.egg-info/
+%{python3_sitelib}/azure_mgmt_healthcareapis-*.dist-info/
 
 
 %files mgmt-hybridcompute
 %{python3_sitelib}/azure/mgmt/hybridcompute
-%{python3_sitelib}/azure_mgmt_hybridcompute-*.egg-info/
+%{python3_sitelib}/azure_mgmt_hybridcompute-*.dist-info/
 
 
 %files mgmt-hybridkubernetes
 %{python3_sitelib}/azure/mgmt/hybridkubernetes
-%{python3_sitelib}/azure_mgmt_hybridkubernetes-*.egg-info/
+%{python3_sitelib}/azure_mgmt_hybridkubernetes-*.dist-info/
 
 
 %files mgmt-imagebuilder
 %{python3_sitelib}/azure/mgmt/imagebuilder
-%{python3_sitelib}/azure_mgmt_imagebuilder-*.egg-info/
+%{python3_sitelib}/azure_mgmt_imagebuilder-*.dist-info/
 
 
 %files mgmt-iotcentral
 %{python3_sitelib}/azure/mgmt/iotcentral
-%{python3_sitelib}/azure_mgmt_iotcentral-*.egg-info/
+%{python3_sitelib}/azure_mgmt_iotcentral-*.dist-info/
 
 
 %files mgmt-iothub
 %{python3_sitelib}/azure/mgmt/iothub
-%{python3_sitelib}/azure_mgmt_iothub-*.egg-info/
+%{python3_sitelib}/azure_mgmt_iothub-*.dist-info/
 
 
 %files mgmt-iothubprovisioningservices
 %{python3_sitelib}/azure/mgmt/iothubprovisioningservices
-%{python3_sitelib}/azure_mgmt_iothubprovisioningservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_iothubprovisioningservices-*.dist-info/
 
 
 %files mgmt-keyvault
 %{python3_sitelib}/azure/mgmt/keyvault
-%{python3_sitelib}/azure_mgmt_keyvault-*.egg-info/
+%{python3_sitelib}/azure_mgmt_keyvault-*.dist-info/
 
 
 %files mgmt-kusto
 %{python3_sitelib}/azure/mgmt/kusto
-%{python3_sitelib}/azure_mgmt_kusto-*.egg-info/
+%{python3_sitelib}/azure_mgmt_kusto-*.dist-info/
 
 
 %files mgmt-labservices
 %{python3_sitelib}/azure/mgmt/labservices
-%{python3_sitelib}/azure_mgmt_labservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_labservices-*.dist-info/
 
 
 %files mgmt-loganalytics
 %{python3_sitelib}/azure/mgmt/loganalytics
-%{python3_sitelib}/azure_mgmt_loganalytics-*.egg-info/
+%{python3_sitelib}/azure_mgmt_loganalytics-*.dist-info/
 
 
 %files mgmt-logic
 %{python3_sitelib}/azure/mgmt/logic
-%{python3_sitelib}/azure_mgmt_logic-*.egg-info/
+%{python3_sitelib}/azure_mgmt_logic-*.dist-info/
 
 
 %files mgmt-machinelearningcompute
 %{python3_sitelib}/azure/mgmt/machinelearningcompute
-%{python3_sitelib}/azure_mgmt_machinelearningcompute-*.egg-info/
+%{python3_sitelib}/azure_mgmt_machinelearningcompute-*.dist-info/
 
 
 %files mgmt-machinelearningservices
 %{python3_sitelib}/azure/mgmt/machinelearningservices
-%{python3_sitelib}/azure_mgmt_machinelearningservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_machinelearningservices-*.dist-info/
 
 
 %files mgmt-maintenance
 %{python3_sitelib}/azure/mgmt/maintenance
-%{python3_sitelib}/azure_mgmt_maintenance-*.egg-info/
+%{python3_sitelib}/azure_mgmt_maintenance-*.dist-info/
 
 
 %files mgmt-managedservices
 %{python3_sitelib}/azure/mgmt/managedservices
-%{python3_sitelib}/azure_mgmt_managedservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_managedservices-*.dist-info/
 
 
 %files mgmt-managementgroups
 %{python3_sitelib}/azure/mgmt/managementgroups
-%{python3_sitelib}/azure_mgmt_managementgroups-*.egg-info/
+%{python3_sitelib}/azure_mgmt_managementgroups-*.dist-info/
 
 
 %files mgmt-managementpartner
 %{python3_sitelib}/azure/mgmt/managementpartner
-%{python3_sitelib}/azure_mgmt_managementpartner-*.egg-info/
+%{python3_sitelib}/azure_mgmt_managementpartner-*.dist-info/
 
 
 %files mgmt-maps
 %{python3_sitelib}/azure/mgmt/maps
-%{python3_sitelib}/azure_mgmt_maps-*.egg-info/
+%{python3_sitelib}/azure_mgmt_maps-*.dist-info/
 
 
 %files mgmt-marketplaceordering
 %{python3_sitelib}/azure/mgmt/marketplaceordering
-%{python3_sitelib}/azure_mgmt_marketplaceordering-*.egg-info/
+%{python3_sitelib}/azure_mgmt_marketplaceordering-*.dist-info/
 
 
 %files mgmt-media
 %{python3_sitelib}/azure/mgmt/media
-%{python3_sitelib}/azure_mgmt_media-*.egg-info/
+%{python3_sitelib}/azure_mgmt_media-*.dist-info/
 
 
 %files mgmt-mixedreality
 %{python3_sitelib}/azure/mgmt/mixedreality
-%{python3_sitelib}/azure_mgmt_mixedreality-*.egg-info/
+%{python3_sitelib}/azure_mgmt_mixedreality-*.dist-info/
 
 
 %files mgmt-monitor
 %{python3_sitelib}/azure/mgmt/monitor
-%{python3_sitelib}/azure_mgmt_monitor-*.egg-info/
+%{python3_sitelib}/azure_mgmt_monitor-*.dist-info/
 
 
 %files mgmt-msi
 %{python3_sitelib}/azure/mgmt/msi
-%{python3_sitelib}/azure_mgmt_msi-*.egg-info/
+%{python3_sitelib}/azure_mgmt_msi-*.dist-info/
 
 
 %files mgmt-netapp
 %{python3_sitelib}/azure/mgmt/netapp
-%{python3_sitelib}/azure_mgmt_netapp-*.egg-info/
+%{python3_sitelib}/azure_mgmt_netapp-*.dist-info/
 
 
 %files mgmt-network
 %{python3_sitelib}/azure/mgmt/network
-%{python3_sitelib}/azure_mgmt_network-*.egg-info/
+%{python3_sitelib}/azure_mgmt_network-*.dist-info/
 
 
 %files mgmt-notificationhubs
 %{python3_sitelib}/azure/mgmt/notificationhubs
-%{python3_sitelib}/azure_mgmt_notificationhubs-*.egg-info/
+%{python3_sitelib}/azure_mgmt_notificationhubs-*.dist-info/
 
 
 %files mgmt-nspkg
-%{python3_sitelib}/azure_mgmt_nspkg-*.egg-info/
+%{python3_sitelib}/azure_mgmt_nspkg-*.dist-info/
 
 
 %files mgmt-operationsmanagement
 %{python3_sitelib}/azure/mgmt/operationsmanagement
-%{python3_sitelib}/azure_mgmt_operationsmanagement-*.egg-info/
+%{python3_sitelib}/azure_mgmt_operationsmanagement-*.dist-info/
 
 
 %files mgmt-peering
 %{python3_sitelib}/azure/mgmt/peering
-%{python3_sitelib}/azure_mgmt_peering-*.egg-info/
+%{python3_sitelib}/azure_mgmt_peering-*.dist-info/
 
 
 %files mgmt-policyinsights
 %{python3_sitelib}/azure/mgmt/policyinsights
-%{python3_sitelib}/azure_mgmt_policyinsights-*.egg-info/
+%{python3_sitelib}/azure_mgmt_policyinsights-*.dist-info/
 
 
 %files mgmt-powerbidedicated
 %{python3_sitelib}/azure/mgmt/powerbidedicated
-%{python3_sitelib}/azure_mgmt_powerbidedicated-*.egg-info/
+%{python3_sitelib}/azure_mgmt_powerbidedicated-*.dist-info/
 
 
 %files mgmt-powerbiembedded
 %{python3_sitelib}/azure/mgmt/powerbiembedded
-%{python3_sitelib}/azure_mgmt_powerbiembedded-*.egg-info/
+%{python3_sitelib}/azure_mgmt_powerbiembedded-*.dist-info/
 
 
 %files mgmt-privatedns
 %{python3_sitelib}/azure/mgmt/privatedns
-%{python3_sitelib}/azure_mgmt_privatedns-*.egg-info/
+%{python3_sitelib}/azure_mgmt_privatedns-*.dist-info/
 
 
 %files mgmt-rdbms
 %{python3_sitelib}/azure/mgmt/rdbms
-%{python3_sitelib}/azure_mgmt_rdbms-*.egg-info/
+%{python3_sitelib}/azure_mgmt_rdbms-*.dist-info/
 
 
 %files mgmt-recoveryservices
 %{python3_sitelib}/azure/mgmt/recoveryservices
-%{python3_sitelib}/azure_mgmt_recoveryservices-*.egg-info/
+%{python3_sitelib}/azure_mgmt_recoveryservices-*.dist-info/
 
 
 %files mgmt-recoveryservicesbackup
 %{python3_sitelib}/azure/mgmt/recoveryservicesbackup
-%{python3_sitelib}/azure_mgmt_recoveryservicesbackup-*.egg-info/
+%{python3_sitelib}/azure_mgmt_recoveryservicesbackup-*.dist-info/
 
 
 %files mgmt-redhatopenshift
 %{python3_sitelib}/azure/mgmt/redhatopenshift
-%{python3_sitelib}/azure_mgmt_redhatopenshift-*.egg-info/
+%{python3_sitelib}/azure_mgmt_redhatopenshift-*.dist-info/
 
 
 %files mgmt-redis
 %{python3_sitelib}/azure/mgmt/redis
-%{python3_sitelib}/azure_mgmt_redis-*.egg-info/
+%{python3_sitelib}/azure_mgmt_redis-*.dist-info/
 
 
 %files mgmt-relay
 %{python3_sitelib}/azure/mgmt/relay
-%{python3_sitelib}/azure_mgmt_relay-*.egg-info/
+%{python3_sitelib}/azure_mgmt_relay-*.dist-info/
 
 
 %files mgmt-reservations
 %{python3_sitelib}/azure/mgmt/reservations
-%{python3_sitelib}/azure_mgmt_reservations-*.egg-info/
+%{python3_sitelib}/azure_mgmt_reservations-*.dist-info/
 
 
 %files mgmt-resource
 %{python3_sitelib}/azure/mgmt/resource
-%{python3_sitelib}/azure_mgmt_resource-*.egg-info/
+%{python3_sitelib}/azure_mgmt_resource-*.dist-info/
 
 
 %files mgmt-resourcegraph
 %{python3_sitelib}/azure/mgmt/resourcegraph
-%{python3_sitelib}/azure_mgmt_resourcegraph-*.egg-info/
+%{python3_sitelib}/azure_mgmt_resourcegraph-*.dist-info/
 
 
 %files mgmt-resourcemover
 %{python3_sitelib}/azure/mgmt/resourcemover
-%{python3_sitelib}/azure_mgmt_resourcemover-*.egg-info/
+%{python3_sitelib}/azure_mgmt_resourcemover-*.dist-info/
 
 
 %files mgmt-scheduler
 %{python3_sitelib}/azure/mgmt/scheduler
-%{python3_sitelib}/azure_mgmt_scheduler-*.egg-info/
+%{python3_sitelib}/azure_mgmt_scheduler-*.dist-info/
 
 
 %files mgmt-search
 %{python3_sitelib}/azure/mgmt/search
-%{python3_sitelib}/azure_mgmt_search-*.egg-info/
+%{python3_sitelib}/azure_mgmt_search-*.dist-info/
 
 
 %files mgmt-security
 %{python3_sitelib}/azure/mgmt/security
-%{python3_sitelib}/azure_mgmt_security-*.egg-info/
+%{python3_sitelib}/azure_mgmt_security-*.dist-info/
 
 
 %files mgmt-serialconsole
 %{python3_sitelib}/azure/mgmt/serialconsole
-%{python3_sitelib}/azure_mgmt_serialconsole-*.egg-info/
+%{python3_sitelib}/azure_mgmt_serialconsole-*.dist-info/
 
 
 %files mgmt-servermanager
 %{python3_sitelib}/azure/mgmt/servermanager
-%{python3_sitelib}/azure_mgmt_servermanager-*.egg-info/
+%{python3_sitelib}/azure_mgmt_servermanager-*.dist-info/
 
 
 %files mgmt-servicebus
 %{python3_sitelib}/azure/mgmt/servicebus
-%{python3_sitelib}/azure_mgmt_servicebus-*.egg-info/
+%{python3_sitelib}/azure_mgmt_servicebus-*.dist-info/
 
 
 %files mgmt-sql
 %{python3_sitelib}/azure/mgmt/sql
-%{python3_sitelib}/azure_mgmt_sql-*.egg-info/
+%{python3_sitelib}/azure_mgmt_sql-*.dist-info/
 
 
 %files mgmt-sqlvirtualmachine
 %{python3_sitelib}/azure/mgmt/sqlvirtualmachine
-%{python3_sitelib}/azure_mgmt_sqlvirtualmachine-*.egg-info/
+%{python3_sitelib}/azure_mgmt_sqlvirtualmachine-*.dist-info/
 
 
 %files mgmt-storage
 %{python3_sitelib}/azure/mgmt/storage
-%{python3_sitelib}/azure_mgmt_storage-*.egg-info/
+%{python3_sitelib}/azure_mgmt_storage-*.dist-info/
 
 
 %files mgmt-storagecache
 %{python3_sitelib}/azure/mgmt/storagecache
-%{python3_sitelib}/azure_mgmt_storagecache-*.egg-info/
+%{python3_sitelib}/azure_mgmt_storagecache-*.dist-info/
 
 
 %files mgmt-storageimportexport
 %{python3_sitelib}/azure/mgmt/storageimportexport
-%{python3_sitelib}/azure_mgmt_storageimportexport-*.egg-info/
+%{python3_sitelib}/azure_mgmt_storageimportexport-*.dist-info/
 
 
 %files mgmt-storagesync
 %{python3_sitelib}/azure/mgmt/storagesync
-%{python3_sitelib}/azure_mgmt_storagesync-*.egg-info/
+%{python3_sitelib}/azure_mgmt_storagesync-*.dist-info/
 
 
 %files mgmt-subscription
 %{python3_sitelib}/azure/mgmt/subscription
-%{python3_sitelib}/azure_mgmt_subscription-*.egg-info/
+%{python3_sitelib}/azure_mgmt_subscription-*.dist-info/
 
 
 %files mgmt-support
 %{python3_sitelib}/azure/mgmt/support
-%{python3_sitelib}/azure_mgmt_support-*.egg-info/
+%{python3_sitelib}/azure_mgmt_support-*.dist-info/
 
 
 %files mgmt-synapse
 %{python3_sitelib}/azure/mgmt/synapse
-%{python3_sitelib}/azure_mgmt_synapse-*.egg-info/
+%{python3_sitelib}/azure_mgmt_synapse-*.dist-info/
 
 
 %files mgmt-timeseriesinsights
 %{python3_sitelib}/azure/mgmt/timeseriesinsights
-%{python3_sitelib}/azure_mgmt_timeseriesinsights-*.egg-info/
+%{python3_sitelib}/azure_mgmt_timeseriesinsights-*.dist-info/
 
 
 %files mgmt-trafficmanager
 %{python3_sitelib}/azure/mgmt/trafficmanager
-%{python3_sitelib}/azure_mgmt_trafficmanager-*.egg-info/
+%{python3_sitelib}/azure_mgmt_trafficmanager-*.dist-info/
 
 
 %files mgmt-vmwarecloudsimple
 %{python3_sitelib}/azure/mgmt/vmwarecloudsimple
-%{python3_sitelib}/azure_mgmt_vmwarecloudsimple-*.egg-info/
+%{python3_sitelib}/azure_mgmt_vmwarecloudsimple-*.dist-info/
 
 
 %files mgmt-web
 %{python3_sitelib}/azure/mgmt/web
-%{python3_sitelib}/azure_mgmt_web-*.egg-info/
+%{python3_sitelib}/azure_mgmt_web-*.dist-info/
 
 
 %files nspkg
-%{python3_sitelib}/azure_nspkg-*.egg-info/
+%{python3_sitelib}/azure_nspkg-*.dist-info/
 
 
 %files search-documents
 %{python3_sitelib}/azure/search/documents
-%{python3_sitelib}/azure_search_documents-*.egg-info/
+%{python3_sitelib}/azure_search_documents-*.dist-info/
 
 
 %files search-nspkg
-%{python3_sitelib}/azure_search_nspkg-*.egg-info/
+%{python3_sitelib}/azure_search_nspkg-*.dist-info/
 
 
 %files servicebus
 %{python3_sitelib}/azure/servicebus
-%{python3_sitelib}/azure_servicebus-*.egg-info/
+%{python3_sitelib}/azure_servicebus-*.dist-info/
 
 
 %files servicefabric
 %{python3_sitelib}/azure/servicefabric
-%{python3_sitelib}/azure_servicefabric-*.egg-info/
+%{python3_sitelib}/azure_servicefabric-*.dist-info/
 
 
 %files storage-blob
 %{python3_sitelib}/azure/storage/blob
-%{python3_sitelib}/azure_storage_blob-*.egg-info/
+%{python3_sitelib}/azure_storage_blob-*.dist-info/
 
 
 %files storage-common
 %{python3_sitelib}/azure/storage/common
-%{python3_sitelib}/azure_storage_common-*.egg-info/
+%{python3_sitelib}/azure_storage_common-*.dist-info/
 
 
 %files storage-file
 %{python3_sitelib}/azure/storage/file
-%{python3_sitelib}/azure_storage_file-*.egg-info/
+%{python3_sitelib}/azure_storage_file-*.dist-info/
 
 
 %files storage-file-datalake
 %{python3_sitelib}/azure/storage/filedatalake
-%{python3_sitelib}/azure_storage_file_datalake-*.egg-info/
+%{python3_sitelib}/azure_storage_file_datalake-*.dist-info/
 
 
 %files storage-file-share
 %{python3_sitelib}/azure/storage/fileshare
-%{python3_sitelib}/azure_storage_file_share-*.egg-info/
+%{python3_sitelib}/azure_storage_file_share-*.dist-info/
 
 
 %files storage-nspkg
-%{python3_sitelib}/azure_storage_nspkg-*.egg-info/
+%{python3_sitelib}/azure_storage_nspkg-*.dist-info/
 %{python3_sitelib}/azure/storage/__init__.py
 %{python3_sitelib}/azure/storage/__pycache__/__init__*
 
 
 %files storage-queue
 %{python3_sitelib}/azure/storage/queue
-%{python3_sitelib}/azure_storage_queue-*.egg-info/
+%{python3_sitelib}/azure_storage_queue-*.dist-info/
 
 
 %files synapse
 %{python3_sitelib}/azure/synapse
-%{python3_sitelib}/azure_synapse-*.egg-info/
+%{python3_sitelib}/azure_synapse-*.dist-info/
 
 
 %files synapse-nspkg
-%{python3_sitelib}/azure_synapse_nspkg-*.egg-info/
+%{python3_sitelib}/azure_synapse_nspkg-*.dist-info/
 
 
 %files template
 %{python3_sitelib}/azure/template
-%{python3_sitelib}/azure_template-*.egg-info/
+%{python3_sitelib}/azure_template-*.dist-info/
 
 
 

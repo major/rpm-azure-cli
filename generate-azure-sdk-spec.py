@@ -49,10 +49,10 @@ template = Template(template_content)
 # List of packages to skip because they have no source in pypi. 😞
 skip_list = [
     "azure",  # deprecated
-    "azure-devtools",  # not needed
     "azure-eventhub-checkpointstoreblob",  # not needed
     "azure-eventhub-checkpointstoreblob-aio",  # not needed
     "azure-cognitiveservices-speech",  # only pre-compiled wheel available
+    "azure-devtools",  # not needed
     "azure-mgmt",  # deprecated
     "azure-mgmt-documentdb",  # can't build wheel
     "azure-monitor",  # can't build wheel
@@ -96,13 +96,9 @@ for i, data in df.iterrows():
             "%{python3_sitelib}/"
             f"{package_data['slashed_name']}"
         ),
-        #"distinfo": (
-        #    "%{python3_sitelib}/"
-        #    f"{package_data['underscored_name']}-*.dist-info/"
-        #)
-        "egginfo": (
-           "%{python3_sitelib}/"
-           f"{package_data['underscored_name']}-*.egg-info/"
+        "distinfo": (
+            "%{python3_sitelib}/"
+            f"{package_data['underscored_name']}-*.dist-info/"
         )
     }
 
@@ -190,6 +186,12 @@ for i, data in df.iterrows():
 
     # The core package needs a few extra things from the base azure directory.
     if "mgmt-core" in data.Package:
+        package_data["files"]["base_init"] = (
+            "%{python3_sitelib}/azure/__init__.py"
+        )
+        package_data["files"]["base_init_pycache"] = (
+            "%{python3_sitelib}/azure/__pycache__/__init__*"
+        )
         package_data["files"]["base_mgmt_init"] = (
             "%{python3_sitelib}/azure/mgmt/__init__.py"
         )
