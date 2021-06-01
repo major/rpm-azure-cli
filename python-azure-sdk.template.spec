@@ -74,16 +74,6 @@ done
 %pyproject_install
 rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
-%if %{with check}
-%check
-PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
-for PYTHON_PROJECT in $PYTHON_PROJECTS; do
-    pushd $(dirname $PYTHON_PROJECT)
-        %pytest
-    popd
-done
-%endif
-
 {% for package in packages %}
 %files {{ package.short_name }}
 {% for file_type, file_path in package.files.items() -%}

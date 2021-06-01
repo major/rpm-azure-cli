@@ -49,6 +49,7 @@ template = Template(template_content)
 # List of packages to skip because they have no source in pypi. 😞
 skip_list = [
     "azure",  # deprecated
+    "azure-ai-formrecognizer",  # has no files 🤷🏻‍♂️
     "azure-eventhub-checkpointstoreblob",  # not needed
     "azure-eventhub-checkpointstoreblob-aio",  # not needed
     "azure-cognitiveservices-speech",  # only pre-compiled wheel available
