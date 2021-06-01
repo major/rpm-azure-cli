@@ -4,19 +4,13 @@ on: push
 jobs:
   build:
     container:
-      image: registry.fedoraproject.org/fedora:34
+      image: https://quay.io/repository/major/fedora-packager:latest
       options: "--privileged"
     runs-on: ubuntu-latest
     steps:
 
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Enable fastestmirror
-      run: echo "fastestmirror=1" >> /etc/dnf/dnf.conf
-
-    - name: Install requirements
-      run: dnf -y install fedora-packager
 
     - name: Build RPMs
       run: ./build.sh
