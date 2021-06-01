@@ -54,24 +54,21 @@ Summary: {{ package.summary}}
 %pyproject_buildrequires
 
 %build
-# Set the directory where we collect the wheels during each step of the loop.
-BASE_WHEELDIR=$(pwd)/pyproject-wheeldir
-mkdir -vp $BASE_WHEELDIR
-
 # Get a list of python projects that we've extracted.
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
 
-# Loop over each project, build the wheel, and move the wheel into the correct
-# place.
+# Loop over each project and build a wheel for each.
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
         %pyproject_wheel
-        # mv pyproject-wheeldir/* $BASE_WHEELDIR
     popd
 done
 
 %install
 %pyproject_install
+
+# Some of the wheels contain random stuff at the top level that don't belong in
+# any RPM packages.
 rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 {% for package in packages %}

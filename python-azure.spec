@@ -11,191 +11,190 @@ Release:        1%{?dist}
 Summary:        Azure SDK for Python
 License:        MIT
 URL:            https://github.com/Azure/azure-sdk-for-python
-Source0:        %{pypi_source azure-ai-nspkg 1.0.0 zip}
-Source1:        %{pypi_source azure-ai-textanalytics 5.0.0 zip}
-Source2:        %{pypi_source azure-appconfiguration 1.1.1 zip}
-Source3:        %{pypi_source azure-applicationinsights 0.1.0 zip}
-Source4:        %{pypi_source azure-batch 10.0.0 zip}
-Source5:        %{pypi_source azure-cognitiveservices-anomalydetector 0.3.0 zip}
-Source6:        %{pypi_source azure-cognitiveservices-formrecognizer 0.1.1 zip}
-Source7:        %{pypi_source azure-cognitiveservices-knowledge-nspkg 3.0.0 zip}
-Source8:        %{pypi_source azure-cognitiveservices-knowledge-qnamaker 0.3.0 zip}
-Source9:        %{pypi_source azure-cognitiveservices-language-luis 0.7.0 zip}
-Source10:       %{pypi_source azure-cognitiveservices-language-nspkg 3.0.1 zip}
-Source11:       %{pypi_source azure-cognitiveservices-language-spellcheck 2.0.0 zip}
-Source12:       %{pypi_source azure-cognitiveservices-language-textanalytics 0.2.0 zip}
-Source13:       %{pypi_source azure-cognitiveservices-nspkg 3.0.1 zip}
-Source14:       %{pypi_source azure-cognitiveservices-personalizer 0.1.0 zip}
-Source15:       %{pypi_source azure-cognitiveservices-search-autosuggest 0.2.0 zip}
-Source16:       %{pypi_source azure-cognitiveservices-search-customimagesearch 0.2.0 zip}
-Source17:       %{pypi_source azure-cognitiveservices-search-customsearch 0.3.0 zip}
-Source18:       %{pypi_source azure-cognitiveservices-search-entitysearch 2.0.0 zip}
-Source19:       %{pypi_source azure-cognitiveservices-search-imagesearch 2.0.0 zip}
-Source20:       %{pypi_source azure-cognitiveservices-search-newssearch 2.0.0 zip}
-Source21:       %{pypi_source azure-cognitiveservices-search-nspkg 3.0.1 zip}
-Source22:       %{pypi_source azure-cognitiveservices-search-videosearch 2.0.0 zip}
-Source23:       %{pypi_source azure-cognitiveservices-search-visualsearch 0.2.0 zip}
-Source24:       %{pypi_source azure-cognitiveservices-search-websearch 2.0.0 zip}
-Source25:       %{pypi_source azure-cognitiveservices-vision-computervision 0.9.0 zip}
-Source26:       %{pypi_source azure-cognitiveservices-vision-contentmoderator 1.0.0 zip}
-Source27:       %{pypi_source azure-cognitiveservices-vision-customvision 3.1.0 zip}
-Source28:       %{pypi_source azure-cognitiveservices-vision-face 0.5.0 zip}
-Source29:       %{pypi_source azure-cognitiveservices-vision-nspkg 3.0.1 zip}
-Source30:       %{pypi_source azure-common 1.1.27 zip}
-Source31:       %{pypi_source azure-communication-chat 1.0.0 zip}
-Source32:       %{pypi_source azure-communication-identity 1.0.0 zip}
-Source33:       %{pypi_source azure-communication-phonenumbers 1.0.0 zip}
-Source34:       %{pypi_source azure-communication-sms 1.0.0 zip}
-Source35:       %{pypi_source azure-core 1.14.0 zip}
-Source36:       %{pypi_source azure-cosmos 3.2.0 tar.gz}
-Source37:       %{pypi_source azure-cosmosdb-table 1.0.6 tar.gz}
-Source38:       %{pypi_source azure-data-nspkg 1.0.0 zip}
-Source39:       %{pypi_source azure-datalake-store 0.0.51 tar.gz}
-Source40:       %{pypi_source azure-digitaltwins-core 1.1.0 zip}
-Source41:       %{pypi_source azure-digitaltwins-nspkg 1.0.0 zip}
-Source42:       %{pypi_source azure-eventgrid 4.2.0 zip}
-Source43:       %{pypi_source azure-eventhub 5.5.0 zip}
-Source44:       %{pypi_source azure-graphrbac 0.61.1 zip}
-Source45:       %{pypi_source azure-identity 1.6.0 zip}
-Source46:       %{pypi_source azure-iot-device 2.6.0 tar.gz}
-Source47:       %{pypi_source azure-iot-hub 2.4.0 tar.gz}
-Source48:       %{pypi_source azure-keyvault 4.1.0 zip}
-Source49:       %{pypi_source azure-keyvault-certificates 4.2.1 zip}
-Source50:       %{pypi_source azure-keyvault-keys 4.3.1 zip}
-Source51:       %{pypi_source azure-keyvault-nspkg 1.0.0 zip}
-Source52:       %{pypi_source azure-keyvault-secrets 4.2.0 zip}
-Source53:       %{pypi_source azure-kusto-data 2.0.0 tar.gz}
-Source54:       %{pypi_source azure-loganalytics 0.1.0 zip}
-Source55:       %{pypi_source azure-mgmt-advisor 9.0.0 zip}
-Source56:       %{pypi_source azure-mgmt-alertsmanagement 1.0.0 zip}
-Source57:       %{pypi_source azure-mgmt-apimanagement 2.0.0 zip}
-Source58:       %{pypi_source azure-mgmt-appconfiguration 1.0.1 zip}
-Source59:       %{pypi_source azure-mgmt-applicationinsights 1.0.0 zip}
-Source60:       %{pypi_source azure-mgmt-appplatform 6.0.0 zip}
-Source61:       %{pypi_source azure-mgmt-attestation 1.0.0 zip}
-Source62:       %{pypi_source azure-mgmt-authorization 1.0.0 zip}
-Source63:       %{pypi_source azure-mgmt-automation 1.0.0 zip}
-Source64:       %{pypi_source azure-mgmt-avs 1.0.0 zip}
-Source65:       %{pypi_source azure-mgmt-azurestack 1.0.0 zip}
-Source66:       %{pypi_source azure-mgmt-azurestackhci 6.0.0 zip}
-Source67:       %{pypi_source azure-mgmt-batch 15.0.0 zip}
-Source68:       %{pypi_source azure-mgmt-batchai 2.0.0 zip}
-Source69:       %{pypi_source azure-mgmt-billing 6.0.0 zip}
-Source70:       %{pypi_source azure-mgmt-botservice 1.0.0 zip}
-Source71:       %{pypi_source azure-mgmt-cdn 11.0.0 zip}
-Source72:       %{pypi_source azure-mgmt-cognitiveservices 11.0.0 zip}
-Source73:       %{pypi_source azure-mgmt-commerce 6.0.0 zip}
-Source74:       %{pypi_source azure-mgmt-common 0.20.0 zip}
-Source75:       %{pypi_source azure-mgmt-communication 1.0.0 zip}
-Source76:       %{pypi_source azure-mgmt-compute 21.0.0 zip}
-Source77:       %{pypi_source azure-mgmt-confluent 1.0.0 zip}
-Source78:       %{pypi_source azure-mgmt-consumption 8.0.0 zip}
-Source79:       %{pypi_source azure-mgmt-containerinstance 7.0.0 zip}
-Source80:       %{pypi_source azure-mgmt-containerregistry 8.0.0 zip}
-Source81:       %{pypi_source azure-mgmt-containerservice 15.1.0 zip}
-Source82:       %{pypi_source azure-mgmt-core 1.2.2 zip}
-Source83:       %{pypi_source azure-mgmt-cosmosdb 6.3.0 zip}
-Source84:       %{pypi_source azure-mgmt-costmanagement 1.0.0 zip}
-Source85:       %{pypi_source azure-mgmt-customproviders 1.0.0 zip}
-Source86:       %{pypi_source azure-mgmt-databox 1.0.0 zip}
-Source87:       %{pypi_source azure-mgmt-databoxedge 1.0.0 zip}
-Source88:       %{pypi_source azure-mgmt-databricks 1.0.0 zip}
-Source89:       %{pypi_source azure-mgmt-datadog 2.0.0 zip}
-Source90:       %{pypi_source azure-mgmt-datafactory 1.1.0 zip}
-Source91:       %{pypi_source azure-mgmt-datalake-analytics 0.6.0 zip}
-Source92:       %{pypi_source azure-mgmt-datalake-nspkg 3.0.1 zip}
-Source93:       %{pypi_source azure-mgmt-datalake-store 0.5.0 zip}
-Source94:       %{pypi_source azure-mgmt-datamigration 9.0.0 zip}
-Source95:       %{pypi_source azure-mgmt-datashare 1.0.0 zip}
-Source96:       %{pypi_source azure-mgmt-deploymentmanager 1.0.0 zip}
-Source97:       %{pypi_source azure-mgmt-devspaces 0.2.0 zip}
-Source98:       %{pypi_source azure-mgmt-devtestlabs 9.0.0 zip}
-Source99:       %{pypi_source azure-mgmt-digitaltwins 6.0.0 zip}
-Source100:      %{pypi_source azure-mgmt-dns 8.0.0 zip}
-Source101:      %{pypi_source azure-mgmt-edgegateway 0.1.0 zip}
-Source102:      %{pypi_source azure-mgmt-eventgrid 9.0.0 zip}
-Source103:      %{pypi_source azure-mgmt-eventhub 9.0.0 zip}
-Source104:      %{pypi_source azure-mgmt-frontdoor 1.0.0 zip}
-Source105:      %{pypi_source azure-mgmt-hanaonazure 1.0.0 zip}
-Source106:      %{pypi_source azure-mgmt-hdinsight 7.0.0 zip}
-Source107:      %{pypi_source azure-mgmt-healthcareapis 1.0.0 zip}
-Source108:      %{pypi_source azure-mgmt-hybridcompute 7.0.0 zip}
-Source109:      %{pypi_source azure-mgmt-hybridkubernetes 1.0.0 zip}
-Source110:      %{pypi_source azure-mgmt-imagebuilder 0.4.0 zip}
-Source111:      %{pypi_source azure-mgmt-iotcentral 4.1.0 zip}
-Source112:      %{pypi_source azure-mgmt-iothub 2.0.0 zip}
-Source113:      %{pypi_source azure-mgmt-iothubprovisioningservices 0.2.0 zip}
-Source114:      %{pypi_source azure-mgmt-keyvault 9.0.0 zip}
-Source115:      %{pypi_source azure-mgmt-kusto 2.0.0 zip}
-Source116:      %{pypi_source azure-mgmt-labservices 1.0.0 zip}
-Source117:      %{pypi_source azure-mgmt-loganalytics 10.0.0 zip}
-Source118:      %{pypi_source azure-mgmt-logic 9.0.0 zip}
-Source119:      %{pypi_source azure-mgmt-machinelearningcompute 0.4.1 zip}
-Source120:      %{pypi_source azure-mgmt-machinelearningservices 1.0.0 zip}
-Source121:      %{pypi_source azure-mgmt-maintenance 2.0.0 zip}
-Source122:      %{pypi_source azure-mgmt-managedservices 6.0.0 zip}
-Source123:      %{pypi_source azure-mgmt-managementgroups 1.0.0 zip}
-Source124:      %{pypi_source azure-mgmt-managementpartner 1.0.0 zip}
-Source125:      %{pypi_source azure-mgmt-maps 2.0.0 zip}
-Source126:      %{pypi_source azure-mgmt-marketplaceordering 1.1.0 zip}
-Source127:      %{pypi_source azure-mgmt-media 3.1.0 zip}
-Source128:      %{pypi_source azure-mgmt-mixedreality 1.0.0 zip}
-Source129:      %{pypi_source azure-mgmt-monitor 2.0.0 zip}
-Source130:      %{pypi_source azure-mgmt-msi 1.0.0 zip}
-Source131:      %{pypi_source azure-mgmt-netapp 3.0.0 zip}
-Source132:      %{pypi_source azure-mgmt-network 19.0.0 zip}
-Source133:      %{pypi_source azure-mgmt-notificationhubs 7.0.0 zip}
-Source134:      %{pypi_source azure-mgmt-nspkg 3.0.2 zip}
-Source135:      %{pypi_source azure-mgmt-operationsmanagement 1.0.0 zip}
-Source136:      %{pypi_source azure-mgmt-peering 1.0.0 zip}
-Source137:      %{pypi_source azure-mgmt-policyinsights 1.0.0 zip}
-Source138:      %{pypi_source azure-mgmt-powerbidedicated 1.0.0 zip}
-Source139:      %{pypi_source azure-mgmt-powerbiembedded 2.0.0 zip}
-Source140:      %{pypi_source azure-mgmt-privatedns 1.0.0 zip}
-Source141:      %{pypi_source azure-mgmt-rdbms 8.0.0 zip}
-Source142:      %{pypi_source azure-mgmt-recoveryservices 1.0.0 zip}
-Source143:      %{pypi_source azure-mgmt-recoveryservicesbackup 0.11.0 zip}
-Source144:      %{pypi_source azure-mgmt-redhatopenshift 1.0.0 zip}
-Source145:      %{pypi_source azure-mgmt-redis 12.0.0 zip}
-Source146:      %{pypi_source azure-mgmt-relay 1.0.0 zip}
-Source147:      %{pypi_source azure-mgmt-reservations 1.0.0 zip}
-Source148:      %{pypi_source azure-mgmt-resource 18.0.0 zip}
-Source149:      %{pypi_source azure-mgmt-resourcegraph 8.0.0 zip}
-Source150:      %{pypi_source azure-mgmt-resourcemover 1.0.0 zip}
-Source151:      %{pypi_source azure-mgmt-scheduler 2.0.0 zip}
-Source152:      %{pypi_source azure-mgmt-search 8.0.0 zip}
-Source153:      %{pypi_source azure-mgmt-security 1.0.0 zip}
-Source154:      %{pypi_source azure-mgmt-serialconsole 1.0.0 zip}
-Source155:      %{pypi_source azure-mgmt-servermanager 2.0.0 zip}
-Source156:      %{pypi_source azure-mgmt-servicebus 6.0.0 zip}
-Source157:      %{pypi_source azure-mgmt-sql 2.1.0 zip}
-Source158:      %{pypi_source azure-mgmt-sqlvirtualmachine 0.5.0 zip}
-Source159:      %{pypi_source azure-mgmt-storage 18.0.0 zip}
-Source160:      %{pypi_source azure-mgmt-storagecache 0.5.0 zip}
-Source161:      %{pypi_source azure-mgmt-storageimportexport 0.1.0 zip}
-Source162:      %{pypi_source azure-mgmt-storagesync 1.0.0 zip}
-Source163:      %{pypi_source azure-mgmt-subscription 1.0.0 zip}
-Source164:      %{pypi_source azure-mgmt-support 6.0.0 zip}
-Source165:      %{pypi_source azure-mgmt-synapse 2.0.0 zip}
-Source166:      %{pypi_source azure-mgmt-timeseriesinsights 1.0.0 zip}
-Source167:      %{pypi_source azure-mgmt-trafficmanager 0.51.0 zip}
-Source168:      %{pypi_source azure-mgmt-vmwarecloudsimple 0.2.0 zip}
-Source169:      %{pypi_source azure-mgmt-web 3.0.0 zip}
-Source170:      %{pypi_source azure-nspkg 3.0.2 zip}
-Source171:      %{pypi_source azure-search-documents 11.1.0 zip}
-Source172:      %{pypi_source azure-search-nspkg 1.0.0 zip}
-Source173:      %{pypi_source azure-servicebus 7.2.0 zip}
-Source174:      %{pypi_source azure-servicefabric 8.0.0.0 zip}
-Source175:      %{pypi_source azure-storage-blob 2.1.0 tar.gz}
-Source176:      %{pypi_source azure-storage-common 2.1.0 tar.gz}
-Source177:      %{pypi_source azure-storage-file 2.1.0 tar.gz}
-Source178:      %{pypi_source azure-storage-file-datalake 12.3.1 zip}
-Source179:      %{pypi_source azure-storage-file-share 12.4.2 zip}
-Source180:      %{pypi_source azure-storage-nspkg 3.1.0 tar.gz}
-Source181:      %{pypi_source azure-storage-queue 2.1.0 tar.gz}
-Source182:      %{pypi_source azure-synapse 0.1.1 zip}
-Source183:      %{pypi_source azure-synapse-nspkg 1.0.0 zip}
-Source184:      %{pypi_source azure-template 0.0.17 zip}
+Source0:        %{pypi_source azure-ai-textanalytics 5.0.0 zip}
+Source1:        %{pypi_source azure-appconfiguration 1.1.1 zip}
+Source2:        %{pypi_source azure-applicationinsights 0.1.0 zip}
+Source3:        %{pypi_source azure-batch 10.0.0 zip}
+Source4:        %{pypi_source azure-cognitiveservices-anomalydetector 0.3.0 zip}
+Source5:        %{pypi_source azure-cognitiveservices-formrecognizer 0.1.1 zip}
+Source6:        %{pypi_source azure-cognitiveservices-knowledge-nspkg 3.0.0 zip}
+Source7:        %{pypi_source azure-cognitiveservices-knowledge-qnamaker 0.3.0 zip}
+Source8:        %{pypi_source azure-cognitiveservices-language-luis 0.7.0 zip}
+Source9:        %{pypi_source azure-cognitiveservices-language-nspkg 3.0.1 zip}
+Source10:       %{pypi_source azure-cognitiveservices-language-spellcheck 2.0.0 zip}
+Source11:       %{pypi_source azure-cognitiveservices-language-textanalytics 0.2.0 zip}
+Source12:       %{pypi_source azure-cognitiveservices-nspkg 3.0.1 zip}
+Source13:       %{pypi_source azure-cognitiveservices-personalizer 0.1.0 zip}
+Source14:       %{pypi_source azure-cognitiveservices-search-autosuggest 0.2.0 zip}
+Source15:       %{pypi_source azure-cognitiveservices-search-customimagesearch 0.2.0 zip}
+Source16:       %{pypi_source azure-cognitiveservices-search-customsearch 0.3.0 zip}
+Source17:       %{pypi_source azure-cognitiveservices-search-entitysearch 2.0.0 zip}
+Source18:       %{pypi_source azure-cognitiveservices-search-imagesearch 2.0.0 zip}
+Source19:       %{pypi_source azure-cognitiveservices-search-newssearch 2.0.0 zip}
+Source20:       %{pypi_source azure-cognitiveservices-search-nspkg 3.0.1 zip}
+Source21:       %{pypi_source azure-cognitiveservices-search-videosearch 2.0.0 zip}
+Source22:       %{pypi_source azure-cognitiveservices-search-visualsearch 0.2.0 zip}
+Source23:       %{pypi_source azure-cognitiveservices-search-websearch 2.0.0 zip}
+Source24:       %{pypi_source azure-cognitiveservices-vision-computervision 0.9.0 zip}
+Source25:       %{pypi_source azure-cognitiveservices-vision-contentmoderator 1.0.0 zip}
+Source26:       %{pypi_source azure-cognitiveservices-vision-customvision 3.1.0 zip}
+Source27:       %{pypi_source azure-cognitiveservices-vision-face 0.5.0 zip}
+Source28:       %{pypi_source azure-cognitiveservices-vision-nspkg 3.0.1 zip}
+Source29:       %{pypi_source azure-common 1.1.27 zip}
+Source30:       %{pypi_source azure-communication-chat 1.0.0 zip}
+Source31:       %{pypi_source azure-communication-identity 1.0.0 zip}
+Source32:       %{pypi_source azure-communication-phonenumbers 1.0.0 zip}
+Source33:       %{pypi_source azure-communication-sms 1.0.0 zip}
+Source34:       %{pypi_source azure-core 1.14.0 zip}
+Source35:       %{pypi_source azure-cosmos 3.2.0 tar.gz}
+Source36:       %{pypi_source azure-cosmosdb-table 1.0.6 tar.gz}
+Source37:       %{pypi_source azure-data-nspkg 1.0.0 zip}
+Source38:       %{pypi_source azure-datalake-store 0.0.51 tar.gz}
+Source39:       %{pypi_source azure-digitaltwins-core 1.1.0 zip}
+Source40:       %{pypi_source azure-digitaltwins-nspkg 1.0.0 zip}
+Source41:       %{pypi_source azure-eventgrid 4.2.0 zip}
+Source42:       %{pypi_source azure-eventhub 5.5.0 zip}
+Source43:       %{pypi_source azure-graphrbac 0.61.1 zip}
+Source44:       %{pypi_source azure-identity 1.6.0 zip}
+Source45:       %{pypi_source azure-iot-device 2.6.0 tar.gz}
+Source46:       %{pypi_source azure-iot-hub 2.4.0 tar.gz}
+Source47:       %{pypi_source azure-keyvault 4.1.0 zip}
+Source48:       %{pypi_source azure-keyvault-certificates 4.2.1 zip}
+Source49:       %{pypi_source azure-keyvault-keys 4.3.1 zip}
+Source50:       %{pypi_source azure-keyvault-nspkg 1.0.0 zip}
+Source51:       %{pypi_source azure-keyvault-secrets 4.2.0 zip}
+Source52:       %{pypi_source azure-kusto-data 2.0.0 tar.gz}
+Source53:       %{pypi_source azure-loganalytics 0.1.0 zip}
+Source54:       %{pypi_source azure-mgmt-advisor 9.0.0 zip}
+Source55:       %{pypi_source azure-mgmt-alertsmanagement 1.0.0 zip}
+Source56:       %{pypi_source azure-mgmt-apimanagement 2.0.0 zip}
+Source57:       %{pypi_source azure-mgmt-appconfiguration 1.0.1 zip}
+Source58:       %{pypi_source azure-mgmt-applicationinsights 1.0.0 zip}
+Source59:       %{pypi_source azure-mgmt-appplatform 6.0.0 zip}
+Source60:       %{pypi_source azure-mgmt-attestation 1.0.0 zip}
+Source61:       %{pypi_source azure-mgmt-authorization 1.0.0 zip}
+Source62:       %{pypi_source azure-mgmt-automation 1.0.0 zip}
+Source63:       %{pypi_source azure-mgmt-avs 1.0.0 zip}
+Source64:       %{pypi_source azure-mgmt-azurestack 1.0.0 zip}
+Source65:       %{pypi_source azure-mgmt-azurestackhci 6.0.0 zip}
+Source66:       %{pypi_source azure-mgmt-batch 15.0.0 zip}
+Source67:       %{pypi_source azure-mgmt-batchai 2.0.0 zip}
+Source68:       %{pypi_source azure-mgmt-billing 6.0.0 zip}
+Source69:       %{pypi_source azure-mgmt-botservice 1.0.0 zip}
+Source70:       %{pypi_source azure-mgmt-cdn 11.0.0 zip}
+Source71:       %{pypi_source azure-mgmt-cognitiveservices 11.0.0 zip}
+Source72:       %{pypi_source azure-mgmt-commerce 6.0.0 zip}
+Source73:       %{pypi_source azure-mgmt-common 0.20.0 zip}
+Source74:       %{pypi_source azure-mgmt-communication 1.0.0 zip}
+Source75:       %{pypi_source azure-mgmt-compute 21.0.0 zip}
+Source76:       %{pypi_source azure-mgmt-confluent 1.0.0 zip}
+Source77:       %{pypi_source azure-mgmt-consumption 8.0.0 zip}
+Source78:       %{pypi_source azure-mgmt-containerinstance 7.0.0 zip}
+Source79:       %{pypi_source azure-mgmt-containerregistry 8.0.0 zip}
+Source80:       %{pypi_source azure-mgmt-containerservice 15.1.0 zip}
+Source81:       %{pypi_source azure-mgmt-core 1.2.2 zip}
+Source82:       %{pypi_source azure-mgmt-cosmosdb 6.3.0 zip}
+Source83:       %{pypi_source azure-mgmt-costmanagement 1.0.0 zip}
+Source84:       %{pypi_source azure-mgmt-customproviders 1.0.0 zip}
+Source85:       %{pypi_source azure-mgmt-databox 1.0.0 zip}
+Source86:       %{pypi_source azure-mgmt-databoxedge 1.0.0 zip}
+Source87:       %{pypi_source azure-mgmt-databricks 1.0.0 zip}
+Source88:       %{pypi_source azure-mgmt-datadog 2.0.0 zip}
+Source89:       %{pypi_source azure-mgmt-datafactory 1.1.0 zip}
+Source90:       %{pypi_source azure-mgmt-datalake-analytics 0.6.0 zip}
+Source91:       %{pypi_source azure-mgmt-datalake-nspkg 3.0.1 zip}
+Source92:       %{pypi_source azure-mgmt-datalake-store 0.5.0 zip}
+Source93:       %{pypi_source azure-mgmt-datamigration 9.0.0 zip}
+Source94:       %{pypi_source azure-mgmt-datashare 1.0.0 zip}
+Source95:       %{pypi_source azure-mgmt-deploymentmanager 1.0.0 zip}
+Source96:       %{pypi_source azure-mgmt-devspaces 0.2.0 zip}
+Source97:       %{pypi_source azure-mgmt-devtestlabs 9.0.0 zip}
+Source98:       %{pypi_source azure-mgmt-digitaltwins 6.0.0 zip}
+Source99:       %{pypi_source azure-mgmt-dns 8.0.0 zip}
+Source100:      %{pypi_source azure-mgmt-edgegateway 0.1.0 zip}
+Source101:      %{pypi_source azure-mgmt-eventgrid 9.0.0 zip}
+Source102:      %{pypi_source azure-mgmt-eventhub 9.0.0 zip}
+Source103:      %{pypi_source azure-mgmt-frontdoor 1.0.0 zip}
+Source104:      %{pypi_source azure-mgmt-hanaonazure 1.0.0 zip}
+Source105:      %{pypi_source azure-mgmt-hdinsight 7.0.0 zip}
+Source106:      %{pypi_source azure-mgmt-healthcareapis 1.0.0 zip}
+Source107:      %{pypi_source azure-mgmt-hybridcompute 7.0.0 zip}
+Source108:      %{pypi_source azure-mgmt-hybridkubernetes 1.0.0 zip}
+Source109:      %{pypi_source azure-mgmt-imagebuilder 0.4.0 zip}
+Source110:      %{pypi_source azure-mgmt-iotcentral 4.1.0 zip}
+Source111:      %{pypi_source azure-mgmt-iothub 2.0.0 zip}
+Source112:      %{pypi_source azure-mgmt-iothubprovisioningservices 0.2.0 zip}
+Source113:      %{pypi_source azure-mgmt-keyvault 9.0.0 zip}
+Source114:      %{pypi_source azure-mgmt-kusto 2.0.0 zip}
+Source115:      %{pypi_source azure-mgmt-labservices 1.0.0 zip}
+Source116:      %{pypi_source azure-mgmt-loganalytics 10.0.0 zip}
+Source117:      %{pypi_source azure-mgmt-logic 9.0.0 zip}
+Source118:      %{pypi_source azure-mgmt-machinelearningcompute 0.4.1 zip}
+Source119:      %{pypi_source azure-mgmt-machinelearningservices 1.0.0 zip}
+Source120:      %{pypi_source azure-mgmt-maintenance 2.0.0 zip}
+Source121:      %{pypi_source azure-mgmt-managedservices 6.0.0 zip}
+Source122:      %{pypi_source azure-mgmt-managementgroups 1.0.0 zip}
+Source123:      %{pypi_source azure-mgmt-managementpartner 1.0.0 zip}
+Source124:      %{pypi_source azure-mgmt-maps 2.0.0 zip}
+Source125:      %{pypi_source azure-mgmt-marketplaceordering 1.1.0 zip}
+Source126:      %{pypi_source azure-mgmt-media 3.1.0 zip}
+Source127:      %{pypi_source azure-mgmt-mixedreality 1.0.0 zip}
+Source128:      %{pypi_source azure-mgmt-monitor 2.0.0 zip}
+Source129:      %{pypi_source azure-mgmt-msi 1.0.0 zip}
+Source130:      %{pypi_source azure-mgmt-netapp 3.0.0 zip}
+Source131:      %{pypi_source azure-mgmt-network 19.0.0 zip}
+Source132:      %{pypi_source azure-mgmt-notificationhubs 7.0.0 zip}
+Source133:      %{pypi_source azure-mgmt-nspkg 3.0.2 zip}
+Source134:      %{pypi_source azure-mgmt-operationsmanagement 1.0.0 zip}
+Source135:      %{pypi_source azure-mgmt-peering 1.0.0 zip}
+Source136:      %{pypi_source azure-mgmt-policyinsights 1.0.0 zip}
+Source137:      %{pypi_source azure-mgmt-powerbidedicated 1.0.0 zip}
+Source138:      %{pypi_source azure-mgmt-powerbiembedded 2.0.0 zip}
+Source139:      %{pypi_source azure-mgmt-privatedns 1.0.0 zip}
+Source140:      %{pypi_source azure-mgmt-rdbms 8.0.0 zip}
+Source141:      %{pypi_source azure-mgmt-recoveryservices 1.0.0 zip}
+Source142:      %{pypi_source azure-mgmt-recoveryservicesbackup 0.11.0 zip}
+Source143:      %{pypi_source azure-mgmt-redhatopenshift 1.0.0 zip}
+Source144:      %{pypi_source azure-mgmt-redis 12.0.0 zip}
+Source145:      %{pypi_source azure-mgmt-relay 1.0.0 zip}
+Source146:      %{pypi_source azure-mgmt-reservations 1.0.0 zip}
+Source147:      %{pypi_source azure-mgmt-resource 18.0.0 zip}
+Source148:      %{pypi_source azure-mgmt-resourcegraph 8.0.0 zip}
+Source149:      %{pypi_source azure-mgmt-resourcemover 1.0.0 zip}
+Source150:      %{pypi_source azure-mgmt-scheduler 2.0.0 zip}
+Source151:      %{pypi_source azure-mgmt-search 8.0.0 zip}
+Source152:      %{pypi_source azure-mgmt-security 1.0.0 zip}
+Source153:      %{pypi_source azure-mgmt-serialconsole 1.0.0 zip}
+Source154:      %{pypi_source azure-mgmt-servermanager 2.0.0 zip}
+Source155:      %{pypi_source azure-mgmt-servicebus 6.0.0 zip}
+Source156:      %{pypi_source azure-mgmt-sql 2.1.0 zip}
+Source157:      %{pypi_source azure-mgmt-sqlvirtualmachine 0.5.0 zip}
+Source158:      %{pypi_source azure-mgmt-storage 18.0.0 zip}
+Source159:      %{pypi_source azure-mgmt-storagecache 0.5.0 zip}
+Source160:      %{pypi_source azure-mgmt-storageimportexport 0.1.0 zip}
+Source161:      %{pypi_source azure-mgmt-storagesync 1.0.0 zip}
+Source162:      %{pypi_source azure-mgmt-subscription 1.0.0 zip}
+Source163:      %{pypi_source azure-mgmt-support 6.0.0 zip}
+Source164:      %{pypi_source azure-mgmt-synapse 2.0.0 zip}
+Source165:      %{pypi_source azure-mgmt-timeseriesinsights 1.0.0 zip}
+Source166:      %{pypi_source azure-mgmt-trafficmanager 0.51.0 zip}
+Source167:      %{pypi_source azure-mgmt-vmwarecloudsimple 0.2.0 zip}
+Source168:      %{pypi_source azure-mgmt-web 3.0.0 zip}
+Source169:      %{pypi_source azure-nspkg 3.0.2 zip}
+Source170:      %{pypi_source azure-search-documents 11.1.0 zip}
+Source171:      %{pypi_source azure-search-nspkg 1.0.0 zip}
+Source172:      %{pypi_source azure-servicebus 7.2.0 zip}
+Source173:      %{pypi_source azure-servicefabric 8.0.0.0 zip}
+Source174:      %{pypi_source azure-storage-blob 2.1.0 tar.gz}
+Source175:      %{pypi_source azure-storage-common 2.1.0 tar.gz}
+Source176:      %{pypi_source azure-storage-file 2.1.0 tar.gz}
+Source177:      %{pypi_source azure-storage-file-datalake 12.3.1 zip}
+Source178:      %{pypi_source azure-storage-file-share 12.4.2 zip}
+Source179:      %{pypi_source azure-storage-nspkg 3.1.0 tar.gz}
+Source180:      %{pypi_source azure-storage-queue 2.1.0 tar.gz}
+Source181:      %{pypi_source azure-synapse 0.1.1 zip}
+Source182:      %{pypi_source azure-synapse-nspkg 1.0.0 zip}
+Source183:      %{pypi_source azure-template 0.0.17 zip}
 
 
 BuildArch:      noarch
@@ -215,13 +214,6 @@ BuildRequires:  python3-wheel
 %description
 Azure SDK for Python
 
-
-%package ai-nspkg
-Version: 1.0.0
-Summary: Microsoft Azure Python SDK - Text Analytics Namespace Package
-
-%description ai-nspkg
-Microsoft Azure Python SDK - Text Analytics Namespace Package
 
 %package ai-textanalytics
 Version: 5.0.0
@@ -1515,405 +1507,396 @@ Microsoft Azure Python SDK - Template
 %prep
 # Create the base directory but skip any extractions for now.
 %autosetup -n %{name}-%{version} -c -T
-# Extract azure-ai-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 0
 # Extract azure-ai-textanalytics 5.0.0
-%autosetup -n %{name}-%{version} -D -T -a 1
+%autosetup -n %{name}-%{version} -D -T -a 0
 # Extract azure-appconfiguration 1.1.1
-%autosetup -n %{name}-%{version} -D -T -a 2
+%autosetup -n %{name}-%{version} -D -T -a 1
 # Extract azure-applicationinsights 0.1.0
-%autosetup -n %{name}-%{version} -D -T -a 3
+%autosetup -n %{name}-%{version} -D -T -a 2
 # Extract azure-batch 10.0.0
-%autosetup -n %{name}-%{version} -D -T -a 4
+%autosetup -n %{name}-%{version} -D -T -a 3
 # Extract azure-cognitiveservices-anomalydetector 0.3.0
-%autosetup -n %{name}-%{version} -D -T -a 5
+%autosetup -n %{name}-%{version} -D -T -a 4
 # Extract azure-cognitiveservices-formrecognizer 0.1.1
-%autosetup -n %{name}-%{version} -D -T -a 6
+%autosetup -n %{name}-%{version} -D -T -a 5
 # Extract azure-cognitiveservices-knowledge-nspkg 3.0.0
-%autosetup -n %{name}-%{version} -D -T -a 7
+%autosetup -n %{name}-%{version} -D -T -a 6
 # Extract azure-cognitiveservices-knowledge-qnamaker 0.3.0
-%autosetup -n %{name}-%{version} -D -T -a 8
+%autosetup -n %{name}-%{version} -D -T -a 7
 # Extract azure-cognitiveservices-language-luis 0.7.0
-%autosetup -n %{name}-%{version} -D -T -a 9
+%autosetup -n %{name}-%{version} -D -T -a 8
 # Extract azure-cognitiveservices-language-nspkg 3.0.1
-%autosetup -n %{name}-%{version} -D -T -a 10
+%autosetup -n %{name}-%{version} -D -T -a 9
 # Extract azure-cognitiveservices-language-spellcheck 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 11
+%autosetup -n %{name}-%{version} -D -T -a 10
 # Extract azure-cognitiveservices-language-textanalytics 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 12
+%autosetup -n %{name}-%{version} -D -T -a 11
 # Extract azure-cognitiveservices-nspkg 3.0.1
-%autosetup -n %{name}-%{version} -D -T -a 13
+%autosetup -n %{name}-%{version} -D -T -a 12
 # Extract azure-cognitiveservices-personalizer 0.1.0
-%autosetup -n %{name}-%{version} -D -T -a 14
+%autosetup -n %{name}-%{version} -D -T -a 13
 # Extract azure-cognitiveservices-search-autosuggest 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 15
+%autosetup -n %{name}-%{version} -D -T -a 14
 # Extract azure-cognitiveservices-search-customimagesearch 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 16
+%autosetup -n %{name}-%{version} -D -T -a 15
 # Extract azure-cognitiveservices-search-customsearch 0.3.0
-%autosetup -n %{name}-%{version} -D -T -a 17
+%autosetup -n %{name}-%{version} -D -T -a 16
 # Extract azure-cognitiveservices-search-entitysearch 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 18
+%autosetup -n %{name}-%{version} -D -T -a 17
 # Extract azure-cognitiveservices-search-imagesearch 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 19
+%autosetup -n %{name}-%{version} -D -T -a 18
 # Extract azure-cognitiveservices-search-newssearch 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 20
+%autosetup -n %{name}-%{version} -D -T -a 19
 # Extract azure-cognitiveservices-search-nspkg 3.0.1
-%autosetup -n %{name}-%{version} -D -T -a 21
+%autosetup -n %{name}-%{version} -D -T -a 20
 # Extract azure-cognitiveservices-search-videosearch 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 22
+%autosetup -n %{name}-%{version} -D -T -a 21
 # Extract azure-cognitiveservices-search-visualsearch 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 23
+%autosetup -n %{name}-%{version} -D -T -a 22
 # Extract azure-cognitiveservices-search-websearch 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 24
+%autosetup -n %{name}-%{version} -D -T -a 23
 # Extract azure-cognitiveservices-vision-computervision 0.9.0
-%autosetup -n %{name}-%{version} -D -T -a 25
+%autosetup -n %{name}-%{version} -D -T -a 24
 # Extract azure-cognitiveservices-vision-contentmoderator 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 26
+%autosetup -n %{name}-%{version} -D -T -a 25
 # Extract azure-cognitiveservices-vision-customvision 3.1.0
-%autosetup -n %{name}-%{version} -D -T -a 27
+%autosetup -n %{name}-%{version} -D -T -a 26
 # Extract azure-cognitiveservices-vision-face 0.5.0
-%autosetup -n %{name}-%{version} -D -T -a 28
+%autosetup -n %{name}-%{version} -D -T -a 27
 # Extract azure-cognitiveservices-vision-nspkg 3.0.1
-%autosetup -n %{name}-%{version} -D -T -a 29
+%autosetup -n %{name}-%{version} -D -T -a 28
 # Extract azure-common 1.1.27
-%autosetup -n %{name}-%{version} -D -T -a 30
+%autosetup -n %{name}-%{version} -D -T -a 29
 # Extract azure-communication-chat 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 31
+%autosetup -n %{name}-%{version} -D -T -a 30
 # Extract azure-communication-identity 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 32
+%autosetup -n %{name}-%{version} -D -T -a 31
 # Extract azure-communication-phonenumbers 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 33
+%autosetup -n %{name}-%{version} -D -T -a 32
 # Extract azure-communication-sms 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 34
+%autosetup -n %{name}-%{version} -D -T -a 33
 # Extract azure-core 1.14.0
-%autosetup -n %{name}-%{version} -D -T -a 35
+%autosetup -n %{name}-%{version} -D -T -a 34
 # Extract azure-cosmos 3.2.0
-%autosetup -n %{name}-%{version} -D -T -a 36
+%autosetup -n %{name}-%{version} -D -T -a 35
 # Extract azure-cosmosdb-table 1.0.6
-%autosetup -n %{name}-%{version} -D -T -a 37
+%autosetup -n %{name}-%{version} -D -T -a 36
 # Extract azure-data-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 38
+%autosetup -n %{name}-%{version} -D -T -a 37
 # Extract azure-datalake-store 0.0.51
-%autosetup -n %{name}-%{version} -D -T -a 39
+%autosetup -n %{name}-%{version} -D -T -a 38
 # Extract azure-digitaltwins-core 1.1.0
-%autosetup -n %{name}-%{version} -D -T -a 40
+%autosetup -n %{name}-%{version} -D -T -a 39
 # Extract azure-digitaltwins-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 41
+%autosetup -n %{name}-%{version} -D -T -a 40
 # Extract azure-eventgrid 4.2.0
-%autosetup -n %{name}-%{version} -D -T -a 42
+%autosetup -n %{name}-%{version} -D -T -a 41
 # Extract azure-eventhub 5.5.0
-%autosetup -n %{name}-%{version} -D -T -a 43
+%autosetup -n %{name}-%{version} -D -T -a 42
 # Extract azure-graphrbac 0.61.1
-%autosetup -n %{name}-%{version} -D -T -a 44
+%autosetup -n %{name}-%{version} -D -T -a 43
 # Extract azure-identity 1.6.0
-%autosetup -n %{name}-%{version} -D -T -a 45
+%autosetup -n %{name}-%{version} -D -T -a 44
 # Extract azure-iot-device 2.6.0
-%autosetup -n %{name}-%{version} -D -T -a 46
+%autosetup -n %{name}-%{version} -D -T -a 45
 # Extract azure-iot-hub 2.4.0
-%autosetup -n %{name}-%{version} -D -T -a 47
+%autosetup -n %{name}-%{version} -D -T -a 46
 # Extract azure-keyvault 4.1.0
-%autosetup -n %{name}-%{version} -D -T -a 48
+%autosetup -n %{name}-%{version} -D -T -a 47
 # Extract azure-keyvault-certificates 4.2.1
-%autosetup -n %{name}-%{version} -D -T -a 49
+%autosetup -n %{name}-%{version} -D -T -a 48
 # Extract azure-keyvault-keys 4.3.1
-%autosetup -n %{name}-%{version} -D -T -a 50
+%autosetup -n %{name}-%{version} -D -T -a 49
 # Extract azure-keyvault-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 51
+%autosetup -n %{name}-%{version} -D -T -a 50
 # Extract azure-keyvault-secrets 4.2.0
-%autosetup -n %{name}-%{version} -D -T -a 52
+%autosetup -n %{name}-%{version} -D -T -a 51
 # Extract azure-kusto-data 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 53
+%autosetup -n %{name}-%{version} -D -T -a 52
 # Extract azure-loganalytics 0.1.0
-%autosetup -n %{name}-%{version} -D -T -a 54
+%autosetup -n %{name}-%{version} -D -T -a 53
 # Extract azure-mgmt-advisor 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 55
+%autosetup -n %{name}-%{version} -D -T -a 54
 # Extract azure-mgmt-alertsmanagement 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 56
+%autosetup -n %{name}-%{version} -D -T -a 55
 # Extract azure-mgmt-apimanagement 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 57
+%autosetup -n %{name}-%{version} -D -T -a 56
 # Extract azure-mgmt-appconfiguration 1.0.1
-%autosetup -n %{name}-%{version} -D -T -a 58
+%autosetup -n %{name}-%{version} -D -T -a 57
 # Extract azure-mgmt-applicationinsights 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 59
+%autosetup -n %{name}-%{version} -D -T -a 58
 # Extract azure-mgmt-appplatform 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 60
+%autosetup -n %{name}-%{version} -D -T -a 59
 # Extract azure-mgmt-attestation 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 61
+%autosetup -n %{name}-%{version} -D -T -a 60
 # Extract azure-mgmt-authorization 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 62
+%autosetup -n %{name}-%{version} -D -T -a 61
 # Extract azure-mgmt-automation 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 63
+%autosetup -n %{name}-%{version} -D -T -a 62
 # Extract azure-mgmt-avs 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 64
+%autosetup -n %{name}-%{version} -D -T -a 63
 # Extract azure-mgmt-azurestack 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 65
+%autosetup -n %{name}-%{version} -D -T -a 64
 # Extract azure-mgmt-azurestackhci 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 66
+%autosetup -n %{name}-%{version} -D -T -a 65
 # Extract azure-mgmt-batch 15.0.0
-%autosetup -n %{name}-%{version} -D -T -a 67
+%autosetup -n %{name}-%{version} -D -T -a 66
 # Extract azure-mgmt-batchai 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 68
+%autosetup -n %{name}-%{version} -D -T -a 67
 # Extract azure-mgmt-billing 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 69
+%autosetup -n %{name}-%{version} -D -T -a 68
 # Extract azure-mgmt-botservice 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 70
+%autosetup -n %{name}-%{version} -D -T -a 69
 # Extract azure-mgmt-cdn 11.0.0
-%autosetup -n %{name}-%{version} -D -T -a 71
+%autosetup -n %{name}-%{version} -D -T -a 70
 # Extract azure-mgmt-cognitiveservices 11.0.0
-%autosetup -n %{name}-%{version} -D -T -a 72
+%autosetup -n %{name}-%{version} -D -T -a 71
 # Extract azure-mgmt-commerce 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 73
+%autosetup -n %{name}-%{version} -D -T -a 72
 # Extract azure-mgmt-common 0.20.0
-%autosetup -n %{name}-%{version} -D -T -a 74
+%autosetup -n %{name}-%{version} -D -T -a 73
 # Extract azure-mgmt-communication 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 75
+%autosetup -n %{name}-%{version} -D -T -a 74
 # Extract azure-mgmt-compute 21.0.0
-%autosetup -n %{name}-%{version} -D -T -a 76
+%autosetup -n %{name}-%{version} -D -T -a 75
 # Extract azure-mgmt-confluent 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 77
+%autosetup -n %{name}-%{version} -D -T -a 76
 # Extract azure-mgmt-consumption 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 78
+%autosetup -n %{name}-%{version} -D -T -a 77
 # Extract azure-mgmt-containerinstance 7.0.0
-%autosetup -n %{name}-%{version} -D -T -a 79
+%autosetup -n %{name}-%{version} -D -T -a 78
 # Extract azure-mgmt-containerregistry 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 80
+%autosetup -n %{name}-%{version} -D -T -a 79
 # Extract azure-mgmt-containerservice 15.1.0
-%autosetup -n %{name}-%{version} -D -T -a 81
+%autosetup -n %{name}-%{version} -D -T -a 80
 # Extract azure-mgmt-core 1.2.2
-%autosetup -n %{name}-%{version} -D -T -a 82
+%autosetup -n %{name}-%{version} -D -T -a 81
 # Extract azure-mgmt-cosmosdb 6.3.0
-%autosetup -n %{name}-%{version} -D -T -a 83
+%autosetup -n %{name}-%{version} -D -T -a 82
 # Extract azure-mgmt-costmanagement 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 84
+%autosetup -n %{name}-%{version} -D -T -a 83
 # Extract azure-mgmt-customproviders 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 85
+%autosetup -n %{name}-%{version} -D -T -a 84
 # Extract azure-mgmt-databox 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 86
+%autosetup -n %{name}-%{version} -D -T -a 85
 # Extract azure-mgmt-databoxedge 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 87
+%autosetup -n %{name}-%{version} -D -T -a 86
 # Extract azure-mgmt-databricks 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 88
+%autosetup -n %{name}-%{version} -D -T -a 87
 # Extract azure-mgmt-datadog 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 89
+%autosetup -n %{name}-%{version} -D -T -a 88
 # Extract azure-mgmt-datafactory 1.1.0
-%autosetup -n %{name}-%{version} -D -T -a 90
+%autosetup -n %{name}-%{version} -D -T -a 89
 # Extract azure-mgmt-datalake-analytics 0.6.0
-%autosetup -n %{name}-%{version} -D -T -a 91
+%autosetup -n %{name}-%{version} -D -T -a 90
 # Extract azure-mgmt-datalake-nspkg 3.0.1
-%autosetup -n %{name}-%{version} -D -T -a 92
+%autosetup -n %{name}-%{version} -D -T -a 91
 # Extract azure-mgmt-datalake-store 0.5.0
-%autosetup -n %{name}-%{version} -D -T -a 93
+%autosetup -n %{name}-%{version} -D -T -a 92
 # Extract azure-mgmt-datamigration 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 94
+%autosetup -n %{name}-%{version} -D -T -a 93
 # Extract azure-mgmt-datashare 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 95
+%autosetup -n %{name}-%{version} -D -T -a 94
 # Extract azure-mgmt-deploymentmanager 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 96
+%autosetup -n %{name}-%{version} -D -T -a 95
 # Extract azure-mgmt-devspaces 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 97
+%autosetup -n %{name}-%{version} -D -T -a 96
 # Extract azure-mgmt-devtestlabs 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 98
+%autosetup -n %{name}-%{version} -D -T -a 97
 # Extract azure-mgmt-digitaltwins 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 99
+%autosetup -n %{name}-%{version} -D -T -a 98
 # Extract azure-mgmt-dns 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 100
+%autosetup -n %{name}-%{version} -D -T -a 99
 # Extract azure-mgmt-edgegateway 0.1.0
-%autosetup -n %{name}-%{version} -D -T -a 101
+%autosetup -n %{name}-%{version} -D -T -a 100
 # Extract azure-mgmt-eventgrid 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 102
+%autosetup -n %{name}-%{version} -D -T -a 101
 # Extract azure-mgmt-eventhub 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 103
+%autosetup -n %{name}-%{version} -D -T -a 102
 # Extract azure-mgmt-frontdoor 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 104
+%autosetup -n %{name}-%{version} -D -T -a 103
 # Extract azure-mgmt-hanaonazure 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 105
+%autosetup -n %{name}-%{version} -D -T -a 104
 # Extract azure-mgmt-hdinsight 7.0.0
-%autosetup -n %{name}-%{version} -D -T -a 106
+%autosetup -n %{name}-%{version} -D -T -a 105
 # Extract azure-mgmt-healthcareapis 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 107
+%autosetup -n %{name}-%{version} -D -T -a 106
 # Extract azure-mgmt-hybridcompute 7.0.0
-%autosetup -n %{name}-%{version} -D -T -a 108
+%autosetup -n %{name}-%{version} -D -T -a 107
 # Extract azure-mgmt-hybridkubernetes 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 109
+%autosetup -n %{name}-%{version} -D -T -a 108
 # Extract azure-mgmt-imagebuilder 0.4.0
-%autosetup -n %{name}-%{version} -D -T -a 110
+%autosetup -n %{name}-%{version} -D -T -a 109
 # Extract azure-mgmt-iotcentral 4.1.0
-%autosetup -n %{name}-%{version} -D -T -a 111
+%autosetup -n %{name}-%{version} -D -T -a 110
 # Extract azure-mgmt-iothub 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 112
+%autosetup -n %{name}-%{version} -D -T -a 111
 # Extract azure-mgmt-iothubprovisioningservices 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 113
+%autosetup -n %{name}-%{version} -D -T -a 112
 # Extract azure-mgmt-keyvault 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 114
+%autosetup -n %{name}-%{version} -D -T -a 113
 # Extract azure-mgmt-kusto 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 115
+%autosetup -n %{name}-%{version} -D -T -a 114
 # Extract azure-mgmt-labservices 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 116
+%autosetup -n %{name}-%{version} -D -T -a 115
 # Extract azure-mgmt-loganalytics 10.0.0
-%autosetup -n %{name}-%{version} -D -T -a 117
+%autosetup -n %{name}-%{version} -D -T -a 116
 # Extract azure-mgmt-logic 9.0.0
-%autosetup -n %{name}-%{version} -D -T -a 118
+%autosetup -n %{name}-%{version} -D -T -a 117
 # Extract azure-mgmt-machinelearningcompute 0.4.1
-%autosetup -n %{name}-%{version} -D -T -a 119
+%autosetup -n %{name}-%{version} -D -T -a 118
 # Extract azure-mgmt-machinelearningservices 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 120
+%autosetup -n %{name}-%{version} -D -T -a 119
 # Extract azure-mgmt-maintenance 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 121
+%autosetup -n %{name}-%{version} -D -T -a 120
 # Extract azure-mgmt-managedservices 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 122
+%autosetup -n %{name}-%{version} -D -T -a 121
 # Extract azure-mgmt-managementgroups 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 123
+%autosetup -n %{name}-%{version} -D -T -a 122
 # Extract azure-mgmt-managementpartner 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 124
+%autosetup -n %{name}-%{version} -D -T -a 123
 # Extract azure-mgmt-maps 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 125
+%autosetup -n %{name}-%{version} -D -T -a 124
 # Extract azure-mgmt-marketplaceordering 1.1.0
-%autosetup -n %{name}-%{version} -D -T -a 126
+%autosetup -n %{name}-%{version} -D -T -a 125
 # Extract azure-mgmt-media 3.1.0
-%autosetup -n %{name}-%{version} -D -T -a 127
+%autosetup -n %{name}-%{version} -D -T -a 126
 # Extract azure-mgmt-mixedreality 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 128
+%autosetup -n %{name}-%{version} -D -T -a 127
 # Extract azure-mgmt-monitor 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 129
+%autosetup -n %{name}-%{version} -D -T -a 128
 # Extract azure-mgmt-msi 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 130
+%autosetup -n %{name}-%{version} -D -T -a 129
 # Extract azure-mgmt-netapp 3.0.0
-%autosetup -n %{name}-%{version} -D -T -a 131
+%autosetup -n %{name}-%{version} -D -T -a 130
 # Extract azure-mgmt-network 19.0.0
-%autosetup -n %{name}-%{version} -D -T -a 132
+%autosetup -n %{name}-%{version} -D -T -a 131
 # Extract azure-mgmt-notificationhubs 7.0.0
-%autosetup -n %{name}-%{version} -D -T -a 133
+%autosetup -n %{name}-%{version} -D -T -a 132
 # Extract azure-mgmt-nspkg 3.0.2
-%autosetup -n %{name}-%{version} -D -T -a 134
+%autosetup -n %{name}-%{version} -D -T -a 133
 # Extract azure-mgmt-operationsmanagement 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 135
+%autosetup -n %{name}-%{version} -D -T -a 134
 # Extract azure-mgmt-peering 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 136
+%autosetup -n %{name}-%{version} -D -T -a 135
 # Extract azure-mgmt-policyinsights 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 137
+%autosetup -n %{name}-%{version} -D -T -a 136
 # Extract azure-mgmt-powerbidedicated 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 138
+%autosetup -n %{name}-%{version} -D -T -a 137
 # Extract azure-mgmt-powerbiembedded 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 139
+%autosetup -n %{name}-%{version} -D -T -a 138
 # Extract azure-mgmt-privatedns 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 140
+%autosetup -n %{name}-%{version} -D -T -a 139
 # Extract azure-mgmt-rdbms 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 141
+%autosetup -n %{name}-%{version} -D -T -a 140
 # Extract azure-mgmt-recoveryservices 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 142
+%autosetup -n %{name}-%{version} -D -T -a 141
 # Extract azure-mgmt-recoveryservicesbackup 0.11.0
-%autosetup -n %{name}-%{version} -D -T -a 143
+%autosetup -n %{name}-%{version} -D -T -a 142
 # Extract azure-mgmt-redhatopenshift 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 144
+%autosetup -n %{name}-%{version} -D -T -a 143
 # Extract azure-mgmt-redis 12.0.0
-%autosetup -n %{name}-%{version} -D -T -a 145
+%autosetup -n %{name}-%{version} -D -T -a 144
 # Extract azure-mgmt-relay 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 146
+%autosetup -n %{name}-%{version} -D -T -a 145
 # Extract azure-mgmt-reservations 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 147
+%autosetup -n %{name}-%{version} -D -T -a 146
 # Extract azure-mgmt-resource 18.0.0
-%autosetup -n %{name}-%{version} -D -T -a 148
+%autosetup -n %{name}-%{version} -D -T -a 147
 # Extract azure-mgmt-resourcegraph 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 149
+%autosetup -n %{name}-%{version} -D -T -a 148
 # Extract azure-mgmt-resourcemover 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 150
+%autosetup -n %{name}-%{version} -D -T -a 149
 # Extract azure-mgmt-scheduler 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 151
+%autosetup -n %{name}-%{version} -D -T -a 150
 # Extract azure-mgmt-search 8.0.0
-%autosetup -n %{name}-%{version} -D -T -a 152
+%autosetup -n %{name}-%{version} -D -T -a 151
 # Extract azure-mgmt-security 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 153
+%autosetup -n %{name}-%{version} -D -T -a 152
 # Extract azure-mgmt-serialconsole 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 154
+%autosetup -n %{name}-%{version} -D -T -a 153
 # Extract azure-mgmt-servermanager 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 155
+%autosetup -n %{name}-%{version} -D -T -a 154
 # Extract azure-mgmt-servicebus 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 156
+%autosetup -n %{name}-%{version} -D -T -a 155
 # Extract azure-mgmt-sql 2.1.0
-%autosetup -n %{name}-%{version} -D -T -a 157
+%autosetup -n %{name}-%{version} -D -T -a 156
 # Extract azure-mgmt-sqlvirtualmachine 0.5.0
-%autosetup -n %{name}-%{version} -D -T -a 158
+%autosetup -n %{name}-%{version} -D -T -a 157
 # Extract azure-mgmt-storage 18.0.0
-%autosetup -n %{name}-%{version} -D -T -a 159
+%autosetup -n %{name}-%{version} -D -T -a 158
 # Extract azure-mgmt-storagecache 0.5.0
-%autosetup -n %{name}-%{version} -D -T -a 160
+%autosetup -n %{name}-%{version} -D -T -a 159
 # Extract azure-mgmt-storageimportexport 0.1.0
-%autosetup -n %{name}-%{version} -D -T -a 161
+%autosetup -n %{name}-%{version} -D -T -a 160
 # Extract azure-mgmt-storagesync 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 162
+%autosetup -n %{name}-%{version} -D -T -a 161
 # Extract azure-mgmt-subscription 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 163
+%autosetup -n %{name}-%{version} -D -T -a 162
 # Extract azure-mgmt-support 6.0.0
-%autosetup -n %{name}-%{version} -D -T -a 164
+%autosetup -n %{name}-%{version} -D -T -a 163
 # Extract azure-mgmt-synapse 2.0.0
-%autosetup -n %{name}-%{version} -D -T -a 165
+%autosetup -n %{name}-%{version} -D -T -a 164
 # Extract azure-mgmt-timeseriesinsights 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 166
+%autosetup -n %{name}-%{version} -D -T -a 165
 # Extract azure-mgmt-trafficmanager 0.51.0
-%autosetup -n %{name}-%{version} -D -T -a 167
+%autosetup -n %{name}-%{version} -D -T -a 166
 # Extract azure-mgmt-vmwarecloudsimple 0.2.0
-%autosetup -n %{name}-%{version} -D -T -a 168
+%autosetup -n %{name}-%{version} -D -T -a 167
 # Extract azure-mgmt-web 3.0.0
-%autosetup -n %{name}-%{version} -D -T -a 169
+%autosetup -n %{name}-%{version} -D -T -a 168
 # Extract azure-nspkg 3.0.2
-%autosetup -n %{name}-%{version} -D -T -a 170
+%autosetup -n %{name}-%{version} -D -T -a 169
 # Extract azure-search-documents 11.1.0
-%autosetup -n %{name}-%{version} -D -T -a 171
+%autosetup -n %{name}-%{version} -D -T -a 170
 # Extract azure-search-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 172
+%autosetup -n %{name}-%{version} -D -T -a 171
 # Extract azure-servicebus 7.2.0
-%autosetup -n %{name}-%{version} -D -T -a 173
+%autosetup -n %{name}-%{version} -D -T -a 172
 # Extract azure-servicefabric 8.0.0.0
-%autosetup -n %{name}-%{version} -D -T -a 174
+%autosetup -n %{name}-%{version} -D -T -a 173
 # Extract azure-storage-blob 2.1.0
-%autosetup -n %{name}-%{version} -D -T -a 175
+%autosetup -n %{name}-%{version} -D -T -a 174
 # Extract azure-storage-common 2.1.0
-%autosetup -n %{name}-%{version} -D -T -a 176
+%autosetup -n %{name}-%{version} -D -T -a 175
 # Extract azure-storage-file 2.1.0
-%autosetup -n %{name}-%{version} -D -T -a 177
+%autosetup -n %{name}-%{version} -D -T -a 176
 # Extract azure-storage-file-datalake 12.3.1
-%autosetup -n %{name}-%{version} -D -T -a 178
+%autosetup -n %{name}-%{version} -D -T -a 177
 # Extract azure-storage-file-share 12.4.2
-%autosetup -n %{name}-%{version} -D -T -a 179
+%autosetup -n %{name}-%{version} -D -T -a 178
 # Extract azure-storage-nspkg 3.1.0
-%autosetup -n %{name}-%{version} -D -T -a 180
+%autosetup -n %{name}-%{version} -D -T -a 179
 # Extract azure-storage-queue 2.1.0
-%autosetup -n %{name}-%{version} -D -T -a 181
+%autosetup -n %{name}-%{version} -D -T -a 180
 # Extract azure-synapse 0.1.1
-%autosetup -n %{name}-%{version} -D -T -a 182
+%autosetup -n %{name}-%{version} -D -T -a 181
 # Extract azure-synapse-nspkg 1.0.0
-%autosetup -n %{name}-%{version} -D -T -a 183
+%autosetup -n %{name}-%{version} -D -T -a 182
 # Extract azure-template 0.0.17
-%autosetup -n %{name}-%{version} -D -T -a 184
+%autosetup -n %{name}-%{version} -D -T -a 183
 
 
 %generate_buildrequires
 %pyproject_buildrequires
 
 %build
-# Set the directory where we collect the wheels during each step of the loop.
-BASE_WHEELDIR=$(pwd)/pyproject-wheeldir
-mkdir -vp $BASE_WHEELDIR
-
 # Get a list of python projects that we've extracted.
 PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
 
-# Loop over each project, build the wheel, and move the wheel into the correct
-# place.
+# Loop over each project and build a wheel for each.
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
         %pyproject_wheel
-        # mv pyproject-wheeldir/* $BASE_WHEELDIR
     popd
 done
 
 %install
 %pyproject_install
+
+# Some of the wheels contain random stuff at the top level that don't belong in
+# any RPM packages.
 rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
-
-
-%files ai-nspkg
-%{python3_sitelib}/azure_ai_nspkg-*.dist-info/
 
 
 %files ai-textanalytics

@@ -50,6 +50,7 @@ template = Template(template_content)
 skip_list = [
     "azure",  # deprecated
     "azure-ai-formrecognizer",  # has no files 🤷🏻‍♂️
+    "azure-ai-nspkg",  # has no files 🤷🏻‍♂️
     "azure-eventhub-checkpointstoreblob",  # not needed
     "azure-eventhub-checkpointstoreblob-aio",  # not needed
     "azure-cognitiveservices-speech",  # only pre-compiled wheel available
