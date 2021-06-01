@@ -66,7 +66,7 @@ PYTHON_PROJECTS=$(find . -name setup.py -maxdepth 2)
 for PYTHON_PROJECT in $PYTHON_PROJECTS; do
     pushd $(dirname $PYTHON_PROJECT)
         %pyproject_wheel
-        mv pyproject-wheeldir/* $BASE_WHEELDIR
+        # mv pyproject-wheeldir/* $BASE_WHEELDIR
     popd
 done
 
