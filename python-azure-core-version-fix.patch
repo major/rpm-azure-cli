@@ -1,0 +1,12 @@
+diff -up ./setup.py.orig ./setup.py
+--- ./setup.py.orig	2021-06-02 10:34:59.612575531 -0500
++++ ./setup.py	2021-06-02 10:35:09.807510251 -0500
+@@ -67,7 +67,7 @@ setup(
+         'pytyped': ['py.typed'],
+     },
+     install_requires=[
+-        "azure-core<2.0.0,>=1.9.0",
++        "azure-core>=1.9.0",
+     ],
+     extras_require={
+         ":python_version<'3.0'": ['azure-mgmt-nspkg'],

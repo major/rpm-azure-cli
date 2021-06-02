@@ -1,13 +1,14 @@
-%global srcname azure-core
+%global srcname azure-mgmt-core
 
 Name:           python-%{srcname}
-Version:        1.14.0
+Version:        1.2.2
 Release:        1%{?dist}
-Summary:        Azure Core shared client library for Python
+Summary:        Azure Management Core Library
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
+Patch0:         python-azure-core-version-fix.patch
 
 BuildArch:      noarch
 
@@ -15,7 +16,7 @@ BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  pyproject-rpm-macros
 
 %global _description %{expand:
-Azure Core shared client library for Python}
+Azure Management Core Library}
 
 %description %{_description}
 
@@ -27,10 +28,8 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -n %{srcname}-%{version}
+%autosetup -p0 -n %{srcname}-%{version}
 
-# Remove strict version requirement for azure-core.
-sed -i 's/"azure-core.*",$/"azure-core",/' setup.py
 
 %generate_buildrequires
 %pyproject_buildrequires -r
@@ -48,5 +47,5 @@ sed -i 's/"azure-core.*",$/"azure-core",/' setup.py
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.14.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.2.2-1
 - First package.
