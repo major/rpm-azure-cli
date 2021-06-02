@@ -34,11 +34,11 @@ BuildRequires:  python3-wheel
 Azure SDK for Python
 
 {% for package in packages %}
-%package {{ package.short_name }}
+%package -n python%{python3_pkgversion}-{{ package.name }}
 Version: {{ package.version}}
 Summary: {{ package.summary}}
 
-%description {{ package.short_name }}
+%description -n python%{python3_pkgversion}-{{ package.name }}
 {{ package.summary}}
 {% endfor %}
 
@@ -72,7 +72,7 @@ done
 rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 {% for package in packages %}
-%files {{ package.short_name }}
+%files -n python%{python3_pkgversion}-{{ package.name }}
 {% for file_type, file_path in package.files.items() -%}
 {{ file_path }}
 {% endfor %}

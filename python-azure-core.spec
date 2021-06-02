@@ -1,6 +1,3 @@
-# tests are enabled by default
-%bcond_without tests
-
 %global srcname azure-core
 
 Name:           python-%{srcname}
@@ -16,13 +13,6 @@ BuildArch:      noarch
 
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  pyproject-rpm-macros
-
-%if %{with tests}
-BuildRequires:  python%{python3_pkgversion}-aiohttp
-BuildRequires:  python%{python3_pkgversion}-msrest
-BuildRequires:  python%{python3_pkgversion}-pytest
-BuildRequires:  python%{python3_pkgversion}-trio
-%endif
 
 %global _description %{expand:
 Azure Core shared client library for Python}
@@ -52,15 +42,7 @@ Summary:        %{summary}
 %pyproject_save_files azure
 
 
-%if %{with tests}
-%check
-%pytest
-%endif
-
-
 %files -n python%{python3_pkgversion}-%{srcname} -f %{pyproject_files}
-%license LICENSE.txt
-%doc README.rst
 
 
 %changelog

@@ -153,7 +153,7 @@ Source138:      %{pypi_source azure-mgmt-powerbiembedded 2.0.0 zip}
 Source139:      %{pypi_source azure-mgmt-privatedns 1.0.0 zip}
 Source140:      %{pypi_source azure-mgmt-rdbms 8.0.0 zip}
 Source141:      %{pypi_source azure-mgmt-recoveryservices 1.0.0 zip}
-Source142:      %{pypi_source azure-mgmt-recoveryservicesbackup 0.11.0 zip}
+Source142:      %{pypi_source azure-mgmt-recoveryservicesbackup 0.12.0 zip}
 Source143:      %{pypi_source azure-mgmt-redhatopenshift 1.0.0 zip}
 Source144:      %{pypi_source azure-mgmt-redis 12.0.0 zip}
 Source145:      %{pypi_source azure-mgmt-relay 1.0.0 zip}
@@ -215,1292 +215,1292 @@ BuildRequires:  python3-wheel
 Azure SDK for Python
 
 
-%package ai-textanalytics
+%package -n python%{python3_pkgversion}-azure-ai-textanalytics
 Version: 5.0.0
 Summary: Microsoft Azure Python SDK - Text Analytics
 
-%description ai-textanalytics
+%description -n python%{python3_pkgversion}-azure-ai-textanalytics
 Microsoft Azure Python SDK - Text Analytics
 
-%package appconfiguration
+%package -n python%{python3_pkgversion}-azure-appconfiguration
 Version: 1.1.1
 Summary: Microsoft Azure Python SDK - App Configuration
 
-%description appconfiguration
+%description -n python%{python3_pkgversion}-azure-appconfiguration
 Microsoft Azure Python SDK - App Configuration
 
-%package applicationinsights
+%package -n python%{python3_pkgversion}-azure-applicationinsights
 Version: 0.1.0
 Summary: Microsoft Azure Python SDK - Application Insights
 
-%description applicationinsights
+%description -n python%{python3_pkgversion}-azure-applicationinsights
 Microsoft Azure Python SDK - Application Insights
 
-%package batch
+%package -n python%{python3_pkgversion}-azure-batch
 Version: 10.0.0
 Summary: Microsoft Azure Python SDK - Batch
 
-%description batch
+%description -n python%{python3_pkgversion}-azure-batch
 Microsoft Azure Python SDK - Batch
 
-%package cognitiveservices-anomalydetector
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-anomalydetector
 Version: 0.3.0
 Summary: Microsoft Azure Python SDK - Anomaly Detector
 
-%description cognitiveservices-anomalydetector
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-anomalydetector
 Microsoft Azure Python SDK - Anomaly Detector
 
-%package cognitiveservices-formrecognizer
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-formrecognizer
 Version: 0.1.1
 Summary: Microsoft Azure Python SDK - Form Recognizer
 
-%description cognitiveservices-formrecognizer
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-formrecognizer
 Microsoft Azure Python SDK - Form Recognizer
 
-%package cognitiveservices-knowledge-nspkg
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-nspkg
 Version: 3.0.0
 Summary: Microsoft Azure Python SDK - Cognitive Services Knowledge Namespace Package
 
-%description cognitiveservices-knowledge-nspkg
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-nspkg
 Microsoft Azure Python SDK - Cognitive Services Knowledge Namespace Package
 
-%package cognitiveservices-knowledge-qnamaker
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-qnamaker
 Version: 0.3.0
 Summary: Microsoft Azure Python SDK - QnA Maker
 
-%description cognitiveservices-knowledge-qnamaker
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-qnamaker
 Microsoft Azure Python SDK - QnA Maker
 
-%package cognitiveservices-language-luis
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-language-luis
 Version: 0.7.0
 Summary: Microsoft Azure Python SDK - LUIS
 
-%description cognitiveservices-language-luis
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-language-luis
 Microsoft Azure Python SDK - LUIS
 
-%package cognitiveservices-language-nspkg
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-language-nspkg
 Version: 3.0.1
 Summary: Microsoft Azure Python SDK - Cognitive Services Language Namespace Package
 
-%description cognitiveservices-language-nspkg
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-language-nspkg
 Microsoft Azure Python SDK - Cognitive Services Language Namespace Package
 
-%package cognitiveservices-language-spellcheck
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-language-spellcheck
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Spell Check
 
-%description cognitiveservices-language-spellcheck
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-language-spellcheck
 Microsoft Azure Python SDK - Spell Check
 
-%package cognitiveservices-language-textanalytics
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-language-textanalytics
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Text Analytics
 
-%description cognitiveservices-language-textanalytics
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-language-textanalytics
 Microsoft Azure Python SDK - Text Analytics
 
-%package cognitiveservices-nspkg
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-nspkg
 Version: 3.0.1
 Summary: Microsoft Azure Python SDK - Cognitive Services Namespace Package
 
-%description cognitiveservices-nspkg
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-nspkg
 Microsoft Azure Python SDK - Cognitive Services Namespace Package
 
-%package cognitiveservices-personalizer
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-personalizer
 Version: 0.1.0
 Summary: Microsoft Azure Python SDK - Personalizer
 
-%description cognitiveservices-personalizer
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-personalizer
 Microsoft Azure Python SDK - Personalizer
 
-%package cognitiveservices-search-autosuggest
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-autosuggest
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Autosuggest
 
-%description cognitiveservices-search-autosuggest
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-autosuggest
 Microsoft Azure Python SDK - Autosuggest
 
-%package cognitiveservices-search-customimagesearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-customimagesearch
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Custom Image Search
 
-%description cognitiveservices-search-customimagesearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-customimagesearch
 Microsoft Azure Python SDK - Custom Image Search
 
-%package cognitiveservices-search-customsearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-customsearch
 Version: 0.3.0
 Summary: Microsoft Azure Python SDK - Custom Search
 
-%description cognitiveservices-search-customsearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-customsearch
 Microsoft Azure Python SDK - Custom Search
 
-%package cognitiveservices-search-entitysearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-entitysearch
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Entity Search
 
-%description cognitiveservices-search-entitysearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-entitysearch
 Microsoft Azure Python SDK - Entity Search
 
-%package cognitiveservices-search-imagesearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-imagesearch
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Image Search
 
-%description cognitiveservices-search-imagesearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-imagesearch
 Microsoft Azure Python SDK - Image Search
 
-%package cognitiveservices-search-newssearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-newssearch
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - News Search
 
-%description cognitiveservices-search-newssearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-newssearch
 Microsoft Azure Python SDK - News Search
 
-%package cognitiveservices-search-nspkg
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-nspkg
 Version: 3.0.1
 Summary: Microsoft Azure Python SDK - Cognitive Services Search Namespace Package
 
-%description cognitiveservices-search-nspkg
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-nspkg
 Microsoft Azure Python SDK - Cognitive Services Search Namespace Package
 
-%package cognitiveservices-search-videosearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-videosearch
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Video Search
 
-%description cognitiveservices-search-videosearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-videosearch
 Microsoft Azure Python SDK - Video Search
 
-%package cognitiveservices-search-visualsearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-visualsearch
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Visual Search
 
-%description cognitiveservices-search-visualsearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-visualsearch
 Microsoft Azure Python SDK - Visual Search
 
-%package cognitiveservices-search-websearch
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-search-websearch
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Web Search
 
-%description cognitiveservices-search-websearch
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-search-websearch
 Microsoft Azure Python SDK - Web Search
 
-%package cognitiveservices-vision-computervision
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-vision-computervision
 Version: 0.9.0
 Summary: Microsoft Azure Python SDK - Computer Vision
 
-%description cognitiveservices-vision-computervision
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-vision-computervision
 Microsoft Azure Python SDK - Computer Vision
 
-%package cognitiveservices-vision-contentmoderator
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-vision-contentmoderator
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Content Moderator
 
-%description cognitiveservices-vision-contentmoderator
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-vision-contentmoderator
 Microsoft Azure Python SDK - Content Moderator
 
-%package cognitiveservices-vision-customvision
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-vision-customvision
 Version: 3.1.0
 Summary: Microsoft Azure Python SDK - Custom Vision
 
-%description cognitiveservices-vision-customvision
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-vision-customvision
 Microsoft Azure Python SDK - Custom Vision
 
-%package cognitiveservices-vision-face
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-vision-face
 Version: 0.5.0
 Summary: Microsoft Azure Python SDK - Face
 
-%description cognitiveservices-vision-face
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-vision-face
 Microsoft Azure Python SDK - Face
 
-%package cognitiveservices-vision-nspkg
+%package -n python%{python3_pkgversion}-azure-cognitiveservices-vision-nspkg
 Version: 3.0.1
 Summary: Microsoft Azure Python SDK - Cognitive Services Vision Namespace Package
 
-%description cognitiveservices-vision-nspkg
+%description -n python%{python3_pkgversion}-azure-cognitiveservices-vision-nspkg
 Microsoft Azure Python SDK - Cognitive Services Vision Namespace Package
 
-%package common
+%package -n python%{python3_pkgversion}-azure-common
 Version: 1.1.27
 Summary: Microsoft Azure Python SDK - Common
 
-%description common
+%description -n python%{python3_pkgversion}-azure-common
 Microsoft Azure Python SDK - Common
 
-%package communication-chat
+%package -n python%{python3_pkgversion}-azure-communication-chat
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Communication Chat
 
-%description communication-chat
+%description -n python%{python3_pkgversion}-azure-communication-chat
 Microsoft Azure Python SDK - Communication Chat
 
-%package communication-identity
+%package -n python%{python3_pkgversion}-azure-communication-identity
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Communication Identity
 
-%description communication-identity
+%description -n python%{python3_pkgversion}-azure-communication-identity
 Microsoft Azure Python SDK - Communication Identity
 
-%package communication-phonenumbers
+%package -n python%{python3_pkgversion}-azure-communication-phonenumbers
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Communication Phone Numbers
 
-%description communication-phonenumbers
+%description -n python%{python3_pkgversion}-azure-communication-phonenumbers
 Microsoft Azure Python SDK - Communication Phone Numbers
 
-%package communication-sms
+%package -n python%{python3_pkgversion}-azure-communication-sms
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Communication Sms
 
-%description communication-sms
+%description -n python%{python3_pkgversion}-azure-communication-sms
 Microsoft Azure Python SDK - Communication Sms
 
-%package core
+%package -n python%{python3_pkgversion}-azure-core
 Version: 1.14.0
 Summary: Microsoft Azure Python SDK - Core
 
-%description core
+%description -n python%{python3_pkgversion}-azure-core
 Microsoft Azure Python SDK - Core
 
-%package cosmos
+%package -n python%{python3_pkgversion}-azure-cosmos
 Version: 3.2.0
 Summary: Microsoft Azure Python SDK - Cosmos DB
 
-%description cosmos
+%description -n python%{python3_pkgversion}-azure-cosmos
 Microsoft Azure Python SDK - Cosmos DB
 
-%package cosmosdb-table
+%package -n python%{python3_pkgversion}-azure-cosmosdb-table
 Version: 1.0.6
 Summary: Microsoft Azure Python SDK - Tables
 
-%description cosmosdb-table
+%description -n python%{python3_pkgversion}-azure-cosmosdb-table
 Microsoft Azure Python SDK - Tables
 
-%package data-nspkg
+%package -n python%{python3_pkgversion}-azure-data-nspkg
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Data Namespace Package
 
-%description data-nspkg
+%description -n python%{python3_pkgversion}-azure-data-nspkg
 Microsoft Azure Python SDK - Data Namespace Package
 
-%package datalake-store
+%package -n python%{python3_pkgversion}-azure-datalake-store
 Version: 0.0.51
 Summary: Microsoft Azure Python SDK - Data Lake Storage
 
-%description datalake-store
+%description -n python%{python3_pkgversion}-azure-datalake-store
 Microsoft Azure Python SDK - Data Lake Storage
 
-%package digitaltwins-core
+%package -n python%{python3_pkgversion}-azure-digitaltwins-core
 Version: 1.1.0
 Summary: Microsoft Azure Python SDK - Digital Twins - Core
 
-%description digitaltwins-core
+%description -n python%{python3_pkgversion}-azure-digitaltwins-core
 Microsoft Azure Python SDK - Digital Twins - Core
 
-%package digitaltwins-nspkg
+%package -n python%{python3_pkgversion}-azure-digitaltwins-nspkg
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Digital Twins Namespace Package
 
-%description digitaltwins-nspkg
+%description -n python%{python3_pkgversion}-azure-digitaltwins-nspkg
 Microsoft Azure Python SDK - Digital Twins Namespace Package
 
-%package eventgrid
+%package -n python%{python3_pkgversion}-azure-eventgrid
 Version: 4.2.0
 Summary: Microsoft Azure Python SDK - Event Grid
 
-%description eventgrid
+%description -n python%{python3_pkgversion}-azure-eventgrid
 Microsoft Azure Python SDK - Event Grid
 
-%package eventhub
+%package -n python%{python3_pkgversion}-azure-eventhub
 Version: 5.5.0
 Summary: Microsoft Azure Python SDK - Event Hubs
 
-%description eventhub
+%description -n python%{python3_pkgversion}-azure-eventhub
 Microsoft Azure Python SDK - Event Hubs
 
-%package graphrbac
+%package -n python%{python3_pkgversion}-azure-graphrbac
 Version: 0.61.1
 Summary: Microsoft Azure Python SDK - Graph RBAC
 
-%description graphrbac
+%description -n python%{python3_pkgversion}-azure-graphrbac
 Microsoft Azure Python SDK - Graph RBAC
 
-%package identity
+%package -n python%{python3_pkgversion}-azure-identity
 Version: 1.6.0
 Summary: Microsoft Azure Python SDK - Identity
 
-%description identity
+%description -n python%{python3_pkgversion}-azure-identity
 Microsoft Azure Python SDK - Identity
 
-%package iot-device
+%package -n python%{python3_pkgversion}-azure-iot-device
 Version: 2.6.0
 Summary: Microsoft Azure Python SDK - IoT Device
 
-%description iot-device
+%description -n python%{python3_pkgversion}-azure-iot-device
 Microsoft Azure Python SDK - IoT Device
 
-%package iot-hub
+%package -n python%{python3_pkgversion}-azure-iot-hub
 Version: 2.4.0
 Summary: Microsoft Azure Python SDK - IoT Hub
 
-%description iot-hub
+%description -n python%{python3_pkgversion}-azure-iot-hub
 Microsoft Azure Python SDK - IoT Hub
 
-%package keyvault
+%package -n python%{python3_pkgversion}-azure-keyvault
 Version: 4.1.0
 Summary: Microsoft Azure Python SDK - Key Vault
 
-%description keyvault
+%description -n python%{python3_pkgversion}-azure-keyvault
 Microsoft Azure Python SDK - Key Vault
 
-%package keyvault-certificates
+%package -n python%{python3_pkgversion}-azure-keyvault-certificates
 Version: 4.2.1
 Summary: Microsoft Azure Python SDK - Key Vault - Certificates
 
-%description keyvault-certificates
+%description -n python%{python3_pkgversion}-azure-keyvault-certificates
 Microsoft Azure Python SDK - Key Vault - Certificates
 
-%package keyvault-keys
+%package -n python%{python3_pkgversion}-azure-keyvault-keys
 Version: 4.3.1
 Summary: Microsoft Azure Python SDK - Key Vault - Keys
 
-%description keyvault-keys
+%description -n python%{python3_pkgversion}-azure-keyvault-keys
 Microsoft Azure Python SDK - Key Vault - Keys
 
-%package keyvault-nspkg
+%package -n python%{python3_pkgversion}-azure-keyvault-nspkg
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Key Vault Namespace Package
 
-%description keyvault-nspkg
+%description -n python%{python3_pkgversion}-azure-keyvault-nspkg
 Microsoft Azure Python SDK - Key Vault Namespace Package
 
-%package keyvault-secrets
+%package -n python%{python3_pkgversion}-azure-keyvault-secrets
 Version: 4.2.0
 Summary: Microsoft Azure Python SDK - Key Vault - Secrets
 
-%description keyvault-secrets
+%description -n python%{python3_pkgversion}-azure-keyvault-secrets
 Microsoft Azure Python SDK - Key Vault - Secrets
 
-%package kusto-data
+%package -n python%{python3_pkgversion}-azure-kusto-data
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Kusto Data
 
-%description kusto-data
+%description -n python%{python3_pkgversion}-azure-kusto-data
 Microsoft Azure Python SDK - Kusto Data
 
-%package loganalytics
+%package -n python%{python3_pkgversion}-azure-loganalytics
 Version: 0.1.0
 Summary: Microsoft Azure Python SDK - Log Analytics
 
-%description loganalytics
+%description -n python%{python3_pkgversion}-azure-loganalytics
 Microsoft Azure Python SDK - Log Analytics
 
-%package mgmt-advisor
+%package -n python%{python3_pkgversion}-azure-mgmt-advisor
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Advisor
 
-%description mgmt-advisor
+%description -n python%{python3_pkgversion}-azure-mgmt-advisor
 Microsoft Azure Python SDK - Resource Management - Advisor
 
-%package mgmt-alertsmanagement
+%package -n python%{python3_pkgversion}-azure-mgmt-alertsmanagement
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Alerts Management
 
-%description mgmt-alertsmanagement
+%description -n python%{python3_pkgversion}-azure-mgmt-alertsmanagement
 Microsoft Azure Python SDK - Resource Management - Alerts Management
 
-%package mgmt-apimanagement
+%package -n python%{python3_pkgversion}-azure-mgmt-apimanagement
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - API Management
 
-%description mgmt-apimanagement
+%description -n python%{python3_pkgversion}-azure-mgmt-apimanagement
 Microsoft Azure Python SDK - Resource Management - API Management
 
-%package mgmt-appconfiguration
+%package -n python%{python3_pkgversion}-azure-mgmt-appconfiguration
 Version: 1.0.1
 Summary: Microsoft Azure Python SDK - Resource Management - App Configuration
 
-%description mgmt-appconfiguration
+%description -n python%{python3_pkgversion}-azure-mgmt-appconfiguration
 Microsoft Azure Python SDK - Resource Management - App Configuration
 
-%package mgmt-applicationinsights
+%package -n python%{python3_pkgversion}-azure-mgmt-applicationinsights
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Application Insights
 
-%description mgmt-applicationinsights
+%description -n python%{python3_pkgversion}-azure-mgmt-applicationinsights
 Microsoft Azure Python SDK - Resource Management - Application Insights
 
-%package mgmt-appplatform
+%package -n python%{python3_pkgversion}-azure-mgmt-appplatform
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - App Platform
 
-%description mgmt-appplatform
+%description -n python%{python3_pkgversion}-azure-mgmt-appplatform
 Microsoft Azure Python SDK - Resource Management - App Platform
 
-%package mgmt-attestation
+%package -n python%{python3_pkgversion}-azure-mgmt-attestation
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Attestation
 
-%description mgmt-attestation
+%description -n python%{python3_pkgversion}-azure-mgmt-attestation
 Microsoft Azure Python SDK - Resource Management - Attestation
 
-%package mgmt-authorization
+%package -n python%{python3_pkgversion}-azure-mgmt-authorization
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Authorization
 
-%description mgmt-authorization
+%description -n python%{python3_pkgversion}-azure-mgmt-authorization
 Microsoft Azure Python SDK - Resource Management - Authorization
 
-%package mgmt-automation
+%package -n python%{python3_pkgversion}-azure-mgmt-automation
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Automation
 
-%description mgmt-automation
+%description -n python%{python3_pkgversion}-azure-mgmt-automation
 Microsoft Azure Python SDK - Resource Management - Automation
 
-%package mgmt-avs
+%package -n python%{python3_pkgversion}-azure-mgmt-avs
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Azure VMware Solution
 
-%description mgmt-avs
+%description -n python%{python3_pkgversion}-azure-mgmt-avs
 Microsoft Azure Python SDK - Resource Management - Azure VMware Solution
 
-%package mgmt-azurestack
+%package -n python%{python3_pkgversion}-azure-mgmt-azurestack
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Azure Stack
 
-%description mgmt-azurestack
+%description -n python%{python3_pkgversion}-azure-mgmt-azurestack
 Microsoft Azure Python SDK - Resource Management - Azure Stack
 
-%package mgmt-azurestackhci
+%package -n python%{python3_pkgversion}-azure-mgmt-azurestackhci
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Azure Stack HCI
 
-%description mgmt-azurestackhci
+%description -n python%{python3_pkgversion}-azure-mgmt-azurestackhci
 Microsoft Azure Python SDK - Resource Management - Azure Stack HCI
 
-%package mgmt-batch
+%package -n python%{python3_pkgversion}-azure-mgmt-batch
 Version: 15.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Batch
 
-%description mgmt-batch
+%description -n python%{python3_pkgversion}-azure-mgmt-batch
 Microsoft Azure Python SDK - Resource Management - Batch
 
-%package mgmt-batchai
+%package -n python%{python3_pkgversion}-azure-mgmt-batchai
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Batch AI
 
-%description mgmt-batchai
+%description -n python%{python3_pkgversion}-azure-mgmt-batchai
 Microsoft Azure Python SDK - Resource Management - Batch AI
 
-%package mgmt-billing
+%package -n python%{python3_pkgversion}-azure-mgmt-billing
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Billing
 
-%description mgmt-billing
+%description -n python%{python3_pkgversion}-azure-mgmt-billing
 Microsoft Azure Python SDK - Resource Management - Billing
 
-%package mgmt-botservice
+%package -n python%{python3_pkgversion}-azure-mgmt-botservice
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Bot Service
 
-%description mgmt-botservice
+%description -n python%{python3_pkgversion}-azure-mgmt-botservice
 Microsoft Azure Python SDK - Resource Management - Bot Service
 
-%package mgmt-cdn
+%package -n python%{python3_pkgversion}-azure-mgmt-cdn
 Version: 11.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Content Delivery Network
 
-%description mgmt-cdn
+%description -n python%{python3_pkgversion}-azure-mgmt-cdn
 Microsoft Azure Python SDK - Resource Management - Content Delivery Network
 
-%package mgmt-cognitiveservices
+%package -n python%{python3_pkgversion}-azure-mgmt-cognitiveservices
 Version: 11.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Cognitive Services
 
-%description mgmt-cognitiveservices
+%description -n python%{python3_pkgversion}-azure-mgmt-cognitiveservices
 Microsoft Azure Python SDK - Resource Management - Cognitive Services
 
-%package mgmt-commerce
+%package -n python%{python3_pkgversion}-azure-mgmt-commerce
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Commerce
 
-%description mgmt-commerce
+%description -n python%{python3_pkgversion}-azure-mgmt-commerce
 Microsoft Azure Python SDK - Resource Management - Commerce
 
-%package mgmt-common
+%package -n python%{python3_pkgversion}-azure-mgmt-common
 Version: 0.20.0
 Summary: Microsoft Azure Python SDK - Resource Management - Common
 
-%description mgmt-common
+%description -n python%{python3_pkgversion}-azure-mgmt-common
 Microsoft Azure Python SDK - Resource Management - Common
 
-%package mgmt-communication
+%package -n python%{python3_pkgversion}-azure-mgmt-communication
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Communication
 
-%description mgmt-communication
+%description -n python%{python3_pkgversion}-azure-mgmt-communication
 Microsoft Azure Python SDK - Resource Management - Communication
 
-%package mgmt-compute
+%package -n python%{python3_pkgversion}-azure-mgmt-compute
 Version: 21.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Compute
 
-%description mgmt-compute
+%description -n python%{python3_pkgversion}-azure-mgmt-compute
 Microsoft Azure Python SDK - Resource Management - Compute
 
-%package mgmt-confluent
+%package -n python%{python3_pkgversion}-azure-mgmt-confluent
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Confluent
 
-%description mgmt-confluent
+%description -n python%{python3_pkgversion}-azure-mgmt-confluent
 Microsoft Azure Python SDK - Resource Management - Confluent
 
-%package mgmt-consumption
+%package -n python%{python3_pkgversion}-azure-mgmt-consumption
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Consumption
 
-%description mgmt-consumption
+%description -n python%{python3_pkgversion}-azure-mgmt-consumption
 Microsoft Azure Python SDK - Resource Management - Consumption
 
-%package mgmt-containerinstance
+%package -n python%{python3_pkgversion}-azure-mgmt-containerinstance
 Version: 7.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Container Instances
 
-%description mgmt-containerinstance
+%description -n python%{python3_pkgversion}-azure-mgmt-containerinstance
 Microsoft Azure Python SDK - Resource Management - Container Instances
 
-%package mgmt-containerregistry
+%package -n python%{python3_pkgversion}-azure-mgmt-containerregistry
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Container Registry
 
-%description mgmt-containerregistry
+%description -n python%{python3_pkgversion}-azure-mgmt-containerregistry
 Microsoft Azure Python SDK - Resource Management - Container Registry
 
-%package mgmt-containerservice
+%package -n python%{python3_pkgversion}-azure-mgmt-containerservice
 Version: 15.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Container Service
 
-%description mgmt-containerservice
+%description -n python%{python3_pkgversion}-azure-mgmt-containerservice
 Microsoft Azure Python SDK - Resource Management - Container Service
 
-%package mgmt-core
+%package -n python%{python3_pkgversion}-azure-mgmt-core
 Version: 1.2.2
 Summary: Microsoft Azure Python SDK - Resource Management - Core
 
-%description mgmt-core
+%description -n python%{python3_pkgversion}-azure-mgmt-core
 Microsoft Azure Python SDK - Resource Management - Core
 
-%package mgmt-cosmosdb
+%package -n python%{python3_pkgversion}-azure-mgmt-cosmosdb
 Version: 6.3.0
 Summary: Microsoft Azure Python SDK - Resource Management - Cosmos DB
 
-%description mgmt-cosmosdb
+%description -n python%{python3_pkgversion}-azure-mgmt-cosmosdb
 Microsoft Azure Python SDK - Resource Management - Cosmos DB
 
-%package mgmt-costmanagement
+%package -n python%{python3_pkgversion}-azure-mgmt-costmanagement
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Cost Management
 
-%description mgmt-costmanagement
+%description -n python%{python3_pkgversion}-azure-mgmt-costmanagement
 Microsoft Azure Python SDK - Resource Management - Cost Management
 
-%package mgmt-customproviders
+%package -n python%{python3_pkgversion}-azure-mgmt-customproviders
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Custom Providers
 
-%description mgmt-customproviders
+%description -n python%{python3_pkgversion}-azure-mgmt-customproviders
 Microsoft Azure Python SDK - Resource Management - Custom Providers
 
-%package mgmt-databox
+%package -n python%{python3_pkgversion}-azure-mgmt-databox
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Box
 
-%description mgmt-databox
+%description -n python%{python3_pkgversion}-azure-mgmt-databox
 Microsoft Azure Python SDK - Resource Management - Data Box
 
-%package mgmt-databoxedge
+%package -n python%{python3_pkgversion}-azure-mgmt-databoxedge
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Box Edge
 
-%description mgmt-databoxedge
+%description -n python%{python3_pkgversion}-azure-mgmt-databoxedge
 Microsoft Azure Python SDK - Resource Management - Data Box Edge
 
-%package mgmt-databricks
+%package -n python%{python3_pkgversion}-azure-mgmt-databricks
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Databricks
 
-%description mgmt-databricks
+%description -n python%{python3_pkgversion}-azure-mgmt-databricks
 Microsoft Azure Python SDK - Resource Management - Databricks
 
-%package mgmt-datadog
+%package -n python%{python3_pkgversion}-azure-mgmt-datadog
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Datadog
 
-%description mgmt-datadog
+%description -n python%{python3_pkgversion}-azure-mgmt-datadog
 Microsoft Azure Python SDK - Resource Management - Datadog
 
-%package mgmt-datafactory
+%package -n python%{python3_pkgversion}-azure-mgmt-datafactory
 Version: 1.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Factory
 
-%description mgmt-datafactory
+%description -n python%{python3_pkgversion}-azure-mgmt-datafactory
 Microsoft Azure Python SDK - Resource Management - Data Factory
 
-%package mgmt-datalake-analytics
+%package -n python%{python3_pkgversion}-azure-mgmt-datalake-analytics
 Version: 0.6.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Lake Analytics
 
-%description mgmt-datalake-analytics
+%description -n python%{python3_pkgversion}-azure-mgmt-datalake-analytics
 Microsoft Azure Python SDK - Resource Management - Data Lake Analytics
 
-%package mgmt-datalake-nspkg
+%package -n python%{python3_pkgversion}-azure-mgmt-datalake-nspkg
 Version: 3.0.1
 Summary: Microsoft Azure Python SDK - Resource Management - Data Lake Namespace Package
 
-%description mgmt-datalake-nspkg
+%description -n python%{python3_pkgversion}-azure-mgmt-datalake-nspkg
 Microsoft Azure Python SDK - Resource Management - Data Lake Namespace Package
 
-%package mgmt-datalake-store
+%package -n python%{python3_pkgversion}-azure-mgmt-datalake-store
 Version: 0.5.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Lake Storage
 
-%description mgmt-datalake-store
+%description -n python%{python3_pkgversion}-azure-mgmt-datalake-store
 Microsoft Azure Python SDK - Resource Management - Data Lake Storage
 
-%package mgmt-datamigration
+%package -n python%{python3_pkgversion}-azure-mgmt-datamigration
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Migration
 
-%description mgmt-datamigration
+%description -n python%{python3_pkgversion}-azure-mgmt-datamigration
 Microsoft Azure Python SDK - Resource Management - Data Migration
 
-%package mgmt-datashare
+%package -n python%{python3_pkgversion}-azure-mgmt-datashare
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Data Share
 
-%description mgmt-datashare
+%description -n python%{python3_pkgversion}-azure-mgmt-datashare
 Microsoft Azure Python SDK - Resource Management - Data Share
 
-%package mgmt-deploymentmanager
+%package -n python%{python3_pkgversion}-azure-mgmt-deploymentmanager
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Deployment Manager
 
-%description mgmt-deploymentmanager
+%description -n python%{python3_pkgversion}-azure-mgmt-deploymentmanager
 Microsoft Azure Python SDK - Resource Management - Deployment Manager
 
-%package mgmt-devspaces
+%package -n python%{python3_pkgversion}-azure-mgmt-devspaces
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Resource Management - Dev Spaces
 
-%description mgmt-devspaces
+%description -n python%{python3_pkgversion}-azure-mgmt-devspaces
 Microsoft Azure Python SDK - Resource Management - Dev Spaces
 
-%package mgmt-devtestlabs
+%package -n python%{python3_pkgversion}-azure-mgmt-devtestlabs
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - DevTest Labs
 
-%description mgmt-devtestlabs
+%description -n python%{python3_pkgversion}-azure-mgmt-devtestlabs
 Microsoft Azure Python SDK - Resource Management - DevTest Labs
 
-%package mgmt-digitaltwins
+%package -n python%{python3_pkgversion}-azure-mgmt-digitaltwins
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Digital Twins
 
-%description mgmt-digitaltwins
+%description -n python%{python3_pkgversion}-azure-mgmt-digitaltwins
 Microsoft Azure Python SDK - Resource Management - Digital Twins
 
-%package mgmt-dns
+%package -n python%{python3_pkgversion}-azure-mgmt-dns
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - DNS
 
-%description mgmt-dns
+%description -n python%{python3_pkgversion}-azure-mgmt-dns
 Microsoft Azure Python SDK - Resource Management - DNS
 
-%package mgmt-edgegateway
+%package -n python%{python3_pkgversion}-azure-mgmt-edgegateway
 Version: 0.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Edge Gateway
 
-%description mgmt-edgegateway
+%description -n python%{python3_pkgversion}-azure-mgmt-edgegateway
 Microsoft Azure Python SDK - Resource Management - Edge Gateway
 
-%package mgmt-eventgrid
+%package -n python%{python3_pkgversion}-azure-mgmt-eventgrid
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Event Grid
 
-%description mgmt-eventgrid
+%description -n python%{python3_pkgversion}-azure-mgmt-eventgrid
 Microsoft Azure Python SDK - Resource Management - Event Grid
 
-%package mgmt-eventhub
+%package -n python%{python3_pkgversion}-azure-mgmt-eventhub
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Event Hubs
 
-%description mgmt-eventhub
+%description -n python%{python3_pkgversion}-azure-mgmt-eventhub
 Microsoft Azure Python SDK - Resource Management - Event Hubs
 
-%package mgmt-frontdoor
+%package -n python%{python3_pkgversion}-azure-mgmt-frontdoor
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Frontdoor
 
-%description mgmt-frontdoor
+%description -n python%{python3_pkgversion}-azure-mgmt-frontdoor
 Microsoft Azure Python SDK - Resource Management - Frontdoor
 
-%package mgmt-hanaonazure
+%package -n python%{python3_pkgversion}-azure-mgmt-hanaonazure
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - HANA on Azure
 
-%description mgmt-hanaonazure
+%description -n python%{python3_pkgversion}-azure-mgmt-hanaonazure
 Microsoft Azure Python SDK - Resource Management - HANA on Azure
 
-%package mgmt-hdinsight
+%package -n python%{python3_pkgversion}-azure-mgmt-hdinsight
 Version: 7.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - HDInsight
 
-%description mgmt-hdinsight
+%description -n python%{python3_pkgversion}-azure-mgmt-hdinsight
 Microsoft Azure Python SDK - Resource Management - HDInsight
 
-%package mgmt-healthcareapis
+%package -n python%{python3_pkgversion}-azure-mgmt-healthcareapis
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Healthcare APIs
 
-%description mgmt-healthcareapis
+%description -n python%{python3_pkgversion}-azure-mgmt-healthcareapis
 Microsoft Azure Python SDK - Resource Management - Healthcare APIs
 
-%package mgmt-hybridcompute
+%package -n python%{python3_pkgversion}-azure-mgmt-hybridcompute
 Version: 7.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Hybrid Compute
 
-%description mgmt-hybridcompute
+%description -n python%{python3_pkgversion}-azure-mgmt-hybridcompute
 Microsoft Azure Python SDK - Resource Management - Hybrid Compute
 
-%package mgmt-hybridkubernetes
+%package -n python%{python3_pkgversion}-azure-mgmt-hybridkubernetes
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Hybrid Kubernetes
 
-%description mgmt-hybridkubernetes
+%description -n python%{python3_pkgversion}-azure-mgmt-hybridkubernetes
 Microsoft Azure Python SDK - Resource Management - Hybrid Kubernetes
 
-%package mgmt-imagebuilder
+%package -n python%{python3_pkgversion}-azure-mgmt-imagebuilder
 Version: 0.4.0
 Summary: Microsoft Azure Python SDK - Resource Management - Image Builder
 
-%description mgmt-imagebuilder
+%description -n python%{python3_pkgversion}-azure-mgmt-imagebuilder
 Microsoft Azure Python SDK - Resource Management - Image Builder
 
-%package mgmt-iotcentral
+%package -n python%{python3_pkgversion}-azure-mgmt-iotcentral
 Version: 4.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - IoT Central
 
-%description mgmt-iotcentral
+%description -n python%{python3_pkgversion}-azure-mgmt-iotcentral
 Microsoft Azure Python SDK - Resource Management - IoT Central
 
-%package mgmt-iothub
+%package -n python%{python3_pkgversion}-azure-mgmt-iothub
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - IoT Hub
 
-%description mgmt-iothub
+%description -n python%{python3_pkgversion}-azure-mgmt-iothub
 Microsoft Azure Python SDK - Resource Management - IoT Hub
 
-%package mgmt-iothubprovisioningservices
+%package -n python%{python3_pkgversion}-azure-mgmt-iothubprovisioningservices
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Resource Management - IoT Hub Provisioning Services
 
-%description mgmt-iothubprovisioningservices
+%description -n python%{python3_pkgversion}-azure-mgmt-iothubprovisioningservices
 Microsoft Azure Python SDK - Resource Management - IoT Hub Provisioning Services
 
-%package mgmt-keyvault
+%package -n python%{python3_pkgversion}-azure-mgmt-keyvault
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - KeyVault
 
-%description mgmt-keyvault
+%description -n python%{python3_pkgversion}-azure-mgmt-keyvault
 Microsoft Azure Python SDK - Resource Management - KeyVault
 
-%package mgmt-kusto
+%package -n python%{python3_pkgversion}-azure-mgmt-kusto
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Kusto
 
-%description mgmt-kusto
+%description -n python%{python3_pkgversion}-azure-mgmt-kusto
 Microsoft Azure Python SDK - Resource Management - Kusto
 
-%package mgmt-labservices
+%package -n python%{python3_pkgversion}-azure-mgmt-labservices
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Lab Services
 
-%description mgmt-labservices
+%description -n python%{python3_pkgversion}-azure-mgmt-labservices
 Microsoft Azure Python SDK - Resource Management - Lab Services
 
-%package mgmt-loganalytics
+%package -n python%{python3_pkgversion}-azure-mgmt-loganalytics
 Version: 10.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Log Analytics
 
-%description mgmt-loganalytics
+%description -n python%{python3_pkgversion}-azure-mgmt-loganalytics
 Microsoft Azure Python SDK - Resource Management - Log Analytics
 
-%package mgmt-logic
+%package -n python%{python3_pkgversion}-azure-mgmt-logic
 Version: 9.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Logic Apps
 
-%description mgmt-logic
+%description -n python%{python3_pkgversion}-azure-mgmt-logic
 Microsoft Azure Python SDK - Resource Management - Logic Apps
 
-%package mgmt-machinelearningcompute
+%package -n python%{python3_pkgversion}-azure-mgmt-machinelearningcompute
 Version: 0.4.1
 Summary: Microsoft Azure Python SDK - Resource Management - Machine Learning Compute
 
-%description mgmt-machinelearningcompute
+%description -n python%{python3_pkgversion}-azure-mgmt-machinelearningcompute
 Microsoft Azure Python SDK - Resource Management - Machine Learning Compute
 
-%package mgmt-machinelearningservices
+%package -n python%{python3_pkgversion}-azure-mgmt-machinelearningservices
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Machine Learning Services
 
-%description mgmt-machinelearningservices
+%description -n python%{python3_pkgversion}-azure-mgmt-machinelearningservices
 Microsoft Azure Python SDK - Resource Management - Machine Learning Services
 
-%package mgmt-maintenance
+%package -n python%{python3_pkgversion}-azure-mgmt-maintenance
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Maintenance
 
-%description mgmt-maintenance
+%description -n python%{python3_pkgversion}-azure-mgmt-maintenance
 Microsoft Azure Python SDK - Resource Management - Maintenance
 
-%package mgmt-managedservices
+%package -n python%{python3_pkgversion}-azure-mgmt-managedservices
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Managed Services
 
-%description mgmt-managedservices
+%description -n python%{python3_pkgversion}-azure-mgmt-managedservices
 Microsoft Azure Python SDK - Resource Management - Managed Services
 
-%package mgmt-managementgroups
+%package -n python%{python3_pkgversion}-azure-mgmt-managementgroups
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Management Groups
 
-%description mgmt-managementgroups
+%description -n python%{python3_pkgversion}-azure-mgmt-managementgroups
 Microsoft Azure Python SDK - Resource Management - Management Groups
 
-%package mgmt-managementpartner
+%package -n python%{python3_pkgversion}-azure-mgmt-managementpartner
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Management Partner
 
-%description mgmt-managementpartner
+%description -n python%{python3_pkgversion}-azure-mgmt-managementpartner
 Microsoft Azure Python SDK - Resource Management - Management Partner
 
-%package mgmt-maps
+%package -n python%{python3_pkgversion}-azure-mgmt-maps
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Maps
 
-%description mgmt-maps
+%description -n python%{python3_pkgversion}-azure-mgmt-maps
 Microsoft Azure Python SDK - Resource Management - Maps
 
-%package mgmt-marketplaceordering
+%package -n python%{python3_pkgversion}-azure-mgmt-marketplaceordering
 Version: 1.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Marketplace Ordering
 
-%description mgmt-marketplaceordering
+%description -n python%{python3_pkgversion}-azure-mgmt-marketplaceordering
 Microsoft Azure Python SDK - Resource Management - Marketplace Ordering
 
-%package mgmt-media
+%package -n python%{python3_pkgversion}-azure-mgmt-media
 Version: 3.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Media Services
 
-%description mgmt-media
+%description -n python%{python3_pkgversion}-azure-mgmt-media
 Microsoft Azure Python SDK - Resource Management - Media Services
 
-%package mgmt-mixedreality
+%package -n python%{python3_pkgversion}-azure-mgmt-mixedreality
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Mixed Reality
 
-%description mgmt-mixedreality
+%description -n python%{python3_pkgversion}-azure-mgmt-mixedreality
 Microsoft Azure Python SDK - Resource Management - Mixed Reality
 
-%package mgmt-monitor
+%package -n python%{python3_pkgversion}-azure-mgmt-monitor
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Monitor
 
-%description mgmt-monitor
+%description -n python%{python3_pkgversion}-azure-mgmt-monitor
 Microsoft Azure Python SDK - Resource Management - Monitor
 
-%package mgmt-msi
+%package -n python%{python3_pkgversion}-azure-mgmt-msi
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Managed Service Identity
 
-%description mgmt-msi
+%description -n python%{python3_pkgversion}-azure-mgmt-msi
 Microsoft Azure Python SDK - Resource Management - Managed Service Identity
 
-%package mgmt-netapp
+%package -n python%{python3_pkgversion}-azure-mgmt-netapp
 Version: 3.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - NetApp
 
-%description mgmt-netapp
+%description -n python%{python3_pkgversion}-azure-mgmt-netapp
 Microsoft Azure Python SDK - Resource Management - NetApp
 
-%package mgmt-network
+%package -n python%{python3_pkgversion}-azure-mgmt-network
 Version: 19.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Network
 
-%description mgmt-network
+%description -n python%{python3_pkgversion}-azure-mgmt-network
 Microsoft Azure Python SDK - Resource Management - Network
 
-%package mgmt-notificationhubs
+%package -n python%{python3_pkgversion}-azure-mgmt-notificationhubs
 Version: 7.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Notification Hubs
 
-%description mgmt-notificationhubs
+%description -n python%{python3_pkgversion}-azure-mgmt-notificationhubs
 Microsoft Azure Python SDK - Resource Management - Notification Hubs
 
-%package mgmt-nspkg
+%package -n python%{python3_pkgversion}-azure-mgmt-nspkg
 Version: 3.0.2
 Summary: Microsoft Azure Python SDK - Resource Management - Namespace Package
 
-%description mgmt-nspkg
+%description -n python%{python3_pkgversion}-azure-mgmt-nspkg
 Microsoft Azure Python SDK - Resource Management - Namespace Package
 
-%package mgmt-operationsmanagement
+%package -n python%{python3_pkgversion}-azure-mgmt-operationsmanagement
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Operations Management
 
-%description mgmt-operationsmanagement
+%description -n python%{python3_pkgversion}-azure-mgmt-operationsmanagement
 Microsoft Azure Python SDK - Resource Management - Operations Management
 
-%package mgmt-peering
+%package -n python%{python3_pkgversion}-azure-mgmt-peering
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Peering
 
-%description mgmt-peering
+%description -n python%{python3_pkgversion}-azure-mgmt-peering
 Microsoft Azure Python SDK - Resource Management - Peering
 
-%package mgmt-policyinsights
+%package -n python%{python3_pkgversion}-azure-mgmt-policyinsights
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Policy Insights
 
-%description mgmt-policyinsights
+%description -n python%{python3_pkgversion}-azure-mgmt-policyinsights
 Microsoft Azure Python SDK - Resource Management - Policy Insights
 
-%package mgmt-powerbidedicated
+%package -n python%{python3_pkgversion}-azure-mgmt-powerbidedicated
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Power BI Dedicated
 
-%description mgmt-powerbidedicated
+%description -n python%{python3_pkgversion}-azure-mgmt-powerbidedicated
 Microsoft Azure Python SDK - Resource Management - Power BI Dedicated
 
-%package mgmt-powerbiembedded
+%package -n python%{python3_pkgversion}-azure-mgmt-powerbiembedded
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Power BI Embedded
 
-%description mgmt-powerbiembedded
+%description -n python%{python3_pkgversion}-azure-mgmt-powerbiembedded
 Microsoft Azure Python SDK - Resource Management - Power BI Embedded
 
-%package mgmt-privatedns
+%package -n python%{python3_pkgversion}-azure-mgmt-privatedns
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Private DNS
 
-%description mgmt-privatedns
+%description -n python%{python3_pkgversion}-azure-mgmt-privatedns
 Microsoft Azure Python SDK - Resource Management - Private DNS
 
-%package mgmt-rdbms
+%package -n python%{python3_pkgversion}-azure-mgmt-rdbms
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Rdbms
 
-%description mgmt-rdbms
+%description -n python%{python3_pkgversion}-azure-mgmt-rdbms
 Microsoft Azure Python SDK - Resource Management - Rdbms
 
-%package mgmt-recoveryservices
+%package -n python%{python3_pkgversion}-azure-mgmt-recoveryservices
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Recovery Services
 
-%description mgmt-recoveryservices
+%description -n python%{python3_pkgversion}-azure-mgmt-recoveryservices
 Microsoft Azure Python SDK - Resource Management - Recovery Services
 
-%package mgmt-recoveryservicesbackup
-Version: 0.11.0
+%package -n python%{python3_pkgversion}-azure-mgmt-recoveryservicesbackup
+Version: 0.12.0
 Summary: Microsoft Azure Python SDK - Resource Management - Recovery Services Backup
 
-%description mgmt-recoveryservicesbackup
+%description -n python%{python3_pkgversion}-azure-mgmt-recoveryservicesbackup
 Microsoft Azure Python SDK - Resource Management - Recovery Services Backup
 
-%package mgmt-redhatopenshift
+%package -n python%{python3_pkgversion}-azure-mgmt-redhatopenshift
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Red Hat OpenShift
 
-%description mgmt-redhatopenshift
+%description -n python%{python3_pkgversion}-azure-mgmt-redhatopenshift
 Microsoft Azure Python SDK - Resource Management - Red Hat OpenShift
 
-%package mgmt-redis
+%package -n python%{python3_pkgversion}-azure-mgmt-redis
 Version: 12.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Redis
 
-%description mgmt-redis
+%description -n python%{python3_pkgversion}-azure-mgmt-redis
 Microsoft Azure Python SDK - Resource Management - Redis
 
-%package mgmt-relay
+%package -n python%{python3_pkgversion}-azure-mgmt-relay
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Relay
 
-%description mgmt-relay
+%description -n python%{python3_pkgversion}-azure-mgmt-relay
 Microsoft Azure Python SDK - Resource Management - Relay
 
-%package mgmt-reservations
+%package -n python%{python3_pkgversion}-azure-mgmt-reservations
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Reservations
 
-%description mgmt-reservations
+%description -n python%{python3_pkgversion}-azure-mgmt-reservations
 Microsoft Azure Python SDK - Resource Management - Reservations
 
-%package mgmt-resource
+%package -n python%{python3_pkgversion}-azure-mgmt-resource
 Version: 18.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Resources
 
-%description mgmt-resource
+%description -n python%{python3_pkgversion}-azure-mgmt-resource
 Microsoft Azure Python SDK - Resource Management - Resources
 
-%package mgmt-resourcegraph
+%package -n python%{python3_pkgversion}-azure-mgmt-resourcegraph
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Resource Graph
 
-%description mgmt-resourcegraph
+%description -n python%{python3_pkgversion}-azure-mgmt-resourcegraph
 Microsoft Azure Python SDK - Resource Management - Resource Graph
 
-%package mgmt-resourcemover
+%package -n python%{python3_pkgversion}-azure-mgmt-resourcemover
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Resource Mover
 
-%description mgmt-resourcemover
+%description -n python%{python3_pkgversion}-azure-mgmt-resourcemover
 Microsoft Azure Python SDK - Resource Management - Resource Mover
 
-%package mgmt-scheduler
+%package -n python%{python3_pkgversion}-azure-mgmt-scheduler
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Scheduler
 
-%description mgmt-scheduler
+%description -n python%{python3_pkgversion}-azure-mgmt-scheduler
 Microsoft Azure Python SDK - Resource Management - Scheduler
 
-%package mgmt-search
+%package -n python%{python3_pkgversion}-azure-mgmt-search
 Version: 8.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Search
 
-%description mgmt-search
+%description -n python%{python3_pkgversion}-azure-mgmt-search
 Microsoft Azure Python SDK - Resource Management - Search
 
-%package mgmt-security
+%package -n python%{python3_pkgversion}-azure-mgmt-security
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Security
 
-%description mgmt-security
+%description -n python%{python3_pkgversion}-azure-mgmt-security
 Microsoft Azure Python SDK - Resource Management - Security
 
-%package mgmt-serialconsole
+%package -n python%{python3_pkgversion}-azure-mgmt-serialconsole
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Serial Console
 
-%description mgmt-serialconsole
+%description -n python%{python3_pkgversion}-azure-mgmt-serialconsole
 Microsoft Azure Python SDK - Resource Management - Serial Console
 
-%package mgmt-servermanager
+%package -n python%{python3_pkgversion}-azure-mgmt-servermanager
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Server Manager
 
-%description mgmt-servermanager
+%description -n python%{python3_pkgversion}-azure-mgmt-servermanager
 Microsoft Azure Python SDK - Resource Management - Server Manager
 
-%package mgmt-servicebus
+%package -n python%{python3_pkgversion}-azure-mgmt-servicebus
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Service Bus
 
-%description mgmt-servicebus
+%description -n python%{python3_pkgversion}-azure-mgmt-servicebus
 Microsoft Azure Python SDK - Resource Management - Service Bus
 
-%package mgmt-sql
+%package -n python%{python3_pkgversion}-azure-mgmt-sql
 Version: 2.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - SQL
 
-%description mgmt-sql
+%description -n python%{python3_pkgversion}-azure-mgmt-sql
 Microsoft Azure Python SDK - Resource Management - SQL
 
-%package mgmt-sqlvirtualmachine
+%package -n python%{python3_pkgversion}-azure-mgmt-sqlvirtualmachine
 Version: 0.5.0
 Summary: Microsoft Azure Python SDK - Resource Management - SQL Virtual Machine
 
-%description mgmt-sqlvirtualmachine
+%description -n python%{python3_pkgversion}-azure-mgmt-sqlvirtualmachine
 Microsoft Azure Python SDK - Resource Management - SQL Virtual Machine
 
-%package mgmt-storage
+%package -n python%{python3_pkgversion}-azure-mgmt-storage
 Version: 18.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Storage
 
-%description mgmt-storage
+%description -n python%{python3_pkgversion}-azure-mgmt-storage
 Microsoft Azure Python SDK - Resource Management - Storage
 
-%package mgmt-storagecache
+%package -n python%{python3_pkgversion}-azure-mgmt-storagecache
 Version: 0.5.0
 Summary: Microsoft Azure Python SDK - Resource Management - Storage Cache
 
-%description mgmt-storagecache
+%description -n python%{python3_pkgversion}-azure-mgmt-storagecache
 Microsoft Azure Python SDK - Resource Management - Storage Cache
 
-%package mgmt-storageimportexport
+%package -n python%{python3_pkgversion}-azure-mgmt-storageimportexport
 Version: 0.1.0
 Summary: Microsoft Azure Python SDK - Resource Management - Storage Import Export
 
-%description mgmt-storageimportexport
+%description -n python%{python3_pkgversion}-azure-mgmt-storageimportexport
 Microsoft Azure Python SDK - Resource Management - Storage Import Export
 
-%package mgmt-storagesync
+%package -n python%{python3_pkgversion}-azure-mgmt-storagesync
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Storage Sync
 
-%description mgmt-storagesync
+%description -n python%{python3_pkgversion}-azure-mgmt-storagesync
 Microsoft Azure Python SDK - Resource Management - Storage Sync
 
-%package mgmt-subscription
+%package -n python%{python3_pkgversion}-azure-mgmt-subscription
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Subscription
 
-%description mgmt-subscription
+%description -n python%{python3_pkgversion}-azure-mgmt-subscription
 Microsoft Azure Python SDK - Resource Management - Subscription
 
-%package mgmt-support
+%package -n python%{python3_pkgversion}-azure-mgmt-support
 Version: 6.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Support
 
-%description mgmt-support
+%description -n python%{python3_pkgversion}-azure-mgmt-support
 Microsoft Azure Python SDK - Resource Management - Support
 
-%package mgmt-synapse
+%package -n python%{python3_pkgversion}-azure-mgmt-synapse
 Version: 2.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Synapse
 
-%description mgmt-synapse
+%description -n python%{python3_pkgversion}-azure-mgmt-synapse
 Microsoft Azure Python SDK - Resource Management - Synapse
 
-%package mgmt-timeseriesinsights
+%package -n python%{python3_pkgversion}-azure-mgmt-timeseriesinsights
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Time Series Insights
 
-%description mgmt-timeseriesinsights
+%description -n python%{python3_pkgversion}-azure-mgmt-timeseriesinsights
 Microsoft Azure Python SDK - Resource Management - Time Series Insights
 
-%package mgmt-trafficmanager
+%package -n python%{python3_pkgversion}-azure-mgmt-trafficmanager
 Version: 0.51.0
 Summary: Microsoft Azure Python SDK - Resource Management - Traffic Manager
 
-%description mgmt-trafficmanager
+%description -n python%{python3_pkgversion}-azure-mgmt-trafficmanager
 Microsoft Azure Python SDK - Resource Management - Traffic Manager
 
-%package mgmt-vmwarecloudsimple
+%package -n python%{python3_pkgversion}-azure-mgmt-vmwarecloudsimple
 Version: 0.2.0
 Summary: Microsoft Azure Python SDK - Resource Management - VM Ware Cloud Simple
 
-%description mgmt-vmwarecloudsimple
+%description -n python%{python3_pkgversion}-azure-mgmt-vmwarecloudsimple
 Microsoft Azure Python SDK - Resource Management - VM Ware Cloud Simple
 
-%package mgmt-web
+%package -n python%{python3_pkgversion}-azure-mgmt-web
 Version: 3.0.0
 Summary: Microsoft Azure Python SDK - Resource Management - Web
 
-%description mgmt-web
+%description -n python%{python3_pkgversion}-azure-mgmt-web
 Microsoft Azure Python SDK - Resource Management - Web
 
-%package nspkg
+%package -n python%{python3_pkgversion}-azure-nspkg
 Version: 3.0.2
 Summary: Microsoft Azure Python SDK - Core Namespace Package
 
-%description nspkg
+%description -n python%{python3_pkgversion}-azure-nspkg
 Microsoft Azure Python SDK - Core Namespace Package
 
-%package search-documents
+%package -n python%{python3_pkgversion}-azure-search-documents
 Version: 11.1.0
 Summary: Microsoft Azure Python SDK - Cognitive Search
 
-%description search-documents
+%description -n python%{python3_pkgversion}-azure-search-documents
 Microsoft Azure Python SDK - Cognitive Search
 
-%package search-nspkg
+%package -n python%{python3_pkgversion}-azure-search-nspkg
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Search Namespace Package
 
-%description search-nspkg
+%description -n python%{python3_pkgversion}-azure-search-nspkg
 Microsoft Azure Python SDK - Search Namespace Package
 
-%package servicebus
+%package -n python%{python3_pkgversion}-azure-servicebus
 Version: 7.2.0
 Summary: Microsoft Azure Python SDK - Service Bus
 
-%description servicebus
+%description -n python%{python3_pkgversion}-azure-servicebus
 Microsoft Azure Python SDK - Service Bus
 
-%package servicefabric
+%package -n python%{python3_pkgversion}-azure-servicefabric
 Version: 8.0.0.0
 Summary: Microsoft Azure Python SDK - Service Fabric
 
-%description servicefabric
+%description -n python%{python3_pkgversion}-azure-servicefabric
 Microsoft Azure Python SDK - Service Fabric
 
-%package storage-blob
+%package -n python%{python3_pkgversion}-azure-storage-blob
 Version: 2.1.0
 Summary: Microsoft Azure Python SDK - Storage - Blobs
 
-%description storage-blob
+%description -n python%{python3_pkgversion}-azure-storage-blob
 Microsoft Azure Python SDK - Storage - Blobs
 
-%package storage-common
+%package -n python%{python3_pkgversion}-azure-storage-common
 Version: 2.1.0
 Summary: Microsoft Azure Python SDK - Storage - Common
 
-%description storage-common
+%description -n python%{python3_pkgversion}-azure-storage-common
 Microsoft Azure Python SDK - Storage - Common
 
-%package storage-file
+%package -n python%{python3_pkgversion}-azure-storage-file
 Version: 2.1.0
 Summary: Microsoft Azure Python SDK - Storage - Files Shares
 
-%description storage-file
+%description -n python%{python3_pkgversion}-azure-storage-file
 Microsoft Azure Python SDK - Storage - Files Shares
 
-%package storage-file-datalake
+%package -n python%{python3_pkgversion}-azure-storage-file-datalake
 Version: 12.3.1
 Summary: Microsoft Azure Python SDK - Storage - Files Data Lake
 
-%description storage-file-datalake
+%description -n python%{python3_pkgversion}-azure-storage-file-datalake
 Microsoft Azure Python SDK - Storage - Files Data Lake
 
-%package storage-file-share
+%package -n python%{python3_pkgversion}-azure-storage-file-share
 Version: 12.4.2
 Summary: Microsoft Azure Python SDK - Storage - Files Shares
 
-%description storage-file-share
+%description -n python%{python3_pkgversion}-azure-storage-file-share
 Microsoft Azure Python SDK - Storage - Files Shares
 
-%package storage-nspkg
+%package -n python%{python3_pkgversion}-azure-storage-nspkg
 Version: 3.1.0
 Summary: Microsoft Azure Python SDK - Storage Namespace Package
 
-%description storage-nspkg
+%description -n python%{python3_pkgversion}-azure-storage-nspkg
 Microsoft Azure Python SDK - Storage Namespace Package
 
-%package storage-queue
+%package -n python%{python3_pkgversion}-azure-storage-queue
 Version: 2.1.0
 Summary: Microsoft Azure Python SDK - Storage - Queues
 
-%description storage-queue
+%description -n python%{python3_pkgversion}-azure-storage-queue
 Microsoft Azure Python SDK - Storage - Queues
 
-%package synapse
+%package -n python%{python3_pkgversion}-azure-synapse
 Version: 0.1.1
 Summary: Microsoft Azure Python SDK - Synapse
 
-%description synapse
+%description -n python%{python3_pkgversion}-azure-synapse
 Microsoft Azure Python SDK - Synapse
 
-%package synapse-nspkg
+%package -n python%{python3_pkgversion}-azure-synapse-nspkg
 Version: 1.0.0
 Summary: Microsoft Azure Python SDK - Synapse Namespace Package
 
-%description synapse-nspkg
+%description -n python%{python3_pkgversion}-azure-synapse-nspkg
 Microsoft Azure Python SDK - Synapse Namespace Package
 
-%package template
+%package -n python%{python3_pkgversion}-azure-template
 Version: 0.0.17
 Summary: Microsoft Azure Python SDK - Template
 
-%description template
+%description -n python%{python3_pkgversion}-azure-template
 Microsoft Azure Python SDK - Template
 
 
@@ -1791,7 +1791,7 @@ Microsoft Azure Python SDK - Template
 %autosetup -n %{name}-%{version} -D -T -a 140
 # Extract azure-mgmt-recoveryservices 1.0.0
 %autosetup -n %{name}-%{version} -D -T -a 141
-# Extract azure-mgmt-recoveryservicesbackup 0.11.0
+# Extract azure-mgmt-recoveryservicesbackup 0.12.0
 %autosetup -n %{name}-%{version} -D -T -a 142
 # Extract azure-mgmt-redhatopenshift 1.0.0
 %autosetup -n %{name}-%{version} -D -T -a 143
@@ -1899,147 +1899,147 @@ done
 rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 
 
-%files ai-textanalytics
+%files -n python%{python3_pkgversion}-azure-ai-textanalytics
 %{python3_sitelib}/azure/ai/textanalytics
 %{python3_sitelib}/azure_ai_textanalytics-*.dist-info/
 
 
-%files appconfiguration
+%files -n python%{python3_pkgversion}-azure-appconfiguration
 %{python3_sitelib}/azure/appconfiguration
 %{python3_sitelib}/azure_appconfiguration-*.dist-info/
 
 
-%files applicationinsights
+%files -n python%{python3_pkgversion}-azure-applicationinsights
 %{python3_sitelib}/azure/applicationinsights
 %{python3_sitelib}/azure_applicationinsights-*.dist-info/
 
 
-%files batch
+%files -n python%{python3_pkgversion}-azure-batch
 %{python3_sitelib}/azure/batch
 %{python3_sitelib}/azure_batch-*.dist-info/
 
 
-%files cognitiveservices-anomalydetector
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-anomalydetector
 %{python3_sitelib}/azure/cognitiveservices/anomalydetector
 %{python3_sitelib}/azure_cognitiveservices_anomalydetector-*.dist-info/
 
 
-%files cognitiveservices-formrecognizer
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-formrecognizer
 %{python3_sitelib}/azure/cognitiveservices/formrecognizer
 %{python3_sitelib}/azure_cognitiveservices_formrecognizer-*.dist-info/
 
 
-%files cognitiveservices-knowledge-nspkg
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-nspkg
 %{python3_sitelib}/azure_cognitiveservices_knowledge_nspkg-*.dist-info/
 
 
-%files cognitiveservices-knowledge-qnamaker
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-knowledge-qnamaker
 %{python3_sitelib}/azure/cognitiveservices/knowledge/qnamaker
 %{python3_sitelib}/azure_cognitiveservices_knowledge_qnamaker-*.dist-info/
 
 
-%files cognitiveservices-language-luis
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-language-luis
 %{python3_sitelib}/azure/cognitiveservices/language/luis
 %{python3_sitelib}/azure_cognitiveservices_language_luis-*.dist-info/
 
 
-%files cognitiveservices-language-nspkg
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-language-nspkg
 %{python3_sitelib}/azure_cognitiveservices_language_nspkg-*.dist-info/
 
 
-%files cognitiveservices-language-spellcheck
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-language-spellcheck
 %{python3_sitelib}/azure/cognitiveservices/language/spellcheck
 %{python3_sitelib}/azure_cognitiveservices_language_spellcheck-*.dist-info/
 
 
-%files cognitiveservices-language-textanalytics
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-language-textanalytics
 %{python3_sitelib}/azure/cognitiveservices/language/textanalytics
 %{python3_sitelib}/azure_cognitiveservices_language_textanalytics-*.dist-info/
 
 
-%files cognitiveservices-nspkg
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-nspkg
 %{python3_sitelib}/azure_cognitiveservices_nspkg-*.dist-info/
 
 
-%files cognitiveservices-personalizer
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-personalizer
 %{python3_sitelib}/azure/cognitiveservices/personalizer
 %{python3_sitelib}/azure_cognitiveservices_personalizer-*.dist-info/
 
 
-%files cognitiveservices-search-autosuggest
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-autosuggest
 %{python3_sitelib}/azure/cognitiveservices/search/autosuggest
 %{python3_sitelib}/azure_cognitiveservices_search_autosuggest-*.dist-info/
 
 
-%files cognitiveservices-search-customimagesearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-customimagesearch
 %{python3_sitelib}/azure/cognitiveservices/search/customimagesearch
 %{python3_sitelib}/azure_cognitiveservices_search_customimagesearch-*.dist-info/
 
 
-%files cognitiveservices-search-customsearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-customsearch
 %{python3_sitelib}/azure/cognitiveservices/search/customsearch
 %{python3_sitelib}/azure_cognitiveservices_search_customsearch-*.dist-info/
 
 
-%files cognitiveservices-search-entitysearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-entitysearch
 %{python3_sitelib}/azure/cognitiveservices/search/entitysearch
 %{python3_sitelib}/azure_cognitiveservices_search_entitysearch-*.dist-info/
 
 
-%files cognitiveservices-search-imagesearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-imagesearch
 %{python3_sitelib}/azure/cognitiveservices/search/imagesearch
 %{python3_sitelib}/azure_cognitiveservices_search_imagesearch-*.dist-info/
 
 
-%files cognitiveservices-search-newssearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-newssearch
 %{python3_sitelib}/azure/cognitiveservices/search/newssearch
 %{python3_sitelib}/azure_cognitiveservices_search_newssearch-*.dist-info/
 
 
-%files cognitiveservices-search-nspkg
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-nspkg
 %{python3_sitelib}/azure_cognitiveservices_search_nspkg-*.dist-info/
 
 
-%files cognitiveservices-search-videosearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-videosearch
 %{python3_sitelib}/azure/cognitiveservices/search/videosearch
 %{python3_sitelib}/azure_cognitiveservices_search_videosearch-*.dist-info/
 
 
-%files cognitiveservices-search-visualsearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-visualsearch
 %{python3_sitelib}/azure/cognitiveservices/search/visualsearch
 %{python3_sitelib}/azure_cognitiveservices_search_visualsearch-*.dist-info/
 
 
-%files cognitiveservices-search-websearch
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-search-websearch
 %{python3_sitelib}/azure/cognitiveservices/search/websearch
 %{python3_sitelib}/azure_cognitiveservices_search_websearch-*.dist-info/
 
 
-%files cognitiveservices-vision-computervision
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-vision-computervision
 %{python3_sitelib}/azure/cognitiveservices/vision/computervision
 %{python3_sitelib}/azure_cognitiveservices_vision_computervision-*.dist-info/
 
 
-%files cognitiveservices-vision-contentmoderator
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-vision-contentmoderator
 %{python3_sitelib}/azure/cognitiveservices/vision/contentmoderator
 %{python3_sitelib}/azure_cognitiveservices_vision_contentmoderator-*.dist-info/
 
 
-%files cognitiveservices-vision-customvision
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-vision-customvision
 %{python3_sitelib}/azure/cognitiveservices/vision/customvision
 %{python3_sitelib}/azure_cognitiveservices_vision_customvision-*.dist-info/
 
 
-%files cognitiveservices-vision-face
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-vision-face
 %{python3_sitelib}/azure/cognitiveservices/vision/face
 %{python3_sitelib}/azure_cognitiveservices_vision_face-*.dist-info/
 
 
-%files cognitiveservices-vision-nspkg
+%files -n python%{python3_pkgversion}-azure-cognitiveservices-vision-nspkg
 %{python3_sitelib}/azure_cognitiveservices_vision_nspkg-*.dist-info/
 
 
-%files common
+%files -n python%{python3_pkgversion}-azure-common
 %{python3_sitelib}/azure/common
 %{python3_sitelib}/azure_common-*.dist-info/
 %{python3_sitelib}/azure/profiles/__init__.py
@@ -2048,120 +2048,120 @@ rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 %{python3_sitelib}/azure/profiles/__pycache__/multiapiclient*.pyc
 
 
-%files communication-chat
+%files -n python%{python3_pkgversion}-azure-communication-chat
 %{python3_sitelib}/azure/communication/chat
 %{python3_sitelib}/azure_communication_chat-*.dist-info/
 
 
-%files communication-identity
+%files -n python%{python3_pkgversion}-azure-communication-identity
 %{python3_sitelib}/azure/communication/identity
 %{python3_sitelib}/azure_communication_identity-*.dist-info/
 
 
-%files communication-phonenumbers
+%files -n python%{python3_pkgversion}-azure-communication-phonenumbers
 %{python3_sitelib}/azure/communication/phonenumbers
 %{python3_sitelib}/azure_communication_phonenumbers-*.dist-info/
 
 
-%files communication-sms
+%files -n python%{python3_pkgversion}-azure-communication-sms
 %{python3_sitelib}/azure/communication/sms
 %{python3_sitelib}/azure_communication_sms-*.dist-info/
 
 
-%files core
+%files -n python%{python3_pkgversion}-azure-core
 %{python3_sitelib}/azure/core
 %{python3_sitelib}/azure_core-*.dist-info/
 
 
-%files cosmos
+%files -n python%{python3_pkgversion}-azure-cosmos
 %{python3_sitelib}/azure/cosmos
 %{python3_sitelib}/azure_cosmos-*.dist-info/
 
 
-%files cosmosdb-table
+%files -n python%{python3_pkgversion}-azure-cosmosdb-table
 %{python3_sitelib}/azure/cosmosdb/table
 %{python3_sitelib}/azure_cosmosdb_table-*.dist-info/
 
 
-%files data-nspkg
+%files -n python%{python3_pkgversion}-azure-data-nspkg
 %{python3_sitelib}/azure_data_nspkg-*.dist-info/
 %{python3_sitelib}/azure/data/__init__.py
 %{python3_sitelib}/azure/data/__pycache__/__init__*
 
 
-%files datalake-store
+%files -n python%{python3_pkgversion}-azure-datalake-store
 %{python3_sitelib}/azure/datalake/store
 %{python3_sitelib}/azure_datalake_store-*.dist-info/
 %{python3_sitelib}/azure/datalake/__init__.py
 %{python3_sitelib}/azure/datalake/__pycache__/__init__*
 
 
-%files digitaltwins-core
+%files -n python%{python3_pkgversion}-azure-digitaltwins-core
 %{python3_sitelib}/azure/digitaltwins/core
 %{python3_sitelib}/azure_digitaltwins_core-*.dist-info/
 
 
-%files digitaltwins-nspkg
+%files -n python%{python3_pkgversion}-azure-digitaltwins-nspkg
 %{python3_sitelib}/azure_digitaltwins_nspkg-*.dist-info/
 %{python3_sitelib}/azure/digitaltwins/__init__.py
 %{python3_sitelib}/azure/digitaltwins/__pycache__/__init__*
 
 
-%files eventgrid
+%files -n python%{python3_pkgversion}-azure-eventgrid
 %{python3_sitelib}/azure/eventgrid
 %{python3_sitelib}/azure_eventgrid-*.dist-info/
 
 
-%files eventhub
+%files -n python%{python3_pkgversion}-azure-eventhub
 %{python3_sitelib}/azure/eventhub
 %{python3_sitelib}/azure_eventhub-*.dist-info/
 
 
-%files graphrbac
+%files -n python%{python3_pkgversion}-azure-graphrbac
 %{python3_sitelib}/azure/graphrbac
 %{python3_sitelib}/azure_graphrbac-*.dist-info/
 
 
-%files identity
+%files -n python%{python3_pkgversion}-azure-identity
 %{python3_sitelib}/azure/identity
 %{python3_sitelib}/azure_identity-*.dist-info/
 
 
-%files iot-device
+%files -n python%{python3_pkgversion}-azure-iot-device
 %{python3_sitelib}/azure/iot/device
 %{python3_sitelib}/azure_iot_device-*.dist-info/
 
 
-%files iot-hub
+%files -n python%{python3_pkgversion}-azure-iot-hub
 %{python3_sitelib}/azure/iot/hub
 %{python3_sitelib}/azure_iot_hub-*.dist-info/
 
 
-%files keyvault
+%files -n python%{python3_pkgversion}-azure-keyvault
 %{python3_sitelib}/azure/keyvault
 %{python3_sitelib}/azure_keyvault-*.dist-info/
 
 
-%files keyvault-certificates
+%files -n python%{python3_pkgversion}-azure-keyvault-certificates
 %{python3_sitelib}/azure/keyvault/certificates
 %{python3_sitelib}/azure_keyvault_certificates-*.dist-info/
 
 
-%files keyvault-keys
+%files -n python%{python3_pkgversion}-azure-keyvault-keys
 %{python3_sitelib}/azure/keyvault/keys
 %{python3_sitelib}/azure_keyvault_keys-*.dist-info/
 
 
-%files keyvault-nspkg
+%files -n python%{python3_pkgversion}-azure-keyvault-nspkg
 %{python3_sitelib}/azure_keyvault_nspkg-*.dist-info/
 
 
-%files keyvault-secrets
+%files -n python%{python3_pkgversion}-azure-keyvault-secrets
 %{python3_sitelib}/azure/keyvault/secrets
 %{python3_sitelib}/azure_keyvault_secrets-*.dist-info/
 
 
-%files kusto-data
+%files -n python%{python3_pkgversion}-azure-kusto-data
 %{python3_sitelib}/azure/kusto/data
 %{python3_sitelib}/azure_kusto_data-*.dist-info/
 %{python3_sitelib}/azure/kusto/__init__.py
@@ -2169,147 +2169,147 @@ rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 %{python3_sitelib}/azure_kusto_data-*.pth
 
 
-%files loganalytics
+%files -n python%{python3_pkgversion}-azure-loganalytics
 %{python3_sitelib}/azure/loganalytics
 %{python3_sitelib}/azure_loganalytics-*.dist-info/
 
 
-%files mgmt-advisor
+%files -n python%{python3_pkgversion}-azure-mgmt-advisor
 %{python3_sitelib}/azure/mgmt/advisor
 %{python3_sitelib}/azure_mgmt_advisor-*.dist-info/
 
 
-%files mgmt-alertsmanagement
+%files -n python%{python3_pkgversion}-azure-mgmt-alertsmanagement
 %{python3_sitelib}/azure/mgmt/alertsmanagement
 %{python3_sitelib}/azure_mgmt_alertsmanagement-*.dist-info/
 
 
-%files mgmt-apimanagement
+%files -n python%{python3_pkgversion}-azure-mgmt-apimanagement
 %{python3_sitelib}/azure/mgmt/apimanagement
 %{python3_sitelib}/azure_mgmt_apimanagement-*.dist-info/
 
 
-%files mgmt-appconfiguration
+%files -n python%{python3_pkgversion}-azure-mgmt-appconfiguration
 %{python3_sitelib}/azure/mgmt/appconfiguration
 %{python3_sitelib}/azure_mgmt_appconfiguration-*.dist-info/
 
 
-%files mgmt-applicationinsights
+%files -n python%{python3_pkgversion}-azure-mgmt-applicationinsights
 %{python3_sitelib}/azure/mgmt/applicationinsights
 %{python3_sitelib}/azure_mgmt_applicationinsights-*.dist-info/
 
 
-%files mgmt-appplatform
+%files -n python%{python3_pkgversion}-azure-mgmt-appplatform
 %{python3_sitelib}/azure/mgmt/appplatform
 %{python3_sitelib}/azure_mgmt_appplatform-*.dist-info/
 
 
-%files mgmt-attestation
+%files -n python%{python3_pkgversion}-azure-mgmt-attestation
 %{python3_sitelib}/azure/mgmt/attestation
 %{python3_sitelib}/azure_mgmt_attestation-*.dist-info/
 
 
-%files mgmt-authorization
+%files -n python%{python3_pkgversion}-azure-mgmt-authorization
 %{python3_sitelib}/azure/mgmt/authorization
 %{python3_sitelib}/azure_mgmt_authorization-*.dist-info/
 
 
-%files mgmt-automation
+%files -n python%{python3_pkgversion}-azure-mgmt-automation
 %{python3_sitelib}/azure/mgmt/automation
 %{python3_sitelib}/azure_mgmt_automation-*.dist-info/
 
 
-%files mgmt-avs
+%files -n python%{python3_pkgversion}-azure-mgmt-avs
 %{python3_sitelib}/azure/mgmt/avs
 %{python3_sitelib}/azure_mgmt_avs-*.dist-info/
 
 
-%files mgmt-azurestack
+%files -n python%{python3_pkgversion}-azure-mgmt-azurestack
 %{python3_sitelib}/azure/mgmt/azurestack
 %{python3_sitelib}/azure_mgmt_azurestack-*.dist-info/
 
 
-%files mgmt-azurestackhci
+%files -n python%{python3_pkgversion}-azure-mgmt-azurestackhci
 %{python3_sitelib}/azure/mgmt/azurestackhci
 %{python3_sitelib}/azure_mgmt_azurestackhci-*.dist-info/
 
 
-%files mgmt-batch
+%files -n python%{python3_pkgversion}-azure-mgmt-batch
 %{python3_sitelib}/azure/mgmt/batch
 %{python3_sitelib}/azure_mgmt_batch-*.dist-info/
 
 
-%files mgmt-batchai
+%files -n python%{python3_pkgversion}-azure-mgmt-batchai
 %{python3_sitelib}/azure/mgmt/batchai
 %{python3_sitelib}/azure_mgmt_batchai-*.dist-info/
 
 
-%files mgmt-billing
+%files -n python%{python3_pkgversion}-azure-mgmt-billing
 %{python3_sitelib}/azure/mgmt/billing
 %{python3_sitelib}/azure_mgmt_billing-*.dist-info/
 
 
-%files mgmt-botservice
+%files -n python%{python3_pkgversion}-azure-mgmt-botservice
 %{python3_sitelib}/azure/mgmt/botservice
 %{python3_sitelib}/azure_mgmt_botservice-*.dist-info/
 
 
-%files mgmt-cdn
+%files -n python%{python3_pkgversion}-azure-mgmt-cdn
 %{python3_sitelib}/azure/mgmt/cdn
 %{python3_sitelib}/azure_mgmt_cdn-*.dist-info/
 
 
-%files mgmt-cognitiveservices
+%files -n python%{python3_pkgversion}-azure-mgmt-cognitiveservices
 %{python3_sitelib}/azure/mgmt/cognitiveservices
 %{python3_sitelib}/azure_mgmt_cognitiveservices-*.dist-info/
 
 
-%files mgmt-commerce
+%files -n python%{python3_pkgversion}-azure-mgmt-commerce
 %{python3_sitelib}/azure/mgmt/commerce
 %{python3_sitelib}/azure_mgmt_commerce-*.dist-info/
 
 
-%files mgmt-common
+%files -n python%{python3_pkgversion}-azure-mgmt-common
 %{python3_sitelib}/azure/mgmt/common
 %{python3_sitelib}/azure_mgmt_common-*.dist-info/
 
 
-%files mgmt-communication
+%files -n python%{python3_pkgversion}-azure-mgmt-communication
 %{python3_sitelib}/azure/mgmt/communication
 %{python3_sitelib}/azure_mgmt_communication-*.dist-info/
 
 
-%files mgmt-compute
+%files -n python%{python3_pkgversion}-azure-mgmt-compute
 %{python3_sitelib}/azure/mgmt/compute
 %{python3_sitelib}/azure_mgmt_compute-*.dist-info/
 
 
-%files mgmt-confluent
+%files -n python%{python3_pkgversion}-azure-mgmt-confluent
 %{python3_sitelib}/azure/mgmt/confluent
 %{python3_sitelib}/azure_mgmt_confluent-*.dist-info/
 
 
-%files mgmt-consumption
+%files -n python%{python3_pkgversion}-azure-mgmt-consumption
 %{python3_sitelib}/azure/mgmt/consumption
 %{python3_sitelib}/azure_mgmt_consumption-*.dist-info/
 
 
-%files mgmt-containerinstance
+%files -n python%{python3_pkgversion}-azure-mgmt-containerinstance
 %{python3_sitelib}/azure/mgmt/containerinstance
 %{python3_sitelib}/azure_mgmt_containerinstance-*.dist-info/
 
 
-%files mgmt-containerregistry
+%files -n python%{python3_pkgversion}-azure-mgmt-containerregistry
 %{python3_sitelib}/azure/mgmt/containerregistry
 %{python3_sitelib}/azure_mgmt_containerregistry-*.dist-info/
 
 
-%files mgmt-containerservice
+%files -n python%{python3_pkgversion}-azure-mgmt-containerservice
 %{python3_sitelib}/azure/mgmt/containerservice
 %{python3_sitelib}/azure_mgmt_containerservice-*.dist-info/
 
 
-%files mgmt-core
+%files -n python%{python3_pkgversion}-azure-mgmt-core
 %{python3_sitelib}/azure/mgmt/core
 %{python3_sitelib}/azure_mgmt_core-*.dist-info/
 %{python3_sitelib}/azure/__init__.py
@@ -2318,513 +2318,513 @@ rm -rf %{buildroot}%{python3_sitelib}/{doc,samples,tests}
 %{python3_sitelib}/azure/mgmt/__pycache__/__init__*
 
 
-%files mgmt-cosmosdb
+%files -n python%{python3_pkgversion}-azure-mgmt-cosmosdb
 %{python3_sitelib}/azure/mgmt/cosmosdb
 %{python3_sitelib}/azure_mgmt_cosmosdb-*.dist-info/
 %{python3_sitelib}/azure/cosmosdb/__init__.py
 %{python3_sitelib}/azure/cosmosdb/__pycache__/__init__*
 
 
-%files mgmt-costmanagement
+%files -n python%{python3_pkgversion}-azure-mgmt-costmanagement
 %{python3_sitelib}/azure/mgmt/costmanagement
 %{python3_sitelib}/azure_mgmt_costmanagement-*.dist-info/
 
 
-%files mgmt-customproviders
+%files -n python%{python3_pkgversion}-azure-mgmt-customproviders
 %{python3_sitelib}/azure/mgmt/customproviders
 %{python3_sitelib}/azure_mgmt_customproviders-*.dist-info/
 
 
-%files mgmt-databox
+%files -n python%{python3_pkgversion}-azure-mgmt-databox
 %{python3_sitelib}/azure/mgmt/databox
 %{python3_sitelib}/azure_mgmt_databox-*.dist-info/
 
 
-%files mgmt-databoxedge
+%files -n python%{python3_pkgversion}-azure-mgmt-databoxedge
 %{python3_sitelib}/azure/mgmt/databoxedge
 %{python3_sitelib}/azure_mgmt_databoxedge-*.dist-info/
 %{python3_sitelib}/azure/mgmt/datab
 
 
-%files mgmt-databricks
+%files -n python%{python3_pkgversion}-azure-mgmt-databricks
 %{python3_sitelib}/azure/mgmt/databricks
 %{python3_sitelib}/azure_mgmt_databricks-*.dist-info/
 
 
-%files mgmt-datadog
+%files -n python%{python3_pkgversion}-azure-mgmt-datadog
 %{python3_sitelib}/azure/mgmt/datadog
 %{python3_sitelib}/azure_mgmt_datadog-*.dist-info/
 
 
-%files mgmt-datafactory
+%files -n python%{python3_pkgversion}-azure-mgmt-datafactory
 %{python3_sitelib}/azure/mgmt/datafactory
 %{python3_sitelib}/azure_mgmt_datafactory-*.dist-info/
 
 
-%files mgmt-datalake-analytics
+%files -n python%{python3_pkgversion}-azure-mgmt-datalake-analytics
 %{python3_sitelib}/azure/mgmt/datalake/analytics
 %{python3_sitelib}/azure_mgmt_datalake_analytics-*.dist-info/
 %{python3_sitelib}/azure/mgmt/datalake/__init__.py
 %{python3_sitelib}/azure/mgmt/datalake/__pycache__/__init__*
 
 
-%files mgmt-datalake-nspkg
+%files -n python%{python3_pkgversion}-azure-mgmt-datalake-nspkg
 %{python3_sitelib}/azure_mgmt_datalake_nspkg-*.dist-info/
 
 
-%files mgmt-datalake-store
+%files -n python%{python3_pkgversion}-azure-mgmt-datalake-store
 %{python3_sitelib}/azure/mgmt/datalake/store
 %{python3_sitelib}/azure_mgmt_datalake_store-*.dist-info/
 
 
-%files mgmt-datamigration
+%files -n python%{python3_pkgversion}-azure-mgmt-datamigration
 %{python3_sitelib}/azure/mgmt/datamigration
 %{python3_sitelib}/azure_mgmt_datamigration-*.dist-info/
 
 
-%files mgmt-datashare
+%files -n python%{python3_pkgversion}-azure-mgmt-datashare
 %{python3_sitelib}/azure/mgmt/datashare
 %{python3_sitelib}/azure_mgmt_datashare-*.dist-info/
 
 
-%files mgmt-deploymentmanager
+%files -n python%{python3_pkgversion}-azure-mgmt-deploymentmanager
 %{python3_sitelib}/azure/mgmt/deploymentmanager
 %{python3_sitelib}/azure_mgmt_deploymentmanager-*.dist-info/
 
 
-%files mgmt-devspaces
+%files -n python%{python3_pkgversion}-azure-mgmt-devspaces
 %{python3_sitelib}/azure/mgmt/devspaces
 %{python3_sitelib}/azure_mgmt_devspaces-*.dist-info/
 
 
-%files mgmt-devtestlabs
+%files -n python%{python3_pkgversion}-azure-mgmt-devtestlabs
 %{python3_sitelib}/azure/mgmt/devtestlabs
 %{python3_sitelib}/azure_mgmt_devtestlabs-*.dist-info/
 
 
-%files mgmt-digitaltwins
+%files -n python%{python3_pkgversion}-azure-mgmt-digitaltwins
 %{python3_sitelib}/azure/mgmt/digitaltwins
 %{python3_sitelib}/azure_mgmt_digitaltwins-*.dist-info/
 
 
-%files mgmt-dns
+%files -n python%{python3_pkgversion}-azure-mgmt-dns
 %{python3_sitelib}/azure/mgmt/dns
 %{python3_sitelib}/azure_mgmt_dns-*.dist-info/
 
 
-%files mgmt-edgegateway
+%files -n python%{python3_pkgversion}-azure-mgmt-edgegateway
 %{python3_sitelib}/azure/mgmt/edgegateway
 %{python3_sitelib}/azure_mgmt_edgegateway-*.dist-info/
 
 
-%files mgmt-eventgrid
+%files -n python%{python3_pkgversion}-azure-mgmt-eventgrid
 %{python3_sitelib}/azure/mgmt/eventgrid
 %{python3_sitelib}/azure_mgmt_eventgrid-*.dist-info/
 
 
-%files mgmt-eventhub
+%files -n python%{python3_pkgversion}-azure-mgmt-eventhub
 %{python3_sitelib}/azure/mgmt/eventhub
 %{python3_sitelib}/azure_mgmt_eventhub-*.dist-info/
 
 
-%files mgmt-frontdoor
+%files -n python%{python3_pkgversion}-azure-mgmt-frontdoor
 %{python3_sitelib}/azure/mgmt/frontdoor
 %{python3_sitelib}/azure_mgmt_frontdoor-*.dist-info/
 
 
-%files mgmt-hanaonazure
+%files -n python%{python3_pkgversion}-azure-mgmt-hanaonazure
 %{python3_sitelib}/azure/mgmt/hanaonazure
 %{python3_sitelib}/azure_mgmt_hanaonazure-*.dist-info/
 
 
-%files mgmt-hdinsight
+%files -n python%{python3_pkgversion}-azure-mgmt-hdinsight
 %{python3_sitelib}/azure/mgmt/hdinsight
 %{python3_sitelib}/azure_mgmt_hdinsight-*.dist-info/
 
 
-%files mgmt-healthcareapis
+%files -n python%{python3_pkgversion}-azure-mgmt-healthcareapis
 %{python3_sitelib}/azure/mgmt/healthcareapis
 %{python3_sitelib}/azure_mgmt_healthcareapis-*.dist-info/
 
 
-%files mgmt-hybridcompute
+%files -n python%{python3_pkgversion}-azure-mgmt-hybridcompute
 %{python3_sitelib}/azure/mgmt/hybridcompute
 %{python3_sitelib}/azure_mgmt_hybridcompute-*.dist-info/
 
 
-%files mgmt-hybridkubernetes
+%files -n python%{python3_pkgversion}-azure-mgmt-hybridkubernetes
 %{python3_sitelib}/azure/mgmt/hybridkubernetes
 %{python3_sitelib}/azure_mgmt_hybridkubernetes-*.dist-info/
 
 
-%files mgmt-imagebuilder
+%files -n python%{python3_pkgversion}-azure-mgmt-imagebuilder
 %{python3_sitelib}/azure/mgmt/imagebuilder
 %{python3_sitelib}/azure_mgmt_imagebuilder-*.dist-info/
 
 
-%files mgmt-iotcentral
+%files -n python%{python3_pkgversion}-azure-mgmt-iotcentral
 %{python3_sitelib}/azure/mgmt/iotcentral
 %{python3_sitelib}/azure_mgmt_iotcentral-*.dist-info/
 
 
-%files mgmt-iothub
+%files -n python%{python3_pkgversion}-azure-mgmt-iothub
 %{python3_sitelib}/azure/mgmt/iothub
 %{python3_sitelib}/azure_mgmt_iothub-*.dist-info/
 
 
-%files mgmt-iothubprovisioningservices
+%files -n python%{python3_pkgversion}-azure-mgmt-iothubprovisioningservices
 %{python3_sitelib}/azure/mgmt/iothubprovisioningservices
 %{python3_sitelib}/azure_mgmt_iothubprovisioningservices-*.dist-info/
 
 
-%files mgmt-keyvault
+%files -n python%{python3_pkgversion}-azure-mgmt-keyvault
 %{python3_sitelib}/azure/mgmt/keyvault
 %{python3_sitelib}/azure_mgmt_keyvault-*.dist-info/
 
 
-%files mgmt-kusto
+%files -n python%{python3_pkgversion}-azure-mgmt-kusto
 %{python3_sitelib}/azure/mgmt/kusto
 %{python3_sitelib}/azure_mgmt_kusto-*.dist-info/
 
 
-%files mgmt-labservices
+%files -n python%{python3_pkgversion}-azure-mgmt-labservices
 %{python3_sitelib}/azure/mgmt/labservices
 %{python3_sitelib}/azure_mgmt_labservices-*.dist-info/
 
 
-%files mgmt-loganalytics
+%files -n python%{python3_pkgversion}-azure-mgmt-loganalytics
 %{python3_sitelib}/azure/mgmt/loganalytics
 %{python3_sitelib}/azure_mgmt_loganalytics-*.dist-info/
 
 
-%files mgmt-logic
+%files -n python%{python3_pkgversion}-azure-mgmt-logic
 %{python3_sitelib}/azure/mgmt/logic
 %{python3_sitelib}/azure_mgmt_logic-*.dist-info/
 
 
-%files mgmt-machinelearningcompute
+%files -n python%{python3_pkgversion}-azure-mgmt-machinelearningcompute
 %{python3_sitelib}/azure/mgmt/machinelearningcompute
 %{python3_sitelib}/azure_mgmt_machinelearningcompute-*.dist-info/
 
 
-%files mgmt-machinelearningservices
+%files -n python%{python3_pkgversion}-azure-mgmt-machinelearningservices
 %{python3_sitelib}/azure/mgmt/machinelearningservices
 %{python3_sitelib}/azure_mgmt_machinelearningservices-*.dist-info/
 
 
-%files mgmt-maintenance
+%files -n python%{python3_pkgversion}-azure-mgmt-maintenance
 %{python3_sitelib}/azure/mgmt/maintenance
 %{python3_sitelib}/azure_mgmt_maintenance-*.dist-info/
 
 
-%files mgmt-managedservices
+%files -n python%{python3_pkgversion}-azure-mgmt-managedservices
 %{python3_sitelib}/azure/mgmt/managedservices
 %{python3_sitelib}/azure_mgmt_managedservices-*.dist-info/
 
 
-%files mgmt-managementgroups
+%files -n python%{python3_pkgversion}-azure-mgmt-managementgroups
 %{python3_sitelib}/azure/mgmt/managementgroups
 %{python3_sitelib}/azure_mgmt_managementgroups-*.dist-info/
 
 
-%files mgmt-managementpartner
+%files -n python%{python3_pkgversion}-azure-mgmt-managementpartner
 %{python3_sitelib}/azure/mgmt/managementpartner
 %{python3_sitelib}/azure_mgmt_managementpartner-*.dist-info/
 
 
-%files mgmt-maps
+%files -n python%{python3_pkgversion}-azure-mgmt-maps
 %{python3_sitelib}/azure/mgmt/maps
 %{python3_sitelib}/azure_mgmt_maps-*.dist-info/
 
 
-%files mgmt-marketplaceordering
+%files -n python%{python3_pkgversion}-azure-mgmt-marketplaceordering
 %{python3_sitelib}/azure/mgmt/marketplaceordering
 %{python3_sitelib}/azure_mgmt_marketplaceordering-*.dist-info/
 
 
-%files mgmt-media
+%files -n python%{python3_pkgversion}-azure-mgmt-media
 %{python3_sitelib}/azure/mgmt/media
 %{python3_sitelib}/azure_mgmt_media-*.dist-info/
 
 
-%files mgmt-mixedreality
+%files -n python%{python3_pkgversion}-azure-mgmt-mixedreality
 %{python3_sitelib}/azure/mgmt/mixedreality
 %{python3_sitelib}/azure_mgmt_mixedreality-*.dist-info/
 
 
-%files mgmt-monitor
+%files -n python%{python3_pkgversion}-azure-mgmt-monitor
 %{python3_sitelib}/azure/mgmt/monitor
 %{python3_sitelib}/azure_mgmt_monitor-*.dist-info/
 
 
-%files mgmt-msi
+%files -n python%{python3_pkgversion}-azure-mgmt-msi
 %{python3_sitelib}/azure/mgmt/msi
 %{python3_sitelib}/azure_mgmt_msi-*.dist-info/
 
 
-%files mgmt-netapp
+%files -n python%{python3_pkgversion}-azure-mgmt-netapp
 %{python3_sitelib}/azure/mgmt/netapp
 %{python3_sitelib}/azure_mgmt_netapp-*.dist-info/
 
 
-%files mgmt-network
+%files -n python%{python3_pkgversion}-azure-mgmt-network
 %{python3_sitelib}/azure/mgmt/network
 %{python3_sitelib}/azure_mgmt_network-*.dist-info/
 
 
-%files mgmt-notificationhubs
+%files -n python%{python3_pkgversion}-azure-mgmt-notificationhubs
 %{python3_sitelib}/azure/mgmt/notificationhubs
 %{python3_sitelib}/azure_mgmt_notificationhubs-*.dist-info/
 
 
-%files mgmt-nspkg
+%files -n python%{python3_pkgversion}-azure-mgmt-nspkg
 %{python3_sitelib}/azure_mgmt_nspkg-*.dist-info/
 
 
-%files mgmt-operationsmanagement
+%files -n python%{python3_pkgversion}-azure-mgmt-operationsmanagement
 %{python3_sitelib}/azure/mgmt/operationsmanagement
 %{python3_sitelib}/azure_mgmt_operationsmanagement-*.dist-info/
 
 
-%files mgmt-peering
+%files -n python%{python3_pkgversion}-azure-mgmt-peering
 %{python3_sitelib}/azure/mgmt/peering
 %{python3_sitelib}/azure_mgmt_peering-*.dist-info/
 
 
-%files mgmt-policyinsights
+%files -n python%{python3_pkgversion}-azure-mgmt-policyinsights
 %{python3_sitelib}/azure/mgmt/policyinsights
 %{python3_sitelib}/azure_mgmt_policyinsights-*.dist-info/
 
 
-%files mgmt-powerbidedicated
+%files -n python%{python3_pkgversion}-azure-mgmt-powerbidedicated
 %{python3_sitelib}/azure/mgmt/powerbidedicated
 %{python3_sitelib}/azure_mgmt_powerbidedicated-*.dist-info/
 
 
-%files mgmt-powerbiembedded
+%files -n python%{python3_pkgversion}-azure-mgmt-powerbiembedded
 %{python3_sitelib}/azure/mgmt/powerbiembedded
 %{python3_sitelib}/azure_mgmt_powerbiembedded-*.dist-info/
 
 
-%files mgmt-privatedns
+%files -n python%{python3_pkgversion}-azure-mgmt-privatedns
 %{python3_sitelib}/azure/mgmt/privatedns
 %{python3_sitelib}/azure_mgmt_privatedns-*.dist-info/
 
 
-%files mgmt-rdbms
+%files -n python%{python3_pkgversion}-azure-mgmt-rdbms
 %{python3_sitelib}/azure/mgmt/rdbms
 %{python3_sitelib}/azure_mgmt_rdbms-*.dist-info/
 
 
-%files mgmt-recoveryservices
+%files -n python%{python3_pkgversion}-azure-mgmt-recoveryservices
 %{python3_sitelib}/azure/mgmt/recoveryservices
 %{python3_sitelib}/azure_mgmt_recoveryservices-*.dist-info/
 
 
-%files mgmt-recoveryservicesbackup
+%files -n python%{python3_pkgversion}-azure-mgmt-recoveryservicesbackup
 %{python3_sitelib}/azure/mgmt/recoveryservicesbackup
 %{python3_sitelib}/azure_mgmt_recoveryservicesbackup-*.dist-info/
 
 
-%files mgmt-redhatopenshift
+%files -n python%{python3_pkgversion}-azure-mgmt-redhatopenshift
 %{python3_sitelib}/azure/mgmt/redhatopenshift
 %{python3_sitelib}/azure_mgmt_redhatopenshift-*.dist-info/
 
 
-%files mgmt-redis
+%files -n python%{python3_pkgversion}-azure-mgmt-redis
 %{python3_sitelib}/azure/mgmt/redis
 %{python3_sitelib}/azure_mgmt_redis-*.dist-info/
 
 
-%files mgmt-relay
+%files -n python%{python3_pkgversion}-azure-mgmt-relay
 %{python3_sitelib}/azure/mgmt/relay
 %{python3_sitelib}/azure_mgmt_relay-*.dist-info/
 
 
-%files mgmt-reservations
+%files -n python%{python3_pkgversion}-azure-mgmt-reservations
 %{python3_sitelib}/azure/mgmt/reservations
 %{python3_sitelib}/azure_mgmt_reservations-*.dist-info/
 
 
-%files mgmt-resource
+%files -n python%{python3_pkgversion}-azure-mgmt-resource
 %{python3_sitelib}/azure/mgmt/resource
 %{python3_sitelib}/azure_mgmt_resource-*.dist-info/
 
 
-%files mgmt-resourcegraph
+%files -n python%{python3_pkgversion}-azure-mgmt-resourcegraph
 %{python3_sitelib}/azure/mgmt/resourcegraph
 %{python3_sitelib}/azure_mgmt_resourcegraph-*.dist-info/
 
 
-%files mgmt-resourcemover
+%files -n python%{python3_pkgversion}-azure-mgmt-resourcemover
 %{python3_sitelib}/azure/mgmt/resourcemover
 %{python3_sitelib}/azure_mgmt_resourcemover-*.dist-info/
 
 
-%files mgmt-scheduler
+%files -n python%{python3_pkgversion}-azure-mgmt-scheduler
 %{python3_sitelib}/azure/mgmt/scheduler
 %{python3_sitelib}/azure_mgmt_scheduler-*.dist-info/
 
 
-%files mgmt-search
+%files -n python%{python3_pkgversion}-azure-mgmt-search
 %{python3_sitelib}/azure/mgmt/search
 %{python3_sitelib}/azure_mgmt_search-*.dist-info/
 
 
-%files mgmt-security
+%files -n python%{python3_pkgversion}-azure-mgmt-security
 %{python3_sitelib}/azure/mgmt/security
 %{python3_sitelib}/azure_mgmt_security-*.dist-info/
 
 
-%files mgmt-serialconsole
+%files -n python%{python3_pkgversion}-azure-mgmt-serialconsole
 %{python3_sitelib}/azure/mgmt/serialconsole
 %{python3_sitelib}/azure_mgmt_serialconsole-*.dist-info/
 
 
-%files mgmt-servermanager
+%files -n python%{python3_pkgversion}-azure-mgmt-servermanager
 %{python3_sitelib}/azure/mgmt/servermanager
 %{python3_sitelib}/azure_mgmt_servermanager-*.dist-info/
 
 
-%files mgmt-servicebus
+%files -n python%{python3_pkgversion}-azure-mgmt-servicebus
 %{python3_sitelib}/azure/mgmt/servicebus
 %{python3_sitelib}/azure_mgmt_servicebus-*.dist-info/
 
 
-%files mgmt-sql
+%files -n python%{python3_pkgversion}-azure-mgmt-sql
 %{python3_sitelib}/azure/mgmt/sql
 %{python3_sitelib}/azure_mgmt_sql-*.dist-info/
 
 
-%files mgmt-sqlvirtualmachine
+%files -n python%{python3_pkgversion}-azure-mgmt-sqlvirtualmachine
 %{python3_sitelib}/azure/mgmt/sqlvirtualmachine
 %{python3_sitelib}/azure_mgmt_sqlvirtualmachine-*.dist-info/
 
 
-%files mgmt-storage
+%files -n python%{python3_pkgversion}-azure-mgmt-storage
 %{python3_sitelib}/azure/mgmt/storage
 %{python3_sitelib}/azure_mgmt_storage-*.dist-info/
 
 
-%files mgmt-storagecache
+%files -n python%{python3_pkgversion}-azure-mgmt-storagecache
 %{python3_sitelib}/azure/mgmt/storagecache
 %{python3_sitelib}/azure_mgmt_storagecache-*.dist-info/
 
 
-%files mgmt-storageimportexport
+%files -n python%{python3_pkgversion}-azure-mgmt-storageimportexport
 %{python3_sitelib}/azure/mgmt/storageimportexport
 %{python3_sitelib}/azure_mgmt_storageimportexport-*.dist-info/
 
 
-%files mgmt-storagesync
+%files -n python%{python3_pkgversion}-azure-mgmt-storagesync
 %{python3_sitelib}/azure/mgmt/storagesync
 %{python3_sitelib}/azure_mgmt_storagesync-*.dist-info/
 
 
-%files mgmt-subscription
+%files -n python%{python3_pkgversion}-azure-mgmt-subscription
 %{python3_sitelib}/azure/mgmt/subscription
 %{python3_sitelib}/azure_mgmt_subscription-*.dist-info/
 
 
-%files mgmt-support
+%files -n python%{python3_pkgversion}-azure-mgmt-support
 %{python3_sitelib}/azure/mgmt/support
 %{python3_sitelib}/azure_mgmt_support-*.dist-info/
 
 
-%files mgmt-synapse
+%files -n python%{python3_pkgversion}-azure-mgmt-synapse
 %{python3_sitelib}/azure/mgmt/synapse
 %{python3_sitelib}/azure_mgmt_synapse-*.dist-info/
 
 
-%files mgmt-timeseriesinsights
+%files -n python%{python3_pkgversion}-azure-mgmt-timeseriesinsights
 %{python3_sitelib}/azure/mgmt/timeseriesinsights
 %{python3_sitelib}/azure_mgmt_timeseriesinsights-*.dist-info/
 
 
-%files mgmt-trafficmanager
+%files -n python%{python3_pkgversion}-azure-mgmt-trafficmanager
 %{python3_sitelib}/azure/mgmt/trafficmanager
 %{python3_sitelib}/azure_mgmt_trafficmanager-*.dist-info/
 
 
-%files mgmt-vmwarecloudsimple
+%files -n python%{python3_pkgversion}-azure-mgmt-vmwarecloudsimple
 %{python3_sitelib}/azure/mgmt/vmwarecloudsimple
 %{python3_sitelib}/azure_mgmt_vmwarecloudsimple-*.dist-info/
 
 
-%files mgmt-web
+%files -n python%{python3_pkgversion}-azure-mgmt-web
 %{python3_sitelib}/azure/mgmt/web
 %{python3_sitelib}/azure_mgmt_web-*.dist-info/
 
 
-%files nspkg
+%files -n python%{python3_pkgversion}-azure-nspkg
 %{python3_sitelib}/azure_nspkg-*.dist-info/
 
 
-%files search-documents
+%files -n python%{python3_pkgversion}-azure-search-documents
 %{python3_sitelib}/azure/search/documents
 %{python3_sitelib}/azure_search_documents-*.dist-info/
 
 
-%files search-nspkg
+%files -n python%{python3_pkgversion}-azure-search-nspkg
 %{python3_sitelib}/azure_search_nspkg-*.dist-info/
 
 
-%files servicebus
+%files -n python%{python3_pkgversion}-azure-servicebus
 %{python3_sitelib}/azure/servicebus
 %{python3_sitelib}/azure_servicebus-*.dist-info/
 
 
-%files servicefabric
+%files -n python%{python3_pkgversion}-azure-servicefabric
 %{python3_sitelib}/azure/servicefabric
 %{python3_sitelib}/azure_servicefabric-*.dist-info/
 
 
-%files storage-blob
+%files -n python%{python3_pkgversion}-azure-storage-blob
 %{python3_sitelib}/azure/storage/blob
 %{python3_sitelib}/azure_storage_blob-*.dist-info/
 
 
-%files storage-common
+%files -n python%{python3_pkgversion}-azure-storage-common
 %{python3_sitelib}/azure/storage/common
 %{python3_sitelib}/azure_storage_common-*.dist-info/
 
 
-%files storage-file
+%files -n python%{python3_pkgversion}-azure-storage-file
 %{python3_sitelib}/azure/storage/file
 %{python3_sitelib}/azure_storage_file-*.dist-info/
 
 
-%files storage-file-datalake
+%files -n python%{python3_pkgversion}-azure-storage-file-datalake
 %{python3_sitelib}/azure/storage/filedatalake
 %{python3_sitelib}/azure_storage_file_datalake-*.dist-info/
 
 
-%files storage-file-share
+%files -n python%{python3_pkgversion}-azure-storage-file-share
 %{python3_sitelib}/azure/storage/fileshare
 %{python3_sitelib}/azure_storage_file_share-*.dist-info/
 
 
-%files storage-nspkg
+%files -n python%{python3_pkgversion}-azure-storage-nspkg
 %{python3_sitelib}/azure_storage_nspkg-*.dist-info/
 %{python3_sitelib}/azure/storage/__init__.py
 %{python3_sitelib}/azure/storage/__pycache__/__init__*
 
 
-%files storage-queue
+%files -n python%{python3_pkgversion}-azure-storage-queue
 %{python3_sitelib}/azure/storage/queue
 %{python3_sitelib}/azure_storage_queue-*.dist-info/
 
 
-%files synapse
+%files -n python%{python3_pkgversion}-azure-synapse
 %{python3_sitelib}/azure/synapse
 %{python3_sitelib}/azure_synapse-*.dist-info/
 
 
-%files synapse-nspkg
+%files -n python%{python3_pkgversion}-azure-synapse-nspkg
 %{python3_sitelib}/azure_synapse_nspkg-*.dist-info/
 
 
-%files template
+%files -n python%{python3_pkgversion}-azure-template
 %{python3_sitelib}/azure/template
 %{python3_sitelib}/azure_template-*.dist-info/
 
