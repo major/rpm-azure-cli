@@ -1,14 +1,13 @@
-%global srcname azure-mgmt-core
+%global srcname azure-mgmt-authorization
 
 Name:           python-%{srcname}
-Version:        1.2.2
+Version:        0.61.0
 Release:        1%{?dist}
-Summary:        Azure Management Core Library
+Summary:        Microsoft Azure Authorization Management Client Library for Python
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
-Patch0:         python-azure-core-version-fix.patch
 
 BuildArch:      noarch
 
@@ -18,7 +17,7 @@ BuildRequires:  pyproject-rpm-macros
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Azure Management Core Library}
+Microsoft Azure Authorization Management Client Library for Python}
 
 %description %{_description}
 
@@ -49,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.2.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.61.0-1
 - First package.
