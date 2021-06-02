@@ -1,13 +1,14 @@
+%{?!python3_pkgversion:%global python3_pkgversion 3}
+
 # tests are enabled by default
 %bcond_without tests
 
-%global srcname avro
+%global         srcname     avro
 
 Name:           python-%{srcname}
 Version:        1.10.2
 Release:        1%{?dist}
-Summary:        Apache Avro™ is a data serialization system
-
+Summary:        Apache Avro is a data serialization system
 License:        ASL 2.0
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
@@ -15,8 +16,6 @@ Source0:        %pypi_source
 BuildArch:      noarch
 
 BuildRequires:  python%{python3_pkgversion}-devel
-BuildRequires:  pyproject-rpm-macros
-
 
 %if %{with tests}
 BuildRequires:  python%{python3_pkgversion}-pytest
@@ -24,7 +23,7 @@ BuildRequires:  python%{python3_pkgversion}-pytest
 
 
 %global _description %{expand:
-Apache Avro™ is a data serialization system.
+Apache Avro is a data serialization system.
 
 Avro provides:
 
@@ -46,8 +45,9 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -p1 -n %{srcname}-%{version}
+%autosetup -n %{srcname}-%{version}
 
+# Remove shebang from non-executable python files.
 PYTHON_FILES=$(find . -name '*.py')
 for lib in $PYTHON_FILES; do
  sed '1{\@^#!/usr/bin/env python@d}' $lib > $lib.new &&
@@ -56,17 +56,12 @@ for lib in $PYTHON_FILES; do
 done
 
 
-%generate_buildrequires
-%pyproject_buildrequires -r
-
-
 %build
-%pyproject_wheel
+%py3_build
 
 
 %install
-%pyproject_install
-%pyproject_save_files avro
+%py3_install
 
 
 %if %{with tests}
@@ -76,8 +71,10 @@ done
 %endif
 
 
-%files -n python%{python3_pkgversion}-%{srcname} -f %{pyproject_files}
+%files -n python%{python3_pkgversion}-%{srcname}
 %license %{python3_sitelib}/avro/LICENSE
+%{python3_sitelib}/avro
+%{python3_sitelib}/avro-*.egg-info
 %{_bindir}/avro
 
 %changelog

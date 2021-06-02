@@ -24,7 +24,6 @@ BuildRequires:  python%{python3_pkgversion}-jmespath
 BuildRequires:  python%{python3_pkgversion}-pytest
 BuildRequires:  python%{python3_pkgversion}-pyyaml
 BuildRequires:  python%{python3_pkgversion}-tabulate
-BuildRequires:  python%{python3_pkgversion}-vcrpy
 %endif
 
 %global _description %{expand:
