@@ -27,7 +27,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -p1 -n %{srcname}-%{version}
+%autosetup -n %{srcname}-%{version}
 
 
 %generate_buildrequires
