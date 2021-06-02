@@ -48,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.2.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.1.27-1
 - First package.

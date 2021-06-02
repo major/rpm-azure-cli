@@ -1,13 +1,13 @@
-%global srcname azure-mgmt-authorization
+%global srcname applicationinsights
 
 Name:           python-%{srcname}
-Version:        0.61.0
+Version:        0.11.10
 Release:        1%{?dist}
-Summary:        Microsoft Azure Authorization Management Client Library for Python
+Summary:        This project extends the Application Insights API surface to support Python
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
-Source0:        %{pypi_source %{srcname} %{version} zip}
+Source0:        %{pypi_source %{srcname} %{version}}
 
 BuildArch:      noarch
 
@@ -17,7 +17,7 @@ BuildRequires:  pyproject-rpm-macros
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Microsoft Azure Authorization Management Client Library for Python}
+This project extends the Application Insights API surface to support Python}
 
 %description %{_description}
 
@@ -41,12 +41,12 @@ Summary:        %{summary}
 
 %install
 %pyproject_install
-%pyproject_save_files azure
+%pyproject_save_files applicationinsights
 
 
 %files -n python%{python3_pkgversion}-%{srcname} -f %{pyproject_files}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.61.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.11.10-1
 - First package.

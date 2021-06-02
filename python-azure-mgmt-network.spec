@@ -1,9 +1,9 @@
-%global srcname azure-mgmt-batchai
+%global srcname azure-mgmt-network
 
 Name:           python-%{srcname}
-Version:        2.0.0
+Version:        19.0.0
 Release:        1%{?dist}
-Summary:        Microsoft Azure Batch AI Management Client Library for Python
+Summary:        Microsoft Azure Network Management Client Library for Python
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
@@ -17,7 +17,7 @@ BuildRequires:  pyproject-rpm-macros
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Microsoft Azure Batch AI Management Client Library for Python}
+Microsoft Azure Network Management Client Library for Python}
 
 %description %{_description}
 
@@ -48,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.0.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 19.0.0-1
 - First package.

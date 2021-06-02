@@ -1,13 +1,13 @@
-%global srcname azure-mgmt-apimanagement
+%global srcname azure-cli-telemetry
 
 Name:           python-%{srcname}
-Version:        0.2.0
+Version:        1.0.6
 Release:        1%{?dist}
-Summary:        Microsoft Azure API Management Client Library for Python
+Summary:        Microsoft Azure CLI Telemetry Package
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
-Source0:        %{pypi_source %{srcname} %{version} zip}
+Source0:        %{pypi_source %{srcname} %{version}}
 
 BuildArch:      noarch
 
@@ -17,7 +17,7 @@ BuildRequires:  pyproject-rpm-macros
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Microsoft Azure API Management Client Library for Python}
+Microsoft Azure CLI Telemetry Package}
 
 %description %{_description}
 
@@ -48,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.0.6-1
 - First package.

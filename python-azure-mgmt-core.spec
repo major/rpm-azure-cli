@@ -8,7 +8,7 @@ Summary:        Azure Management Core Library
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
-Patch0:         python-azure-core-version-fix.patch
+# Patch0:         python-azure-core-version-fix.patch
 
 BuildArch:      noarch
 
