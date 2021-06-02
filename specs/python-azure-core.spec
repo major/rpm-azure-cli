@@ -1,10 +1,11 @@
-%global srcname azure-core
+%{?!python3_pkgversion:%global python3_pkgversion 3}
+
+%global         srcname     azure-core
 
 Name:           python-%{srcname}
 Version:        1.14.0
 Release:        1%{?dist}
 Summary:        Azure Core shared client library for Python
-
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
@@ -12,7 +13,6 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python%{python3_pkgversion}-devel
-BuildRequires:  pyproject-rpm-macros
 
 Obsoletes:      python3-azure-sdk < 5.0.1
 
@@ -32,19 +32,17 @@ Summary:        %{summary}
 %autosetup -n %{srcname}-%{version}
 
 
-%generate_buildrequires
-%pyproject_buildrequires -r
-
-
 %build
-%pyproject_wheel
+%py3_build
+
 
 %install
-%pyproject_install
-%pyproject_save_files azure
+%py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname} -f %{pyproject_files}
+%files -n python%{python3_pkgversion}-%{srcname}
+%{python3_sitelib}/azure/core
+%{python3_sitelib}/azure_core-*.egg-info
 
 
 %changelog

@@ -1,15 +1,14 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-%global         srcname     azure-mgmt-core
+%global         srcname     azure-mgmt-iothub
 
 Name:           python-%{srcname}
-Version:        1.2.2
+Version:        2.0.0
 Release:        1%{?dist}
-Summary:        Azure Management Core Library
+Summary:        Microsoft Azure IoTHub Management Client Library for Python
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
-# Patch0:         python-azure-core-version-fix.patch
 
 BuildArch:      noarch
 
@@ -18,7 +17,7 @@ BuildRequires:  python%{python3_pkgversion}-devel
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Azure Management Core Library}
+Microsoft Azure IoTHub Management Client Library for Python}
 
 %description %{_description}
 
@@ -42,10 +41,10 @@ Summary:        %{summary}
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
-%{python3_sitelib}/azure/mgmt/core
-%{python3_sitelib}/azure_mgmt_core-*.egg-info
+%{python3_sitelib}/azure/mgmt/iothub
+%{python3_sitelib}/azure_mgmt_iothub-*.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.2.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.0.0-1
 - First package.
