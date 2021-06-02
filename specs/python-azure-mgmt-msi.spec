@@ -1,11 +1,11 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-%global         srcname     azure-mgmt-iothubprovisioningservices
+%global         srcname     azure-mgmt-msi
 
 Name:           python-%{srcname}
 Version:        0.2.0
 Release:        1%{?dist}
-Summary:        Microsoft Azure IoTHub Provisioning Services Client Library for Python
+Summary:        Microsoft Azure MSI Management Client Library for Python
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
@@ -17,7 +17,7 @@ BuildRequires:  python%{python3_pkgversion}-devel
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Microsoft Azure IoTHub Provisioning Services Client Library for Python}
+Microsoft Azure MSI Management Client Library for Python}
 
 %description %{_description}
 
@@ -47,11 +47,12 @@ rm -f \
     %{buildroot}%{python3_sitelib}/azure/mgmt/__init__.py \
     %{buildroot}%{python3_sitelib}/azure/mgmt/__pycache__/__init__.cpython-39*.pyc
 
+
 %files -n python%{python3_pkgversion}-%{srcname}
-%{python3_sitelib}/azure/mgmt/iothubprovisioningservices
-%{python3_sitelib}/azure_mgmt_iothubprovisioningservices-*.egg-info
+%{python3_sitelib}/azure/mgmt/msi
+%{python3_sitelib}/azure_mgmt_msi-*.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.0
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.0-1
 - First package.
