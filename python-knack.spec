@@ -1,20 +1,16 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-# tests are enabled by default
-%bcond_without tests
-
 %global         srcname     knack
-%global         forgeurl    https://github.com/microsoft/%{srcname}
-Version:        0.8.2
-%global         tag         v%{version}
-%global         distprefix  %{nil}
-%forgemeta
+
+# tests are enabled by default
+%bcond_without  tests
 
 Name:           python-%{srcname}
+Version:        0.8.2
 Release:        1%{?dist}
 Summary:        A Command-Line Interface framework
 License:        MIT
-URL:            https://github.com/microsoft/knack
+URL:            https://github.com/microsoft/%{srcname}
 Source0:        %pypi_source
 
 BuildArch:      noarch
@@ -44,7 +40,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -p1 -n %{srcname}-%{version}
+%autosetup -n %{srcname}-%{version}
 
 # Use unittest's mock that is built in for Python 3.x.
 # Upstream PR made to fix this: (thanks, Ben!)
