@@ -1,9 +1,9 @@
-%global srcname azure-core
+%global srcname azure-mgmt-advisor
 
 Name:           python-%{srcname}
-Version:        1.14.0
+Version:        2.0.1
 Release:        1%{?dist}
-Summary:        Azure Core shared client library for Python
+Summary:        Microsoft Azure SDK for Python
 
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
@@ -17,7 +17,7 @@ BuildRequires:  pyproject-rpm-macros
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Azure Core shared client library for Python}
+Microsoft Azure SDK for Python}
 
 %description %{_description}
 
@@ -29,7 +29,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -n %{srcname}-%{version}
+%autosetup -p0 -n %{srcname}-%{version}
 
 
 %generate_buildrequires
@@ -48,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.14.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.0.1-1
 - First package.
