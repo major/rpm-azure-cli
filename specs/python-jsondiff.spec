@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     jsondiff
 
 Name:           python-%{srcname}
@@ -12,9 +10,7 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
-
-Obsoletes:      python3-azure-sdk < 5.0.1
+BuildRequires:  python3-devel
 
 %global _description %{expand:
 Diff JSON and JSON-like structures in Python}
@@ -22,10 +18,10 @@ Diff JSON and JSON-like structures in Python}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -40,11 +36,11 @@ Summary:        %{summary}
 %py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
-%{python3_sitelib}/jsondiff
-%{python3_sitelib}/jsondiff-*.egg-info
+%files -n python3-%{srcname}
+%{python3_sitelib}/%{srcname}
+%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 %{_bindir}/jdiff
-%{_bindir}/jsondiff
+%{_bindir}/%{srcname}
 
 
 %changelog
