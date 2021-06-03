@@ -35,5 +35,7 @@ jobs:
 
       - name: Mock build
         run: |
+          mkdir results
           mock -r /etc/mock/fedora-rawhide-x86_64.cfg \
+            --resultdir results \
             --postinstall $(ls ~/rpmbuild/SRPMS/*.src.rpm)
