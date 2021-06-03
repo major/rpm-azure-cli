@@ -3,7 +3,7 @@
 Name:           python-%{srcname}
 Version:        0.1.25
 Release:        1%{?dist}
-Summary:        Python wrapper around the VSTS APIs
+Summary:        Azure DevOps Python API
 License:        ASL 2.0
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
@@ -14,7 +14,8 @@ BuildRequires:  python3-devel
 
 
 %global _description %{expand:
-Python wrapper around the VSTS APIs}
+This repository contains Python APIs for interacting with and managing Azure
+DevOps. These APIs power the Azure DevOps Extension for Azure CLI.}
 
 %description %{_description}
 
