@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     azure-datalake-store
 
 Name:           python-%{srcname}
@@ -12,7 +10,7 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 Obsoletes:      python3-azure-sdk < 5.0.1
 
@@ -22,10 +20,10 @@ Azure Data Lake Store Filesystem Client Library for Python}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -47,9 +45,9 @@ rm -f %{buildroot}%{python3_sitelib}/azure/datalake/__init__.py \
     %{buildroot}%{python3_sitelib}/azure/datalake/__pycache__/__init__.cpython-*.pyc
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/azure/datalake/store
-%{python3_sitelib}/azure_datalake_store-*.egg-info
+%{python3_sitelib}/azure_datalake_store-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

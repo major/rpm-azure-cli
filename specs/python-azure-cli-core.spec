@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     azure-cli-core
 
 Name:           python-%{srcname}
@@ -12,7 +10,7 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 %global _description %{expand:
 Microsoft Azure Command-Line Tools Core Module}
@@ -20,10 +18,10 @@ Microsoft Azure Command-Line Tools Core Module}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -44,9 +42,9 @@ sed -i "s/'PyJWT==1.7.1',$/'PyJWT>=1.7.1',/" setup.py
 %py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/azure/cli/core
-%{python3_sitelib}/azure_cli_core-*.egg-info
+%{python3_sitelib}/azure_cli_core-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

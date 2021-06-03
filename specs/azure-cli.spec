@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     azure-cli
 
 Name:           %{srcname}
@@ -12,7 +10,7 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 %description
 Microsoft Azure Command-Line Tools
@@ -52,7 +50,7 @@ rm -f %{buildroot}%{_bindir}/az.completion.sh
 
 %files
 %{python3_sitelib}/azure/cli/
-%{python3_sitelib}/azure_cli-*.egg-info
+%{python3_sitelib}/azure_cli-%{version}-py%{python3_version}.egg-info
 %{_bindir}/az
 %{_sysconfdir}/bash-completion.d/%{srcname}
 

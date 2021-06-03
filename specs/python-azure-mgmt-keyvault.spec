@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     azure-mgmt-keyvault
 
 Name:           python-%{srcname}
@@ -12,7 +10,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 Obsoletes:      python3-azure-sdk < 5.0.1
 
@@ -22,10 +20,10 @@ Microsoft Azure Keyvault Management Client Library for Python}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -41,9 +39,9 @@ Summary:        %{summary}
 
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/azure/mgmt/keyvault
-%{python3_sitelib}/azure_mgmt_keyvault-*.egg-info
+%{python3_sitelib}/azure_mgmt_keyvault-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
