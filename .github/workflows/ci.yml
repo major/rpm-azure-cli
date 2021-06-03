@@ -32,3 +32,8 @@ jobs:
             rpmdev-spectool -R -g $SPEC
           done
           rpmbuild -bs *.spec
+
+      - name: Mock build
+        run: |
+          mock -r /etc/mock/fedora-rawhide-x86_64.cfg \
+            --postinstall $(ls ~/rpmbuild/SRPMS/*.src.rpm)
