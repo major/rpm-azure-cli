@@ -14,7 +14,7 @@ if [ -f specs/python-${PKG_NAME}.spec ]; then
 fi
 
 tee specs/python-${PKG_NAME}.spec > /dev/null << EOF
-%{?!python3_pkgversion:%global python3_pkgversion 3}
+
 
 %global         srcname     ${PKG_NAME}
 
@@ -28,7 +28,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 Obsoletes:      python3-azure-sdk < 5.0.1
 
@@ -38,10 +38,10 @@ ${SUMMARY}}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -56,9 +56,9 @@ Summary:        %{summary}
 %py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/${PKG_NAME_SLASHED}
-%{python3_sitelib}/${PKG_NAME_UNDERSCORED}-*.egg-info
+%{python3_sitelib}/${PKG_NAME_UNDERSCORED}-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
