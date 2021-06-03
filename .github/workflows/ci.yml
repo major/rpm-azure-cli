@@ -40,7 +40,7 @@ jobs:
             --resultdir results \
             --postinstall $(ls ~/rpmbuild/SRPMS/*.src.rpm)
 
-      - name: Archive code coverage results
+      - name: Upload RPM artifacts
         uses: actions/upload-artifact@v2
         with:
           name: azure-rpms
