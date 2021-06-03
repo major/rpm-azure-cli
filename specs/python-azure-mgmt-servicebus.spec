@@ -3,7 +3,7 @@
 %global         srcname     azure-mgmt-servicebus
 
 Name:           python-%{srcname}
-Version:        0.6.0
+Version:        6.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Service Bus Management Client Library for Python
 License:        MIT
@@ -46,5 +46,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.6.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 6.0.0-1
 - First package.

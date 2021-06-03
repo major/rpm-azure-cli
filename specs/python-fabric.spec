@@ -1,14 +1,14 @@
 %{?!python3_pkgversion:%global python3_pkgversion 3}
 
-%global         srcname     azure-mgmt-security
+%global         srcname     fabric
 
 Name:           python-%{srcname}
-Version:        0.6.0
+Version:        2.6.0
 Release:        1%{?dist}
-Summary:        Microsoft Azure Security Center Management Client Library for Python
+Summary:        High level SSH command execution
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
-Source0:        %{pypi_source %{srcname} %{version} zip}
+Source0:        %pypi_source
 
 BuildArch:      noarch
 
@@ -17,7 +17,11 @@ BuildRequires:  python%{python3_pkgversion}-devel
 Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
-Microsoft Azure Security Center Management Client Library for Python}
+Fabric is a high level Python (2.7, 3.4+) library designed to execute shell
+commands remotely over SSH, yielding useful Python objects in return. It builds
+on top of Invoke (subprocess command execution and command-line features) and
+Paramiko (SSH protocol implementation), extending their APIs to complement one
+another and provide additional functionality.}
 
 %description %{_description}
 
@@ -41,10 +45,11 @@ Summary:        %{summary}
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
-%{python3_sitelib}/azure/mgmt/security
-%{python3_sitelib}/azure_mgmt_security-*.egg-info
+%{python3_sitelib}/fabric
+%{python3_sitelib}/fabric-*.egg-info
+%{_bindir}/fab
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.6.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.6.0-1
 - First package.

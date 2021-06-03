@@ -25,6 +25,17 @@ Microsoft Azure Command-Line Tools
 %prep
 %autosetup -n %{srcname}-%{version}
 
+# Allow for newer versions of antlr4-python3-runtime.
+sed -i "s/antlr4-python3-runtime~=4.7.2/antlr4-python3-runtime>=4.7.2/" setup.py
+
+# Fedora's urllib3 already includes secure connections and is newer than
+# azure-cli's requirements allow.
+sed -i "s/urllib3\[secure\]>=1.25.9,<2.0.0/urllib3>=1.25.9/" setup.py
+
+# Fedora's urllib3 already includes secure connections and is newer than
+# azure-cli's requirements allow.
+sed -i "s/urllib3\[secure\]>=1.25.9,<2.0.0/urllib3>=1.25.9/" setup.py
+
 
 %build
 %py3_build
