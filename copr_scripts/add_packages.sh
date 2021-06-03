@@ -14,6 +14,6 @@ for SPEC in $SPECS; do
         --subdir specs \
         --spec $SPEC_BARE \
         --name $PKG_NAME \
-        --webhook-rebuild on \
+        --webhook-rebuild off \
         azure-cli
 done
