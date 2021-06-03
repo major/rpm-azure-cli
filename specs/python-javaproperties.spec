@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     javaproperties
 
 # tests are enabled by default
@@ -15,12 +13,12 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 %if %{with tests}
-BuildRequires:  python%{python3_pkgversion}-dateutil
-BuildRequires:  python%{python3_pkgversion}-pytest
-BuildRequires:  python%{python3_pkgversion}-pytest-mock
+BuildRequires:  python3-dateutil
+BuildRequires:  python3-pytest
+BuildRequires:  python3-pytest-mock
 %endif
 
 %global _description %{expand:
@@ -29,10 +27,10 @@ Read & write Java .properties files}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -65,9 +63,9 @@ export TZ=EST5EDT,M3.2.0,M11.1.0
 %endif
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/%{srcname}
-%{python3_sitelib}/%{srcname}-*.egg-info
+%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
