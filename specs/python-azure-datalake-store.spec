@@ -44,7 +44,7 @@ rm -rf %{buildroot}%{python3_sitelib}/samples
 
 # Clean up files left at the base package directory.
 rm -f %{buildroot}%{python3_sitelib}/azure/datalake/__init__.py \
-    %{buildroot}%{python3_sitelib}/azure/datalake/__pycache__/__init__.cpython-39*.pyc
+    %{buildroot}%{python3_sitelib}/azure/datalake/__pycache__/__init__.cpython-*.pyc
 
 
 %files -n python%{python3_pkgversion}-%{srcname}

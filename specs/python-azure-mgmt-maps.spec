@@ -43,9 +43,9 @@ Summary:        %{summary}
 # do not belong in this package.
 rm -f \
     %{buildroot}%{python3_sitelib}/azure/__init__.py \
-    %{buildroot}%{python3_sitelib}/azure/__pycache__/__init__.cpython-39*.pyc \
+    %{buildroot}%{python3_sitelib}/azure/__pycache__/__init__.cpython-*.pyc \
     %{buildroot}%{python3_sitelib}/azure/mgmt/__init__.py \
-    %{buildroot}%{python3_sitelib}/azure/mgmt/__pycache__/__init__.cpython-39*.pyc
+    %{buildroot}%{python3_sitelib}/azure/mgmt/__pycache__/__init__.cpython-*.pyc
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
