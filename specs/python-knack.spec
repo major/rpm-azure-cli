@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     knack
 
 # tests are enabled by default
@@ -15,15 +13,15 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 %if %{with tests}
-BuildRequires:  python%{python3_pkgversion}-argcomplete
-BuildRequires:  python%{python3_pkgversion}-colorama
-BuildRequires:  python%{python3_pkgversion}-jmespath
-BuildRequires:  python%{python3_pkgversion}-pytest
-BuildRequires:  python%{python3_pkgversion}-pyyaml
-BuildRequires:  python%{python3_pkgversion}-tabulate
+BuildRequires:  python3-argcomplete
+BuildRequires:  python3-colorama
+BuildRequires:  python3-jmespath
+BuildRequires:  python3-pytest
+BuildRequires:  python3-pyyaml
+BuildRequires:  python3-tabulate
 %endif
 
 %global _description %{expand:
@@ -32,10 +30,10 @@ A Command-Line Interface framework}
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -62,11 +60,11 @@ sed -i 's/^import mock/from unittest import mock/' tests/*.py
 %endif
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %license LICENSE
 %doc README.rst
-%{python3_sitelib}/knack
-%{python3_sitelib}/knack-*.egg-info
+%{python3_sitelib}/%{srcname}
+%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
