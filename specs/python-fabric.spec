@@ -34,7 +34,12 @@ Summary:        %{summary}
 %prep
 %autosetup -n %{srcname}-%{version}
 
+# Upstream is supporting Python 2 + 3 at this time, so they rely on mock.
 sed -i 's/from mock/from unittest.mock/' tests/*.py fabric/testing/*.py
+
+# Pathlib is included in python3, so there's no need to bring in pathlib2, which
+# is currently a dead project.
+sed -i 's/, "pathlib2"//' setup.py
 
 %build
 %py3_build

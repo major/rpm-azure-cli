@@ -3,7 +3,7 @@
 %global         srcname     azure-mgmt-maps
 
 Name:           python-%{srcname}
-Version:        0.2.0
+Version:        0.1.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Maps Client Library for Python
 License:        MIT
@@ -39,6 +39,13 @@ Summary:        %{summary}
 %install
 %py3_install
 
+# Some __init__.py files are left hanging around in azure and azure/mgmt which
+# do not belong in this package.
+rm -f \
+    %{buildroot}%{python3_sitelib}/azure/__init__.py \
+    %{buildroot}%{python3_sitelib}/azure/__pycache__/__init__.cpython-39*.pyc \
+    %{buildroot}%{python3_sitelib}/azure/mgmt/__init__.py \
+    %{buildroot}%{python3_sitelib}/azure/mgmt/__pycache__/__init__.cpython-39*.pyc
 
 
 %files -n python%{python3_pkgversion}-%{srcname}
@@ -47,5 +54,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.1.0-1
 - First package.
