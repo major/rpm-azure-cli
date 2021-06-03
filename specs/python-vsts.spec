@@ -1,5 +1,3 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     vsts
 
 Name:           python-%{srcname}
@@ -12,18 +10,19 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python3-devel
 
 
 %global _description %{expand:
 Python wrapper around the VSTS APIs}
+
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -38,9 +37,9 @@ Summary:        %{summary}
 %py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
-%{python3_sitelib}/vsts
-%{python3_sitelib}/vsts-*.egg-info
+%files -n python3-%{srcname}
+%{python3_sitelib}/%{srcname}
+%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 
 %changelog
 * Wed Jun 02 2021 Major Hayden <major@mhtx.net> - 0.1.25-1
