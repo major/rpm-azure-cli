@@ -14,8 +14,6 @@ BuildArch:      noarch
 
 BuildRequires:  python%{python3_pkgversion}-devel
 
-Obsoletes:      python3-azure-sdk < 5.0.1
-
 %global _description %{expand:
 Microsoft Azure CLI Telemetry Package}
 

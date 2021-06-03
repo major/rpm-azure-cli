@@ -3,7 +3,7 @@
 %global         srcname     azure-mgmt-eventgrid
 
 Name:           python-%{srcname}
-Version:        3.0.0rc9
+Version:        9.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure EventGrid Management Client Library for Python
 License:        MIT
@@ -46,5 +46,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 3.0.0rc9-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 9.0.0-1
 - First package.
