@@ -1,31 +1,29 @@
-%{?!python3_pkgversion:%global python3_pkgversion 3}
-
 %global         srcname     vsts-cd-manager
 
 Name:           python-%{srcname}
 Version:        1.0.2
 Release:        1%{?dist}
-Summary:        Python wrapper around some of the VSTS APIs
+Summary:        Visual Studio Team Services Continuous Delivery Manager
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
 
 BuildArch:      noarch
 
-BuildRequires:  python%{python3_pkgversion}-devel
-
-Obsoletes:      python3-azure-sdk < 5.0.1
+BuildRequires:  python3-devel
 
 %global _description %{expand:
-Python wrapper around some of the VSTS APIs}
+This package provides the class ContinuousDeliveryManager and supporting
+classes. This CD manager class allows the caller to manage Azure Continuous
+Delivery pipelines that are maintained within a VSTS account.}
 
 %description %{_description}
 
 
-%package -n python%{python3_pkgversion}-%{srcname}
+%package -n python3-%{srcname}
 Summary:        %{summary}
 
-%description -n python%{python3_pkgversion}-%{srcname} %{_description}
+%description -n python3-%{srcname} %{_description}
 
 
 %prep
@@ -40,12 +38,12 @@ Summary:        %{summary}
 %py3_install
 
 
-%files -n python%{python3_pkgversion}-%{srcname}
+%files -n python3-%{srcname}
 %{python3_sitelib}/aex_accounts
 %{python3_sitelib}/continuous_delivery
 %{python3_sitelib}/vsts_cd_manager
 %{python3_sitelib}/vsts_info_provider
-%{python3_sitelib}/vsts_cd_manager-*.egg-info
+%{python3_sitelib}/vsts_cd_manager-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
