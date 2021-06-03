@@ -18,6 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
 
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with:
+          path: |
+            /root/rpmbuild/SOURCES
+          key: ${{ runner.os }}-${{ hashFiles('specs/*') }}
+
       - name: Build source RPMs
         run: |
           cd specs
