@@ -1,0 +1,510 @@
+From e6ca97c85a94770df623760d4a9e78253355174a Mon Sep 17 00:00:00 2001
+From: "Benjamin A. Beasley" <code@musicinmybrain.net>
+Date: Thu, 3 Jun 2021 19:28:59 -0400
+Subject: [PATCH 1/2] Use standard library unittest.mock on Python 3.6 and
+ later
+
+---
+ dev-requirements.txt       | 2 +-
+ fabric/testing/base.py     | 6 +++++-
+ fabric/testing/fixtures.py | 7 ++++++-
+ setup.py                   | 2 +-
+ tests/config.py            | 6 +++++-
+ tests/conftest.py          | 6 +++++-
+ tests/connection.py        | 6 +++++-
+ tests/executor.py          | 7 ++++++-
+ tests/group.py             | 7 ++++++-
+ tests/main.py              | 6 +++++-
+ tests/runners.py           | 7 ++++++-
+ tests/task.py              | 7 ++++++-
+ tests/transfer.py          | 7 ++++++-
+ tests/util.py              | 7 ++++++-
+ 14 files changed, 69 insertions(+), 14 deletions(-)
+
+diff --git a/dev-requirements.txt b/dev-requirements.txt
+index 7874f621c..cc7c5b182 100644
+--- a/dev-requirements.txt
++++ b/dev-requirements.txt
+@@ -10,7 +10,7 @@ pytest==3.2.5
+ pytest-cov==2.5.1
+ six==1.10.0
+ # Mock for test mocking
+-mock==2.0.0
++mock==2.0.0; python_version < "3.6"
+ # Linting!
+ flake8==3.6.0
+ # Coverage!
+diff --git a/fabric/testing/base.py b/fabric/testing/base.py
+index 223b7b13a..750b328a5 100644
+--- a/fabric/testing/base.py
++++ b/fabric/testing/base.py
+@@ -18,9 +18,13 @@
+ from itertools import chain, repeat
+ from io import BytesIO
+ import os
++from sys import version_info
+ 
+ try:
+-    from mock import Mock, PropertyMock, call, patch, ANY
++    if version_info >= (3, 6):
++        from unittest.mock import Mock, PropertyMock, call, patch, ANY
++    else:
++        from mock import Mock, PropertyMock, call, patch, ANY
+ except ImportError:
+     import warnings
+ 
+diff --git a/fabric/testing/fixtures.py b/fabric/testing/fixtures.py
+index fdfd514be..0ecd478be 100644
+--- a/fabric/testing/fixtures.py
++++ b/fabric/testing/fixtures.py
+@@ -15,9 +15,14 @@
+ .. versionadded:: 2.1
+ """
+ 
++from sys import version_info
++
+ try:
+     from pytest import fixture
+-    from mock import patch, Mock
++    if version_info >= (3, 6):
++        from unittest.mock import patch, Mock
++    else:
++        from mock import patch, Mock
+ except ImportError:
+     import warnings
+ 
+diff --git a/setup.py b/setup.py
+index a8126b5ad..33e551550 100644
+--- a/setup.py
++++ b/setup.py
+@@ -55,7 +55,7 @@
+     open("README.rst").read()
+ )
+ 
+-testing_deps = ["mock>=2.0.0,<3.0"]
++testing_deps = ['mock>=2.0.0,<3.0; python_version < "3.6"']
+ pytest_deps = ["pytest>=3.2.5,<4.0"]
+ 
+ setuptools.setup(
+diff --git a/tests/config.py b/tests/config.py
+index c28d72c44..d7971cce4 100644
+--- a/tests/config.py
++++ b/tests/config.py
+@@ -1,5 +1,6 @@
+ import errno
+ from os.path import join, expanduser
++from sys import version_info
+ 
+ from paramiko.config import SSHConfig
+ from invoke.vendor.lexicon import Lexicon
+@@ -7,7 +8,10 @@
+ from fabric import Config
+ from fabric.util import get_local_user
+ 
+-from mock import patch, call
++if version_info >= (3, 6):
++    from unittest.mock import patch, call
++else:
++    from mock import patch, call
+ 
+ from _util import support, faux_v1_env
+ 
+diff --git a/tests/conftest.py b/tests/conftest.py
+index e665f3dea..bd5631aba 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -2,10 +2,14 @@
+ from fabric.testing.fixtures import client, remote, sftp, sftp_objs, transfer
+ 
+ from os.path import isfile, expanduser
++from sys import version_info
+ 
+ from pytest import fixture
+ 
+-from mock import patch
++if version_info >= (3, 6):
++    from unittest.mock import patch
++else:
++    from mock import patch
+ 
+ 
+ # TODO: does this want to end up in the public fixtures module too?
+diff --git a/tests/connection.py b/tests/connection.py
+index f41958d35..16d8db3bf 100644
+--- a/tests/connection.py
++++ b/tests/connection.py
+@@ -7,9 +7,13 @@
+ import errno
+ from os.path import join
+ import socket
++from sys import version_info
+ import time
+ 
+-from mock import patch, Mock, call, ANY
++if version_info >= (3, 6):
++    from unittest.mock import patch, Mock, call, ANY
++else:
++    from mock import patch, Mock, call, ANY
+ from paramiko.client import SSHClient, AutoAddPolicy
+ from paramiko import SSHConfig
+ import pytest  # for mark
+diff --git a/tests/executor.py b/tests/executor.py
+index d0275c182..8fd4d268e 100644
+--- a/tests/executor.py
++++ b/tests/executor.py
+@@ -4,7 +4,12 @@
+ from fabric.executor import ConnectionCall
+ from fabric.exceptions import NothingToDo
+ 
+-from mock import Mock
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import Mock
++else:
++    from mock import Mock
+ from pytest import skip, raises  # noqa
+ 
+ 
+diff --git a/tests/group.py b/tests/group.py
+index 4017017b9..4fb4a4feb 100644
+--- a/tests/group.py
++++ b/tests/group.py
+@@ -1,4 +1,9 @@
+-from mock import Mock, patch, call
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import Mock, patch, call
++else:
++    from mock import Mock, patch, call
+ from pytest import mark, raises
+ 
+ from fabric import Connection, Group, SerialGroup, ThreadingGroup, GroupResult
+diff --git a/tests/main.py b/tests/main.py
+index 82edadbae..c4466e8ef 100644
+--- a/tests/main.py
++++ b/tests/main.py
+@@ -4,11 +4,15 @@
+ 
+ import os
+ import sys
++from sys import version_info
+ import re
+ 
+ from invoke import run
+ from invoke.util import cd
+-from mock import patch
++if version_info >= (3, 6):
++    from unittest.mock import patch
++else:
++    from mock import patch
+ import pytest  # because WHY would you expose @skip normally? -_-
+ from pytest_relaxed import raises
+ 
+diff --git a/tests/runners.py b/tests/runners.py
+index 8938d5345..013e5d460 100644
+--- a/tests/runners.py
++++ b/tests/runners.py
+@@ -3,7 +3,12 @@
+ except ImportError:
+     from six import StringIO
+ 
+-from mock import Mock, patch
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import Mock, patch
++else:
++    from mock import Mock, patch
+ from pytest import skip  # noqa
+ 
+ from invoke import pty_size, Result
+diff --git a/tests/task.py b/tests/task.py
+index a2fa64c9a..381e198c7 100644
+--- a/tests/task.py
++++ b/tests/task.py
+@@ -1,6 +1,11 @@
+ # NOTE: named task.py, not tasks.py, to avoid some occasional pytest weirdness
+ 
+-from mock import Mock
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import Mock
++else:
++    from mock import Mock
+ from pytest import skip  # noqa
+ 
+ import fabric
+diff --git a/tests/transfer.py b/tests/transfer.py
+index 9a89fcea9..d5283bcf6 100644
+--- a/tests/transfer.py
++++ b/tests/transfer.py
+@@ -3,7 +3,12 @@
+ except ImportError:
+     from six import StringIO
+ 
+-from mock import Mock, call, patch
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import Mock, call, patch
++else:
++    from mock import Mock, call, patch
+ from pytest_relaxed import raises
+ from pytest import skip  # noqa
+ from paramiko import SFTPAttributes
+diff --git a/tests/util.py b/tests/util.py
+index 580c26158..2efd24f12 100644
+--- a/tests/util.py
++++ b/tests/util.py
+@@ -2,7 +2,12 @@
+ Tests testing the fabric.util module, not utils for the tests!
+ """
+ 
+-from mock import patch
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import patch
++else:
++    from mock import patch
+ 
+ from fabric.util import get_local_user
+ 
+
+From 7fbf9163b2abd72f13e95f732e4b29f0c841baaf Mon Sep 17 00:00:00 2001
+From: "Benjamin A. Beasley" <code@musicinmybrain.net>
+Date: Thu, 3 Jun 2021 22:09:34 -0400
+Subject: [PATCH 2/2] Put conditional unittest.mock imports last to placate
+ flake8
+
+---
+ tests/config.py     | 4 ++--
+ tests/connection.py | 9 +++++----
+ tests/executor.py   | 3 ++-
+ tests/group.py      | 9 +++++----
+ tests/main.py       | 9 +++++----
+ tests/runners.py    | 9 +++++----
+ tests/task.py       | 9 +++++----
+ tests/transfer.py   | 9 +++++----
+ tests/util.py       | 4 ++--
+ 9 files changed, 36 insertions(+), 29 deletions(-)
+
+diff --git a/tests/config.py b/tests/config.py
+index d7971cce4..93e97c2ca 100644
+--- a/tests/config.py
++++ b/tests/config.py
+@@ -8,13 +8,13 @@
+ from fabric import Config
+ from fabric.util import get_local_user
+ 
++from _util import support, faux_v1_env
++
+ if version_info >= (3, 6):
+     from unittest.mock import patch, call
+ else:
+     from mock import patch, call
+ 
+-from _util import support, faux_v1_env
+-
+ 
+ class Config_:
+     def defaults_to_merger_of_global_defaults(self):
+diff --git a/tests/connection.py b/tests/connection.py
+index 16d8db3bf..f998ce1d6 100644
+--- a/tests/connection.py
++++ b/tests/connection.py
+@@ -10,10 +10,6 @@
+ from sys import version_info
+ import time
+ 
+-if version_info >= (3, 6):
+-    from unittest.mock import patch, Mock, call, ANY
+-else:
+-    from mock import patch, Mock, call, ANY
+ from paramiko.client import SSHClient, AutoAddPolicy
+ from paramiko import SSHConfig
+ import pytest  # for mark
+@@ -30,6 +26,11 @@
+ 
+ from _util import support, faux_v1_env
+ 
++if version_info >= (3, 6):
++    from unittest.mock import patch, Mock, call, ANY
++else:
++    from mock import patch, Mock, call, ANY
++
+ 
+ # Remote is woven in as a config default, so must be patched there
+ remote_path = "fabric.config.Remote"
+diff --git a/tests/executor.py b/tests/executor.py
+index 8fd4d268e..15fe15a0e 100644
+--- a/tests/executor.py
++++ b/tests/executor.py
+@@ -6,11 +6,12 @@
+ 
+ from sys import version_info
+ 
++from pytest import skip, raises  # noqa
++
+ if version_info >= (3, 6):
+     from unittest.mock import Mock
+ else:
+     from mock import Mock
+-from pytest import skip, raises  # noqa
+ 
+ 
+ def _get_executor(hosts_flag=None, hosts_kwarg=None, post=None, remainder=""):
+diff --git a/tests/group.py b/tests/group.py
+index 4fb4a4feb..90700ccc9 100644
+--- a/tests/group.py
++++ b/tests/group.py
+@@ -1,15 +1,16 @@
+ from sys import version_info
+ 
+-if version_info >= (3, 6):
+-    from unittest.mock import Mock, patch, call
+-else:
+-    from mock import Mock, patch, call
+ from pytest import mark, raises
+ 
+ from fabric import Connection, Group, SerialGroup, ThreadingGroup, GroupResult
+ from fabric.group import thread_worker
+ from fabric.exceptions import GroupException
+ 
++if version_info >= (3, 6):
++    from unittest.mock import Mock, patch, call
++else:
++    from mock import Mock, patch, call
++
+ 
+ RUNNER_METHODS = ("run", "sudo")
+ TRANSFER_METHODS = ("put", "get")
+diff --git a/tests/main.py b/tests/main.py
+index c4466e8ef..13c96f5bc 100644
+--- a/tests/main.py
++++ b/tests/main.py
+@@ -9,10 +9,6 @@
+ 
+ from invoke import run
+ from invoke.util import cd
+-if version_info >= (3, 6):
+-    from unittest.mock import patch
+-else:
+-    from mock import patch
+ import pytest  # because WHY would you expose @skip normally? -_-
+ from pytest_relaxed import raises
+ 
+@@ -23,6 +19,11 @@
+ from fabric.testing.base import Session
+ from _util import expect, support, config_file, trap
+ 
++if version_info >= (3, 6):
++    from unittest.mock import patch
++else:
++    from mock import patch
++
+ 
+ # Designate a runtime config file intended for the test environment; it does
+ # things like automatically mute stdin so test harnesses that care about stdin
+diff --git a/tests/runners.py b/tests/runners.py
+index 013e5d460..1cdf96473 100644
+--- a/tests/runners.py
++++ b/tests/runners.py
+@@ -5,16 +5,17 @@
+ 
+ from sys import version_info
+ 
+-if version_info >= (3, 6):
+-    from unittest.mock import Mock, patch
+-else:
+-    from mock import Mock, patch
+ from pytest import skip  # noqa
+ 
+ from invoke import pty_size, Result
+ 
+ from fabric import Config, Connection, Remote
+ 
++if version_info >= (3, 6):
++    from unittest.mock import Mock, patch
++else:
++    from mock import Mock, patch
++
+ 
+ # On most systems this will explode if actually executed as a shell command;
+ # this lets us detect holes in our network mocking.
+diff --git a/tests/task.py b/tests/task.py
+index 381e198c7..317c950a8 100644
+--- a/tests/task.py
++++ b/tests/task.py
+@@ -2,14 +2,15 @@
+ 
+ from sys import version_info
+ 
++from pytest import skip  # noqa
++
++import fabric  # noqa: E402
++from fabric.tasks import ConnectionCall
++
+ if version_info >= (3, 6):
+     from unittest.mock import Mock
+ else:
+     from mock import Mock
+-from pytest import skip  # noqa
+-
+-import fabric
+-from fabric.tasks import ConnectionCall
+ 
+ 
+ class Task_:
+diff --git a/tests/transfer.py b/tests/transfer.py
+index d5283bcf6..fcfa23bd5 100644
+--- a/tests/transfer.py
++++ b/tests/transfer.py
+@@ -5,10 +5,6 @@
+ 
+ from sys import version_info
+ 
+-if version_info >= (3, 6):
+-    from unittest.mock import Mock, call, patch
+-else:
+-    from mock import Mock, call, patch
+ from pytest_relaxed import raises
+ from pytest import skip  # noqa
+ from paramiko import SFTPAttributes
+@@ -16,6 +12,11 @@
+ from fabric import Connection
+ from fabric.transfer import Transfer
+ 
++if version_info >= (3, 6):
++    from unittest.mock import Mock, call, patch
++else:
++    from mock import Mock, call, patch
++
+ 
+ # TODO: pull in all edge/corner case tests from fabric v1
+ 
+diff --git a/tests/util.py b/tests/util.py
+index 2efd24f12..39dc6de4f 100644
+--- a/tests/util.py
++++ b/tests/util.py
+@@ -2,6 +2,8 @@
+ Tests testing the fabric.util module, not utils for the tests!
+ """
+ 
++from fabric.util import get_local_user
++
+ from sys import version_info
+ 
+ if version_info >= (3, 6):
+@@ -9,8 +11,6 @@
+ else:
+     from mock import patch
+ 
+-from fabric.util import get_local_user
+-
+ 
+ # Basically implementation tests, because it's not feasible to do a "real" test
+ # on random platforms (where we have no idea what the actual invoking user is)
