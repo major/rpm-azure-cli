@@ -1,7 +1,9 @@
 %global         srcname     fabric
 
-# tests are enabled by default
-%bcond_without  tests
+# Tests are disabled by default. 😞
+# Enable if https://bugzilla.redhat.com/show_bug.cgi?id=1949502 /
+# https://github.com/bitprophet/pytest-relaxed/issues/12 is resolved:
+%bcond_with     tests
 
 Name:           python-%{srcname}
 Version:        2.6.0
