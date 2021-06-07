@@ -4,7 +4,7 @@ Name:           python-%{srcname}
 Version:        0.1.25
 Release:        1%{?dist}
 Summary:        Azure DevOps Python API
-License:        ASL 2.0
+License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
 
@@ -39,6 +39,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%license LICENSE.txt
 %{python3_sitelib}/%{srcname}
 %{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 

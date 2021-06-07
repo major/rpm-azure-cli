@@ -1,7 +1,7 @@
 From ced931db84ca5a1d3833c6c6fc9f8c11815e462a Mon Sep 17 00:00:00 2001
 From: "Benjamin A. Beasley" <code@musicinmybrain.net>
 Date: Fri, 4 Jun 2021 12:46:06 -0400
-Subject: [PATCH] Finish wrapping invoke.vendor.* imports so standalone
+Subject: [PATCH 3/3] Finish wrapping invoke.vendor.* imports so standalone
  packages can be used
 
 ---

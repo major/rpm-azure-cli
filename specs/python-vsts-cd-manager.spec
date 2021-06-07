@@ -29,6 +29,8 @@ Summary:        %{summary}
 %prep
 %autosetup -n %{srcname}-%{version}
 
+# Fix wrong line endings in the README.rst.
+sed -i 's/\r$//' README.rst
 
 %build
 %py3_build
@@ -39,6 +41,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.rst
 %{python3_sitelib}/aex_accounts
 %{python3_sitelib}/continuous_delivery
 %{python3_sitelib}/vsts_cd_manager

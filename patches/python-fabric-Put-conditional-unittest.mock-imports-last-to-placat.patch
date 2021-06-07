@@ -1,0 +1,35 @@
+From a28e7f759e6f4101a7acf72e7c5b1abbaf946ce7 Mon Sep 17 00:00:00 2001
+From: "Benjamin A. Beasley" <code@musicinmybrain.net>
+Date: Thu, 3 Jun 2021 22:09:34 -0400
+Subject: [PATCH 2/3] Put conditional unittest.mock imports last to placate
+ flake8
+
+---
+ tests/util.py | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/tests/util.py b/tests/util.py
+index 580c2615..39dc6de4 100644
+--- a/tests/util.py
++++ b/tests/util.py
+@@ -2,10 +2,15 @@
+ Tests testing the fabric.util module, not utils for the tests!
+ """
+ 
+-from mock import patch
+-
+ from fabric.util import get_local_user
+ 
++from sys import version_info
++
++if version_info >= (3, 6):
++    from unittest.mock import patch
++else:
++    from mock import patch
++
+ 
+ # Basically implementation tests, because it's not feasible to do a "real" test
+ # on random platforms (where we have no idea what the actual invoking user is)
+-- 
+2.31.1
+

@@ -64,6 +64,8 @@ export TZ=EST5EDT,M3.2.0,M11.1.0
 
 
 %files -n python3-%{srcname}
+%license LICENSE
+%doc README.rst
 %{python3_sitelib}/%{srcname}
 %{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
 
