@@ -25,6 +25,11 @@ jobs:
             ~/rpmbuild/SOURCES
           key: ${{ runner.os }}-${{ hashFiles('specs/*') }}
 
+      - name: Copy extra patches/source into place
+        run: |
+          rpmdev-setuptree
+          cp patches/* sources/* ~/rpmbuild/SOURCES
+
       - name: Build source RPMs
         run: |
           cd specs
