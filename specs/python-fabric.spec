@@ -12,41 +12,38 @@ URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
 # Use built-in unittest.mock in python 3.
 # https://github.com/fabric/fabric/pull/2168
-Patch0:         python-fabric-mock-fix.patch
+Patch0:         python-fabric-Use-standard-library-unittest.mock-on-Python-3.6-and.patch
 # Use built-in pathlib in python 3.
-# https://github.com/fabric/fabric/pull/2169
-Patch1:         python-fabric-pathlib-fix.patch
+# https://github.com/fabric/fabric/pull/2167
+Patch1:         python-fabric-Put-conditional-unittest.mock-imports-last-to-placat.patch
 # Fall back to system modules if vendorized ones do not exist.
 # https://github.com/fabric/fabric/pull/2169
-Patch2:         python-fabric-invoke-fix.patch
+Patch2:         python-fabric-Finish-wrapping-invoke.vendor.-imports-so-standalone.patch
 
 BuildArch:      noarch
 
-# Runtime dependencies upstream assumed would be vendored with invoke, but
-# which we must use standalone
-Requires:       python%{python3_pkgversion}-decorator
-Requires:       python%{python3_pkgversion}-lexicon
-Requires:       python%{python3_pkgversion}-six
-
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-BuildRequires:  help2man
 
-%if %{with tests}
 # Runtime dependencies, needed for testing
 BuildRequires:  python3-invoke
 BuildRequires:  python3-paramiko
-# Extra “pytest” (a superset of extra “testing”)
-BuildRequires:  python3-pytest
-# Missing from setup.py (only in requirements-dev.txt), but still needed for
-# testing:
-BuildRequires:  python3-pytest-relaxed
 # Runtime dependencies upstream assumed would be vendored with invoke, but
 # which we must use standalone
 BuildRequires:  python%{python3_pkgversion}-decorator
 BuildRequires:  python%{python3_pkgversion}-lexicon
 BuildRequires:  python%{python3_pkgversion}-six
+
+
+%if %{with tests}
+# Extra pytest (a superset of extra testing)
+BuildRequires:  python3-pytest
+# Missing from setup.py (only in requirements-dev.txt), but still needed for
+# testing:
+BuildRequires:  python3-pytest-relaxed
 %endif
+
+BuildRequires:  help2man
 
 %global _description %{expand:
 Fabric is a high level Python (2.7, 3.4+) library designed to execute shell
@@ -65,7 +62,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -p0 -n %{srcname}-%{version}
+%autosetup -p1 -n %{srcname}-%{version}
 
 
 %build
@@ -79,7 +76,6 @@ program.run()
 EOF
 chmod +x fab
 PYTHONPATH="${PWD}" help2man --no-info --output fab.1 ./fab
-
 
 %install
 %py3_install
