@@ -11,8 +11,10 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 Obsoletes:      python3-azure-sdk < 5.0.1
+Conflicts:      python3-azure-sdk
 
 %global _description %{expand:
 Microsoft Azure Client Library for Python (Common)}
@@ -39,6 +41,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
 %{python3_sitelib}/azure/common
 %{python3_sitelib}/azure/profiles
 %{python3_sitelib}/azure_common-%{version}-py%{python3_version}.egg-info
