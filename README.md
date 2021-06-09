@@ -13,7 +13,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-cli-core | ⚫ | |
 | python-azure-cli-telemetry | ⚫ | Likely going to skip this one to maintain privacy. |
 | python-azure-common | ⚫ | |
-| python-azure-core | ⚫ | |
+| python-azure-core | 🟡 | [RH BZ 1970073](https://bugzilla.redhat.com/show_bug.cgi?id=1970073) |
 | python-azure-cosmos | ⚫ | |
 | python-azure-datalake-store | ⚫ | |
 | python-azure-devtools | ⚫ | |
