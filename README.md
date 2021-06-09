@@ -91,7 +91,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 - [ ] python-azure-synapse-accesscontrol
 - [ ] python-azure-synapse-artifacts
 - [ ] python-azure-synapse-spark
-- [ ] python-fabric *🪲[RH BZ 1967774](https://bugzilla.redhat.com/show_bug.cgi?id=1967774)*
+- [ ] python-fabric *In progress: [BZ 1967774](https://bugzilla.redhat.com/show_bug.cgi?id=1967774)*
 - [x] [python-javaproperties](https://src.fedoraproject.org/rpms/python-javaproperties)
 - [x] [python-jsondiff](https://src.fedoraproject.org/rpms/python-jsondiff)
 - [x] [python-knack](https://src.fedoraproject.org/rpms/python-knack)
