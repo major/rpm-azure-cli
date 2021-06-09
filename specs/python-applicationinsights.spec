@@ -12,8 +12,6 @@ BuildArch:      noarch
 
 BuildRequires:  python3-devel
 
-Obsoletes:      python3-azure-sdk < 5.0.1
-
 %global _description %{expand:
 This project extends the Application Insights API surface to support Python}
 
@@ -39,6 +37,8 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%license LICENSE.TXT
+%doc README.rst
 %{python3_sitelib}/applicationinsights
 %{python3_sitelib}/applicationinsights-%{version}-py%{python3_version}.egg-info
 

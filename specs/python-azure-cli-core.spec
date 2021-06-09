@@ -7,6 +7,10 @@ Summary:        Microsoft Azure Command-Line Tools Core Module
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
+# Allow for newer versions of PyJWT + cryptography. Also remove the
+# azure-cli-telemetry dependency to avoid sending usage data to Microsoft
+# automatically.
+Patch0:         python-azure-cli-core-requirements-fix.patch
 
 BuildArch:      noarch
 
@@ -25,13 +29,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -n %{srcname}-%{version}
-
-# Remove version cap on cryptography.
-sed -i "s/'cryptography>=3.2,<3.4',$/'cryptography>=3.2',/" setup.py
-
-# Allow for newer versions of PyJWT.
-sed -i "s/'PyJWT==1.7.1',$/'PyJWT>=1.7.1',/" setup.py
+%autosetup -p0 -n %{srcname}-%{version}
 
 
 %build
@@ -43,6 +41,7 @@ sed -i "s/'PyJWT==1.7.1',$/'PyJWT>=1.7.1',/" setup.py
 
 
 %files -n python3-%{srcname}
+%doc README.rst
 %{python3_sitelib}/azure/cli/core
 %{python3_sitelib}/azure_cli_core-%{version}-py%{python3_version}.egg-info
 

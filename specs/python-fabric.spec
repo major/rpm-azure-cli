@@ -1,4 +1,10 @@
 %global         srcname     fabric
+%global         forgeurl    https://github.com/fabric/%{srcname}
+%global         tag         %{version}
+Version:        2.6.0
+%global         distprefix  %{nil}
+%forgemeta
+
 
 # Tests are disabled by default. 😞
 # Enable if https://bugzilla.redhat.com/show_bug.cgi?id=1949502 /
@@ -6,12 +12,11 @@
 %bcond_with     tests
 
 Name:           python-%{srcname}
-Version:        2.6.0
 Release:        1%{?dist}
 Summary:        High level SSH command execution
 License:        BSD
-URL:            https://pypi.org/project/%{srcname}/
-Source0:        %pypi_source
+URL:            %forgeurl
+Source0:        %forgesource
 # Use built-in unittest.mock in python 3.
 # https://github.com/fabric/fabric/pull/2168
 Patch0:         python-fabric-Use-standard-library-unittest.mock-on-Python-3.6-and.patch
@@ -32,9 +37,9 @@ BuildRequires:  python3-invoke
 BuildRequires:  python3-paramiko
 # Runtime dependencies upstream assumed would be vendored with invoke, but
 # which we must use standalone
-BuildRequires:  python%{python3_pkgversion}-decorator
-BuildRequires:  python%{python3_pkgversion}-lexicon
-BuildRequires:  python%{python3_pkgversion}-six
+BuildRequires:  python3-decorator
+BuildRequires:  python3-lexicon
+BuildRequires:  python3-six
 
 
 %if %{with tests}
@@ -59,8 +64,22 @@ another and provide additional functionality.}
 
 %package -n python3-%{srcname}
 Summary:        %{summary}
+# Runtime dependencies upstream assumed would be vendored with invoke, but
+# which we must use standalone
+Requires:  python3-decorator
+Requires:  python3-lexicon
+Requires:  python3-six
 
 %description -n python3-%{srcname} %{_description}
+
+%package -n python-%{srcname}-doc
+Summary:        Documentation for %{name}
+
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-sphinx_rtd_theme
+
+%description -n python-%{srcname}-doc
+Documentation for %{srcname}.
 
 
 %prep
@@ -70,6 +89,9 @@ Summary:        %{summary}
 %build
 %py3_build
 
+PYTHONPATH=${PWD} sphinx-build-3 sites/docs html
+rm -rf html/.{doctrees,buildinfo}
+
 # Entry point script that allows us to use help2man before installing
 cat > fab <<'EOF'
 #!%{__python3}
@@ -78,6 +100,7 @@ program.run()
 EOF
 chmod +x fab
 PYTHONPATH="${PWD}" help2man --no-info --output fab.1 ./fab
+
 
 %install
 %py3_install
@@ -99,6 +122,11 @@ install -t %{buildroot}%{_mandir}/man1 -m 0644 -p fab.1
 %{_mandir}/man1/fab.1*
 %{python3_sitelib}/%{srcname}
 %{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info
+
+
+%files -n python-%{srcname}-doc
+%doc html
+%license LICENSE
 
 
 %changelog
