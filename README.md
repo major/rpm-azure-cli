@@ -91,7 +91,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-web | ⚫ | |
 | python-azure-multiapi-storage | ⚫ | |
 | python-azure-sdk-tools | ⚫ | |
-| python-azure-storage-common | ⚫ | |
+| python-azure-storage-common | 🟡 | [RH BZ 1970638](https://bugzilla.redhat.com/show_bug.cgi?id=1970638) |
 | python-azure-synapse-accesscontrol | ⚫ | |
 | python-azure-synapse-artifacts | ⚫ | |
 | python-azure-synapse-spark | ⚫ | |
