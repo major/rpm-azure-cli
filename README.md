@@ -12,7 +12,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-batch | ⚫ | |
 | python-azure-cli-core | ⚫ | |
 | python-azure-cli-telemetry | ⚫ | Likely going to skip this one to maintain privacy. |
-| python-azure-common | ⚫ | |
+| python-azure-common | 🟡 | [RH BZ 1970619](https://bugzilla.redhat.com/show_bug.cgi?id=1970619) |
 | python-azure-core | 🟡 | [RH BZ 1970073](https://bugzilla.redhat.com/show_bug.cgi?id=1970073) |
 | python-azure-cosmos | ⚫ | |
 | python-azure-datalake-store | ⚫ | |
@@ -95,7 +95,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-synapse-accesscontrol | ⚫ | |
 | python-azure-synapse-artifacts | ⚫ | |
 | python-azure-synapse-spark | ⚫ | |
-| python-fabric | 🟡 | [RH BZ 1967774](https://bugzilla.redhat.com/show_bug.cgi?id=1967774) |
+| python-fabric | 🟢 | |
 | python-javaproperties | 🟢 | |
 | python-jsondiff | 🟢  | |
 | python-knack | 🟢 | |
