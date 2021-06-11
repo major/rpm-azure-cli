@@ -20,4 +20,4 @@ rpmlint /var/lib/mock/fedora-rawhide-x86_64/result/*.rpm
 #     $SRPM_NAME
 # rpmlint /var/lib/mock/centos-stream-8-x86_64/result/*.rpm
 
-# copr build --nowait azure-cli $SRPM_NAME
+copr build --nowait azure-cli $SRPM_NAME

@@ -37,7 +37,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
-%license LICENSE.TXT
+%license LICENSE.txt
 %doc README.rst
 %{python3_sitelib}/applicationinsights
 %{python3_sitelib}/applicationinsights-%{version}-py%{python3_version}.egg-info

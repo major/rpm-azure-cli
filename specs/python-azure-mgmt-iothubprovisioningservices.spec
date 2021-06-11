@@ -46,7 +46,7 @@ rm -f \
     %{buildroot}%{python3_sitelib}/azure/mgmt/__pycache__/__init__.cpython-*.pyc
 
 %files -n python3-%{srcname}
-%doc README.md
+%doc README.rst
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/iothubprovisioningservices

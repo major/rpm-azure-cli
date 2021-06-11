@@ -19,8 +19,8 @@ Release:        1%{?dist}
 Summary:        Microsoft Azure Development Tools for SDK
 License:        MIT
 URL:            https://github.com/Azure/azure-sdk-for-python/
-Source0:        ../sources/azure-devtools-%{commit}.tar.gz
-Source1:        ../sources/generate-devtools-tarball.sh
+Source0:        azure-devtools-%{commit}.tar.gz
+Source1:        generate-devtools-tarball.sh
 
 BuildArch:      noarch
 

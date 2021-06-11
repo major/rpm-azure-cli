@@ -39,10 +39,8 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
-%doc README.rst
-%license LICENSE.txt
-# Co-owned namespace package directory
-%dir %{python3_sitelib}/azure
+%doc README.md
+%license LICENSE
 %{python3_sitelib}/azure_functions_devops_build
 %{python3_sitelib}/azure_functions_devops_build-%{version}-py%{python3_version}.egg-info
 

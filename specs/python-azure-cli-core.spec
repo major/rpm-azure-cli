@@ -42,7 +42,6 @@ Summary:        %{summary}
 
 %files -n python3-%{srcname}
 %doc README.rst
-%license LICENSE.txt
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/cli/core

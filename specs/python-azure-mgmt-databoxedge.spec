@@ -42,6 +42,8 @@ Summary:        %{summary}
 %doc README.md
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
+# Not a typo -- some files are in 'datab' and 'databoxedge'.
+%{python3_sitelib}/azure/mgmt/datab
 %{python3_sitelib}/azure/mgmt/databoxedge
 %{python3_sitelib}/azure_mgmt_databoxedge-%{version}-py%{python3_version}.egg-info
 

@@ -1,9 +1,9 @@
-%global         srcname     azure-synapse-spark
+%global         srcname     azure-keyvault-keys
 
 Name:           python-%{srcname}
-Version:        0.2.0
+Version:        4.3.1
 Release:        1%{?dist}
-Summary:        Microsoft Azure Synapse Spark Client Library for Python
+Summary:        Microsoft Azure Key Vault Keys Client Library for Python
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
@@ -11,10 +11,11 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+
+
 
 %global _description %{expand:
-Microsoft Azure Spark Artifacts Client Library for Python}
+Microsoft Azure Key Vault Keys Client Library for Python}
 
 %description %{_description}
 
@@ -36,15 +37,18 @@ Summary:        %{summary}
 %install
 %py3_install
 
+# Clean up files left at the base package directory.
+rm -f %{buildroot}%{python3_sitelib}/azure/__init__.py \
+    %{buildroot}%{python3_sitelib}/azure/__pycache__/__init__.cpython-*.pyc
 
 %files -n python3-%{srcname}
 %doc README.md
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
-%{python3_sitelib}/azure/synapse/spark
-%{python3_sitelib}/azure_synapse_spark-%{version}-py%{python3_version}.egg-info
+%{python3_sitelib}/azure/keyvault/keys
+%{python3_sitelib}/azure_keyvault_keys-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 4.3.1-1
 - First package.
