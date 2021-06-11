@@ -19,8 +19,8 @@ Release:        1%{?dist}
 Summary:        Specific tools for Azure SDK for Python testing
 License:        MIT
 URL:            https://github.com/Azure/azure-sdk-for-python/
-Source0:        azure-sdk-tools-%{commit}.tar.gz
-Source1:        generate-sdk-tools-tarball.sh
+Source0:        ../sources/azure-sdk-tools-%{commit}.tar.gz
+Source1:        ../sources/generate-sdk-tools-tarball.sh
 
 BuildArch:      noarch
 
