@@ -5,7 +5,7 @@
 # Use the generate-devtools-tarball.sh script to generate the source for this
 # package without all of the additional packages from the upstream repository.
 %global         srcname         azure-devtools
-%global         commit          19e35d6472e40ca8974420a4024d7cf34160e25a
+%global         commit          aa29c1cb5da14ab3efca04dc3838b473a88536d4
 %global         shortcommit     %(c=%{commit}; echo ${c:0:7})
 %global         distprefix      %{nil}
 %global         short_version   1.2.1
