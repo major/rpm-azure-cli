@@ -33,7 +33,7 @@ BuildRequires:  python3-pytest
 BuildRequires:  python3-pytest-asyncio
 %endif
 
-Obsoletes:      python3-azure-sdk < 5.0.1
+
 
 %global _description %{expand:
 Specific tools for Azure SDK for Python testing}

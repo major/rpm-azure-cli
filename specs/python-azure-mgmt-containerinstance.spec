@@ -12,7 +12,7 @@ BuildArch:      noarch
 
 BuildRequires:  python3-devel
 
-Obsoletes:      python3-azure-sdk < 5.0.1
+
 
 %global _description %{expand:
 Microsoft Azure Container Instance Client Library for Python}

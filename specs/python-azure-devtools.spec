@@ -40,7 +40,7 @@ BuildRequires:  python3-tornado
 BuildRequires:  python3-vcrpy
 %endif
 
-Obsoletes:      python3-azure-sdk < 5.0.1
+
 
 %global _description %{expand:
 Development tools for Python-based Azure tools

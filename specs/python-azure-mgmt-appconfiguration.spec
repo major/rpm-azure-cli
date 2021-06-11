@@ -12,7 +12,7 @@ BuildArch:      noarch
 
 BuildRequires:  python3-devel
 
-Obsoletes:      python3-azure-sdk < 5.0.1
+
 
 %global _description %{expand:
 Microsoft Azure App Configuration Management Client Library for Python}

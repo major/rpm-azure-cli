@@ -13,7 +13,7 @@ BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
-Obsoletes:      python3-azure-sdk < 5.0.1
+
 Conflicts:      python3-azure-sdk
 
 %global _description %{expand:
