@@ -1,7 +1,7 @@
 %global         srcname     azure-storage-common
 
 Name:           python-%{srcname}
-Version:        1.4.2
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Storage Common Client Library for Python
 License:        MIT
@@ -11,8 +11,7 @@ Source0:        %{pypi_source %{srcname} %{version}}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-
-Obsoletes:      python3-azure-sdk < 5.0.1
+BuildRequires:  python3-setuptools
 
 %global _description %{expand:
 Microsoft Azure Storage Common Client Library for Python}
@@ -39,10 +38,14 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+%license LICENSE.txt
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/storage/common
 %{python3_sitelib}/azure_storage_common-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.4.2-1
+* Thu Jun 10 2021 Major Hayden <major@mhtx.net> - 2.1.0-1
 - First package.

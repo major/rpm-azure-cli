@@ -40,8 +40,12 @@ Summary:        %{summary}
 %py3_install
 
 
+# NOTE(mhayden): Source from pypi does not contain a license file. 😞
+# PR made upstream: https://github.com/Azure/azure-sdk-for-python/pull/19191
 %files -n python3-%{srcname}
 %doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/common
 %{python3_sitelib}/azure/profiles
 %{python3_sitelib}/azure_common-%{version}-py%{python3_version}.egg-info

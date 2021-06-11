@@ -11,8 +11,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-
-Obsoletes:      python3-azure-sdk < 5.0.1
+BuildRequires:  python3-setuptools
 
 %global _description %{expand:
 Microsoft Azure Spark Artifacts Client Library for Python}
@@ -39,6 +38,10 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+%license LICENSE.txt
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/synapse/spark
 %{python3_sitelib}/azure_synapse_spark-%{version}-py%{python3_version}.egg-info
 

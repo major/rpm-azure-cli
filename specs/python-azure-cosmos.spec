@@ -1,18 +1,17 @@
 %global         srcname     azure-cosmos
 
 Name:           python-%{srcname}
-Version:        3.2.0
+Version:        4.2.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Cosmos Client Library for Python
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
-Source0:        %pypi_source
+Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
-
-Obsoletes:      python3-azure-sdk < 5.0.1
+BuildRequires:  python3-setuptools
 
 %global _description %{expand:
 Microsoft Azure Cosmos Client Library for Python}
@@ -44,5 +43,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 3.2.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 4.2.0-1
 - First package.

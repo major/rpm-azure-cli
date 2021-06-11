@@ -1,7 +1,7 @@
 %global         srcname     azure-synapse-accesscontrol
 
 Name:           python-%{srcname}
-Version:        0.5.0
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Synapse AccessControl Client Library for Python
 License:        MIT
@@ -11,8 +11,8 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
-Obsoletes:      python3-azure-sdk < 5.0.1
 
 %global _description %{expand:
 Microsoft Azure Synapse AccessControl Client Library for Python}
@@ -39,10 +39,14 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+%license LICENSE.txt
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/synapse/accesscontrol
 %{python3_sitelib}/azure_synapse_accesscontrol-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.5.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.6.0-1
 - First package.
