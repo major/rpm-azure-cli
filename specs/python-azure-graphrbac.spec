@@ -1,7 +1,7 @@
 %global         srcname     azure-graphrbac
 
 Name:           python-%{srcname}
-Version:        0.60.0
+Version:        0.61.1
 Release:        1%{?dist}
 Summary:        Microsoft Azure Graph RBAC Client Library for Python
 License:        MIT
@@ -39,10 +39,13 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/graphrbac
 %{python3_sitelib}/azure_graphrbac-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.60.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.61.1-1
 - First package.

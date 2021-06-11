@@ -40,6 +40,10 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+%license LICENSE.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/core
 %{python3_sitelib}/azure_mgmt_core-%{version}-py%{python3_version}.egg-info
 

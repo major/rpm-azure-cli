@@ -37,6 +37,9 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/cli/telemetry
 %{python3_sitelib}/azure_cli_telemetry-%{version}-py%{python3_version}.egg-info
 

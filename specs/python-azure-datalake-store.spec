@@ -46,6 +46,10 @@ rm -f %{buildroot}%{python3_sitelib}/azure/datalake/__init__.py \
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+%license LICENSE.txt
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/datalake/store
 %{python3_sitelib}/azure_datalake_store-%{version}-py%{python3_version}.egg-info
 

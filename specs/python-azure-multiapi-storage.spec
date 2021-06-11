@@ -40,6 +40,9 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 # This is the only multiapi package, so it takes everything under the path.
 %{python3_sitelib}/azure/multiapi
 %{python3_sitelib}/azure_multiapi_storage-%{version}-py%{python3_version}.egg-info

@@ -39,6 +39,9 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/servicebus
 %{python3_sitelib}/azure_mgmt_servicebus-%{version}-py%{python3_version}.egg-info
 

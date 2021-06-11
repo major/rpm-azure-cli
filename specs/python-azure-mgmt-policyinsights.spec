@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-policyinsights
 
 Name:           python-%{srcname}
-Version:        0.5.0
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Policy Insights Client Library for Python
 License:        MIT
@@ -44,5 +44,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.5.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.0.0-1
 - First package.

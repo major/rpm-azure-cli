@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-hdinsight
 
 Name:           python-%{srcname}
-Version:        2.2.0
+Version:        8.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure HDInsight Management Client Library for Python
 License:        MIT
@@ -39,10 +39,13 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/hdinsight
 %{python3_sitelib}/azure_mgmt_hdinsight-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.2.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 8.0.0-1
 - First package.

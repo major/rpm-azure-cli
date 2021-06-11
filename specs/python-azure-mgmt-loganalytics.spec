@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-loganalytics
 
 Name:           python-%{srcname}
-Version:        8.0.0
+Version:        10.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Log Analytics Management Client Library for Python
 License:        MIT
@@ -40,10 +40,13 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/loganalytics
 %{python3_sitelib}/azure_mgmt_loganalytics-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 8.0.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 10.0.0-1
 - First package.

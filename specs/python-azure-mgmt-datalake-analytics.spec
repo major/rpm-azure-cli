@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-datalake-analytics
 
 Name:           python-%{srcname}
-Version:        0.2.1
+Version:        0.6.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Data Lake Analytics Management Client Library for Python
 License:        MIT
@@ -47,10 +47,13 @@ rm -f %{buildroot}%{python3_sitelib}/azure/__init__.py \
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/datalake/analytics
 %{python3_sitelib}/azure_mgmt_datalake_analytics-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.2.1-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.6.0-1
 - First package.

@@ -43,6 +43,9 @@ rm -f %{buildroot}%{python3_sitelib}/azure/__init__.py \
 
 
 %files -n python3-%{srcname}
+%doc README.rst
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/loganalytics
 %{python3_sitelib}/azure_loganalytics-%{version}-py%{python3_version}.egg-info
 

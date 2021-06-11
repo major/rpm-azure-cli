@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-containerinstance
 
 Name:           python-%{srcname}
-Version:        1.5.0
+Version:        7.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Container Instance Client Library for Python
 License:        MIT
@@ -39,10 +39,13 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/containerinstance
 %{python3_sitelib}/azure_mgmt_containerinstance-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 1.5.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 7.0.0-1
 - First package.

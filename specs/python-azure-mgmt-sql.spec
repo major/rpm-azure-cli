@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-sql
 
 Name:           python-%{srcname}
-Version:        0.26.0
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure SQL Management Client Library for Python
 License:        MIT
@@ -39,10 +39,13 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/sql
 %{python3_sitelib}/azure_mgmt_sql-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.26.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.1.0-1
 - First package.

@@ -1,7 +1,7 @@
 %global         srcname     azure-mgmt-maps
 
 Name:           python-%{srcname}
-Version:        0.1.0
+Version:        2.0.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Maps Client Library for Python
 License:        MIT
@@ -47,10 +47,13 @@ rm -f \
 
 
 %files -n python3-%{srcname}
+%doc README.md
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/azure
 %{python3_sitelib}/azure/mgmt/maps
 %{python3_sitelib}/azure_mgmt_maps-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.1.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.0.0-1
 - First package.
