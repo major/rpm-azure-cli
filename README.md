@@ -39,7 +39,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-cognitiveservices | 🟡 | [RH BZ 1971786](https://bugzilla.redhat.com/show_bug.cgi?id=1971786) |
 | python-azure-mgmt-compute | 🟡 | [RH BZ 1971787](https://bugzilla.redhat.com/show_bug.cgi?id=1971787) |
 | python-azure-mgmt-consumption | 🟡 | [RH BZ 1971790](https://bugzilla.redhat.com/show_bug.cgi?id=1971790) |
-| python-azure-mgmt-containerinstance | ⚫ | |
+| python-azure-mgmt-containerinstance | 🟡 | [RH BZ 1971791](https://bugzilla.redhat.com/show_bug.cgi?id=1971791) |
 | python-azure-mgmt-containerregistry | ⚫ | |
 | python-azure-mgmt-containerservice | ⚫ | |
 | python-azure-mgmt-core | ⚫ | |
