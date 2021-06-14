@@ -67,7 +67,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-marketplaceordering | 🟡 | [RH BZ 1971827](https://bugzilla.redhat.com/show_bug.cgi?id=1971827) |
 | python-azure-mgmt-media | 🟡 | [RH BZ 1971831](https://bugzilla.redhat.com/show_bug.cgi?id=1971831) |
 | python-azure-mgmt-monitor | 🟡 | [RH BZ 1971834](https://bugzilla.redhat.com/show_bug.cgi?id=1971834) |
-| python-azure-mgmt-msi | ⚫ | |
+| python-azure-mgmt-msi | 🟡 | [RH BZ 1971836](https://bugzilla.redhat.com/show_bug.cgi?id=1971836) |
 | python-azure-mgmt-netapp | ⚫ | |
 | python-azure-mgmt-network | ⚫ | |
 | python-azure-mgmt-policyinsights | ⚫ | |
