@@ -69,7 +69,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-monitor | 🟡 | [RH BZ 1971834](https://bugzilla.redhat.com/show_bug.cgi?id=1971834) |
 | python-azure-mgmt-msi | 🟡 | [RH BZ 1971836](https://bugzilla.redhat.com/show_bug.cgi?id=1971836) |
 | python-azure-mgmt-netapp | 🟡 | [RH BZ 1971837](https://bugzilla.redhat.com/show_bug.cgi?id=1971837) |
-| python-azure-mgmt-network | ⚫ | |
+| python-azure-mgmt-network | 🟡 | [RH BZ 1971842](https://bugzilla.redhat.com/show_bug.cgi?id=1971842) |
 | python-azure-mgmt-policyinsights | ⚫ | |
 | python-azure-mgmt-privatedns | ⚫ | |
 | python-azure-mgmt-rdbms | ⚫ | |
