@@ -61,8 +61,8 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-keyvault | 🟡 | [RH BZ 1971816](https://bugzilla.redhat.com/show_bug.cgi?id=1971816) |
 | python-azure-mgmt-kusto | 🟡 | [RH BZ 1971818](https://bugzilla.redhat.com/show_bug.cgi?id=1971818) |
 | python-azure-mgmt-loganalytics | 🟡 | [RH BZ 1971819](https://bugzilla.redhat.com/show_bug.cgi?id=1971819) |
-| python-azure-mgmt-managedservices | ⚫ | |
-| python-azure-mgmt-managementgroups | ⚫ | |
+| python-azure-mgmt-managedservices | 🟡 | [RH BZ 1971820](https://bugzilla.redhat.com/show_bug.cgi?id=1971820) |
+| python-azure-mgmt-managementgroups | 🟡 | [RH BZ 1971822](https://bugzilla.redhat.com/show_bug.cgi?id=1971822) |
 | python-azure-mgmt-maps | ⚫ | |
 | python-azure-mgmt-marketplaceordering | ⚫ | |
 | python-azure-mgmt-media | ⚫ | |
