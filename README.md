@@ -40,7 +40,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-compute | 🟡 | [RH BZ 1971787](https://bugzilla.redhat.com/show_bug.cgi?id=1971787) |
 | python-azure-mgmt-consumption | 🟡 | [RH BZ 1971790](https://bugzilla.redhat.com/show_bug.cgi?id=1971790) |
 | python-azure-mgmt-containerinstance | 🟡 | [RH BZ 1971791](https://bugzilla.redhat.com/show_bug.cgi?id=1971791) |
-| python-azure-mgmt-containerregistry | ⚫ | |
+| python-azure-mgmt-containerregistry | 🟡 | [RH BZ 1971792](https://bugzilla.redhat.com/show_bug.cgi?id=1971792) |
 | python-azure-mgmt-containerservice | ⚫ | |
 | python-azure-mgmt-core | ⚫ | |
 | python-azure-mgmt-cosmosdb | ⚫ | |
