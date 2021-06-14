@@ -11,6 +11,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 %global _description %{expand:
 Microsoft Azure Identity Library for Python}

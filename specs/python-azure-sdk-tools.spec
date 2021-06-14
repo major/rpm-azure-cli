@@ -26,6 +26,7 @@ BuildArch:      noarch
 
 BuildRequires:  make
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 BuildRequires:  python3-dotenv
 
 %if %{with tests}

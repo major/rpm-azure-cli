@@ -11,6 +11,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 
 
@@ -42,6 +43,8 @@ Summary:        %{summary}
 %doc README.md
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
+# Co-owned namespace package directory
+%dir %{python3_sitelib}/keyvault
 %{python3_sitelib}/azure/keyvault/administration
 %{python3_sitelib}/azure_keyvault_administration-%{version}-py%{python3_version}.egg-info
 

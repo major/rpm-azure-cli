@@ -15,6 +15,7 @@ Patch0:         python-azure-cli-core-requirements-fix.patch
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 %global _description %{expand:
 Microsoft Azure Command-Line Tools Core Module}

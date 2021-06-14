@@ -25,6 +25,7 @@ Source1:        generate-devtools-tarball.sh
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 %if %{with tests}
 BuildRequires:  python3-aiohttp
