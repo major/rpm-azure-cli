@@ -95,9 +95,9 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-multiapi-storage | 🟡 | [RH BZ 1971870](https://bugzilla.redhat.com/show_bug.cgi?id=1971870) |
 | python-azure-sdk-tools | ⚫ | |
 | python-azure-storage-common | 🔵 | [RH BZ 1970638](https://bugzilla.redhat.com/show_bug.cgi?id=1970638) |
-| python-azure-synapse-accesscontrol | ⚫ | |
-| python-azure-synapse-artifacts | ⚫ | |
-| python-azure-synapse-spark | ⚫ | |
+| python-azure-synapse-accesscontrol | 🟡 | [RH BZ 1971873](https://bugzilla.redhat.com/show_bug.cgi?id=1971873) |
+| python-azure-synapse-artifacts | 🟡 | [RH BZ 1971875](https://bugzilla.redhat.com/show_bug.cgi?id=1971875) |
+| python-azure-synapse-spark | 🟡 | [RH BZ 1971876](https://bugzilla.redhat.com/show_bug.cgi?id=1971876) |
 | python-fabric | 🟢 | |
 | python-javaproperties | 🟢 | |
 | python-jsondiff | 🟢  | |
