@@ -49,7 +49,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-datalake-store | 🟡 | [RH BZ 1971798](https://bugzilla.redhat.com/show_bug.cgi?id=1971798) |
 | python-azure-mgmt-datamigration | 🟡 | [RH BZ 1971799](https://bugzilla.redhat.com/show_bug.cgi?id=1971799) |
 | python-azure-mgmt-deploymentmanager | 🟡 | [RH BZ 1971800](https://bugzilla.redhat.com/show_bug.cgi?id=1971800) |
-| python-azure-mgmt-devtestlabs | ⚫ | |
+| python-azure-mgmt-devtestlabs | 🟡 | [RH BZ 1971801](https://bugzilla.redhat.com/show_bug.cgi?id=1971801) |
 | python-azure-mgmt-dns | ⚫ | |
 | python-azure-mgmt-eventgrid | ⚫ | |
 | python-azure-mgmt-eventhub | ⚫ | |
