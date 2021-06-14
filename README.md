@@ -27,7 +27,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-keyvault | 🟡 | [RH BZ 1971768](https://bugzilla.redhat.com/show_bug.cgi?id=1971768) |
 | python-azure-loganalytics | 🟡 | [RH BZ 1971769](https://bugzilla.redhat.com/show_bug.cgi?id=1971769) |
 | python-azure-mgmt-advisor | 🟡 | [RH BZ 1971770](https://bugzilla.redhat.com/show_bug.cgi?id=1971770) |
-| python-azure-mgmt-apimanagement | ⚫ | |
+| python-azure-mgmt-apimanagement | 🟡 | [RH BZ 1971772](https://bugzilla.redhat.com/show_bug.cgi?id=1971772) |
 | python-azure-mgmt-appconfiguration | ⚫ | |
 | python-azure-mgmt-applicationinsights | ⚫ | |
 | python-azure-mgmt-authorization | ⚫ | |
