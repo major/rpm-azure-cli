@@ -8,7 +8,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | ------- | ------ | ----- |
 | azure-cli | ⚫ | |
 | python-applicationinsights | ⚫ | Not needed if `python-azure-cli-telemetry` is skipped |
-| python-azure-appconfiguration | ⚫ | |
+| python-azure-appconfiguration | 🟡 | [RH BZ 1971775](https://bugzilla.redhat.com/show_bug.cgi?id=1971775) |
 | python-azure-batch | 🟡 | [RH BZ 1971717](https://bugzilla.redhat.com/show_bug.cgi?id=1971717) |
 | python-azure-cli-core | ⚫ | |
 | python-azure-cli-telemetry | ⚫ | Likely going to skip this one to maintain privacy. |
