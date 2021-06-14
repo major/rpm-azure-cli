@@ -58,7 +58,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-iotcentral | 🟡 | [RH BZ 1971811](https://bugzilla.redhat.com/show_bug.cgi?id=1971811) |
 | python-azure-mgmt-iothubprovisioningservices | 🟡 | [RH BZ 1971813](https://bugzilla.redhat.com/show_bug.cgi?id=1971813) |
 | python-azure-mgmt-iothub | 🟡 | [RH BZ 1971815](https://bugzilla.redhat.com/show_bug.cgi?id=1971815) |
-| python-azure-mgmt-keyvault | ⚫ | |
+| python-azure-mgmt-keyvault | 🟡 | [RH BZ 1971816](https://bugzilla.redhat.com/show_bug.cgi?id=1971816) |
 | python-azure-mgmt-kusto | ⚫ | |
 | python-azure-mgmt-loganalytics | ⚫ | |
 | python-azure-mgmt-managedservices | ⚫ | |
