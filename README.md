@@ -52,7 +52,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-devtestlabs | 🟡 | [RH BZ 1971801](https://bugzilla.redhat.com/show_bug.cgi?id=1971801) |
 | python-azure-mgmt-dns | 🟡 | [RH BZ 1971803](https://bugzilla.redhat.com/show_bug.cgi?id=1971803) |
 | python-azure-mgmt-eventgrid | 🟡 | [RH BZ 1971804](https://bugzilla.redhat.com/show_bug.cgi?id=1971804) |
-| python-azure-mgmt-eventhub | ⚫ | |
+| python-azure-mgmt-eventhub | 🟡 | [RH BZ 1971805](https://bugzilla.redhat.com/show_bug.cgi?id=1971805) |
 | python-azure-mgmt-hdinsight | ⚫ | |
 | python-azure-mgmt-imagebuilder | ⚫ | |
 | python-azure-mgmt-iotcentral | ⚫ | |
