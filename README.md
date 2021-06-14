@@ -82,8 +82,8 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-resource | 🟡 | [RH BZ 1971852](https://bugzilla.redhat.com/show_bug.cgi?id=1971852) |
 | python-azure-mgmt-search | 🟡 | [RH BZ 1971853](https://bugzilla.redhat.com/show_bug.cgi?id=1971853) |
 | python-azure-mgmt-security | 🟡 | [RH BZ 1971854](https://bugzilla.redhat.com/show_bug.cgi?id=1971854) |
-| python-azure-mgmt-servicebus | ⚫ | |
-| python-azure-mgmt-servicefabricmanagedclusters | ⚫ | |
+| python-azure-mgmt-servicebus | 🟡 | [RH BZ 1971855](https://bugzilla.redhat.com/show_bug.cgi?id=1971855) |
+| python-azure-mgmt-servicefabricmanagedclusters | 🟡 | [RH BZ 1971856](https://bugzilla.redhat.com/show_bug.cgi?id=1971856) |
 | python-azure-mgmt-servicefabric | ⚫ | |
 | python-azure-mgmt-signalr | ⚫ | |
 | python-azure-mgmt-sql | ⚫ | |
