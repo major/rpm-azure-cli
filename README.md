@@ -90,7 +90,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-sqlvirtualmachine | 🟡 | [RH BZ 1971861](https://bugzilla.redhat.com/show_bug.cgi?id=1971861) |
 | python-azure-mgmt-storage | 🟡 | [RH BZ 1971862](https://bugzilla.redhat.com/show_bug.cgi?id=1971862) |
 | python-azure-mgmt-synapse | 🟡 | [RH BZ 1971865](https://bugzilla.redhat.com/show_bug.cgi?id=1971865) |
-| python-azure-mgmt-trafficmanager | ⚫ | |
+| python-azure-mgmt-trafficmanager | 🟡 | [RH BZ 1971866](https://bugzilla.redhat.com/show_bug.cgi?id=1971866) |
 | python-azure-mgmt-web | ⚫ | |
 | python-azure-multiapi-storage | ⚫ | |
 | python-azure-sdk-tools | ⚫ | |
