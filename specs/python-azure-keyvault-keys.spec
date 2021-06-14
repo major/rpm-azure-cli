@@ -23,7 +23,6 @@ Microsoft Azure Key Vault Keys Client Library for Python}
 
 %package -n python3-%{srcname}
 Summary:        %{summary}
-%py_provides    python3-azure-keyvault
 
 %description -n python3-%{srcname} %{_description}
 
