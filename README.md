@@ -55,8 +55,8 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-eventhub | 🟡 | [RH BZ 1971805](https://bugzilla.redhat.com/show_bug.cgi?id=1971805) |
 | python-azure-mgmt-hdinsight | 🟡 | [RH BZ 1971806](https://bugzilla.redhat.com/show_bug.cgi?id=1971806) |
 | python-azure-mgmt-imagebuilder | 🟡 | [RH BZ 1971807](https://bugzilla.redhat.com/show_bug.cgi?id=1971807) |
-| python-azure-mgmt-iotcentral | ⚫ | |
-| python-azure-mgmt-iothubprovisioningservices | ⚫ | |
+| python-azure-mgmt-iotcentral | 🟡 | [RH BZ 1971811](https://bugzilla.redhat.com/show_bug.cgi?id=1971811) |
+| python-azure-mgmt-iothubprovisioningservices | 🟡 | [RH BZ 1971813](https://bugzilla.redhat.com/show_bug.cgi?id=1971813) |
 | python-azure-mgmt-iothub | ⚫ | |
 | python-azure-mgmt-keyvault | ⚫ | |
 | python-azure-mgmt-kusto | ⚫ | |
