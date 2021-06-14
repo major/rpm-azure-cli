@@ -75,7 +75,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-rdbms | 🟡 | [RH BZ 1971845](https://bugzilla.redhat.com/show_bug.cgi?id=1971845) |
 | python-azure-mgmt-recoveryservicesbackup | 🟡 | [RH BZ 1971846](https://bugzilla.redhat.com/show_bug.cgi?id=1971846) |
 | python-azure-mgmt-recoveryservices | 🟡 | [RH BZ 1971847](https://bugzilla.redhat.com/show_bug.cgi?id=1971847) |
-| python-azure-mgmt-redhatopenshift | ⚫ | |
+| python-azure-mgmt-redhatopenshift | 🟡 | [RH BZ 1971848](https://bugzilla.redhat.com/show_bug.cgi?id=1971848) |
 | python-azure-mgmt-redis | ⚫ | |
 | python-azure-mgmt-relay | ⚫ | |
 | python-azure-mgmt-reservations | ⚫ | |
