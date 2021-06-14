@@ -19,7 +19,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-devtools | ⚫ | |
 | python-azure-functions-devops-build | 🟡 | [RH BZ 1971753](https://bugzilla.redhat.com/show_bug.cgi?id=1971753) |
 | python-azure-graphrbac | 🟡 | [RH BZ 1971758](https://bugzilla.redhat.com/show_bug.cgi?id=1971758) |
-| python-azure-identity | ⚫ | |
+| python-azure-identity | 🟡 | [RH BZ 1971760](https://bugzilla.redhat.com/show_bug.cgi?id=1971760) |
 | python-azure-keyvault-administration | ⚫ | |
 | python-azure-keyvault | ⚫ | |
 | python-azure-loganalytics | ⚫ | |
