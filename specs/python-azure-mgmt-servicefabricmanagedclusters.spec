@@ -3,7 +3,7 @@
 Name:           python-%{srcname}
 Version:        1.0.0
 Release:        1%{?dist}
-Summary:        Microsoft Azure Service Fabric Managed Clusters Management Client Library for Python
+Summary:        Microsoft Azure Service Fabric Managed Clusters Management
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
