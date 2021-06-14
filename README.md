@@ -91,7 +91,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-storage | 🟡 | [RH BZ 1971862](https://bugzilla.redhat.com/show_bug.cgi?id=1971862) |
 | python-azure-mgmt-synapse | 🟡 | [RH BZ 1971865](https://bugzilla.redhat.com/show_bug.cgi?id=1971865) |
 | python-azure-mgmt-trafficmanager | 🟡 | [RH BZ 1971866](https://bugzilla.redhat.com/show_bug.cgi?id=1971866) |
-| python-azure-mgmt-web | ⚫ | |
+| python-azure-mgmt-web | 🟡 | [RH BZ 1971868](https://bugzilla.redhat.com/show_bug.cgi?id=1971868) |
 | python-azure-multiapi-storage | ⚫ | |
 | python-azure-sdk-tools | ⚫ | |
 | python-azure-storage-common | 🔵 | [RH BZ 1970638](https://bugzilla.redhat.com/show_bug.cgi?id=1970638) |
