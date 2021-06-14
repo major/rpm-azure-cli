@@ -13,7 +13,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-cli-core | ⚫ | |
 | python-azure-cli-telemetry | ⚫ | Likely going to skip this one to maintain privacy. |
 | python-azure-common | 🟡 | [RH BZ 1970619](https://bugzilla.redhat.com/show_bug.cgi?id=1970619) |
-| python-azure-core | 🟡 | [RH BZ 1970073](https://bugzilla.redhat.com/show_bug.cgi?id=1970073) |
+| python-azure-core | 🟠 | [RH BZ 1970073](https://bugzilla.redhat.com/show_bug.cgi?id=1970073) |
 | python-azure-cosmos | ⚫ | |
 | python-azure-datalake-store | ⚫ | |
 | python-azure-devtools | ⚫ | |
@@ -91,7 +91,7 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 | python-azure-mgmt-web | ⚫ | |
 | python-azure-multiapi-storage | ⚫ | |
 | python-azure-sdk-tools | ⚫ | |
-| python-azure-storage-common | 🟡 | [RH BZ 1970638](https://bugzilla.redhat.com/show_bug.cgi?id=1970638) |
+| python-azure-storage-common | 🟠 | [RH BZ 1970638](https://bugzilla.redhat.com/show_bug.cgi?id=1970638) |
 | python-azure-synapse-accesscontrol | ⚫ | |
 | python-azure-synapse-artifacts | ⚫ | |
 | python-azure-synapse-spark | ⚫ | |
@@ -106,4 +106,5 @@ This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 
 * ⚫ Not started
 * 🟡 Package in review
+* 🟠 Approved and awaiting builds
 * 🟢 Fully packaged
