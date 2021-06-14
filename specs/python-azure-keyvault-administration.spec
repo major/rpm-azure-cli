@@ -42,7 +42,6 @@ Summary:        %{summary}
 %doc README.md
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
-%dir %{python3_sitelib}/azure/keyvault
 %{python3_sitelib}/azure/keyvault/administration
 %{python3_sitelib}/azure_keyvault_administration-%{version}-py%{python3_version}.egg-info
 

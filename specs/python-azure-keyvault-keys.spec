@@ -46,7 +46,6 @@ rm -f %{buildroot}%{python3_sitelib}/azure/__init__.py \
 %doc README.md
 # Co-owned namespace package directory
 %dir %{python3_sitelib}/azure
-%dir %{python3_sitelib}/azure/keyvault
 %{python3_sitelib}/azure/keyvault/keys
 %{python3_sitelib}/azure_keyvault_keys-%{version}-py%{python3_version}.egg-info
 
