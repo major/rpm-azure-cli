@@ -1,5 +1,8 @@
 %global         srcname     azure-mgmt-core
 
+# tests are enabled by default
+%bcond_without  tests
+
 Name:           python-%{srcname}
 Version:        1.2.2
 Release:        1%{?dist}
@@ -11,10 +14,16 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
+Obsoletes: python-azure-sdk < 5.0.1
+
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
-
+%if %{with tests}
+BuildRequires:  python3-azure-devtools
+BuildRequires:  python3-pytest
+BuildRequires:  python3-azure-sdk-tools
+%endif
 
 %global _description %{expand:
 Azure Management Core Library}
@@ -38,6 +47,12 @@ Summary:        %{summary}
 
 %install
 %py3_install
+
+
+%if %{with tests}
+%check
+%pytest
+%endif
 
 
 %files -n python3-%{srcname}

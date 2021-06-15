@@ -10,6 +10,8 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
+Obsoletes: python-azure-sdk < 5.0.1
+
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
@@ -40,6 +42,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname}
+%doc README.md
 %{python3_sitelib}/azure/mgmt/policyinsights
 %{python3_sitelib}/azure_mgmt_policyinsights-%{version}-py%{python3_version}.egg-info
 

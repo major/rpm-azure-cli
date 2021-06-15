@@ -24,6 +24,8 @@ Source1:        generate-devtools-tarball.sh
 
 BuildArch:      noarch
 
+Obsoletes: python-azure-sdk < 5.0.1
+
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 

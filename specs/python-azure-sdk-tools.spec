@@ -10,6 +10,8 @@
 %global         distprefix      %{nil}
 %global         short_version   0.0.0
 
+%undefine py_auto_byte_compile
+
 # tests are enabled by default
 %bcond_without  tests
 
@@ -24,16 +26,19 @@ Source1:        generate-sdk-tools-tarball.sh
 
 BuildArch:      noarch
 
+Obsoletes: python-azure-sdk < 5.0.1
+
 BuildRequires:  make
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-dotenv
 
 %if %{with tests}
+BuildRequires:  python-azure-mgmt-keyvault
+BuildRequires:  python-azure-mgmt-storage
 BuildRequires:  python3-pytest
 BuildRequires:  python3-pytest-asyncio
 %endif
-
 
 
 %global _description %{expand:

@@ -10,6 +10,8 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
+Obsoletes: python-azure-sdk < 5.0.1
+
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 
@@ -30,6 +32,8 @@ Summary:        %{summary}
 %prep
 %autosetup -n %{srcname}-%{version}
 
+# Fix incorrect line endings in the README.
+sed -i 's/\r$//' README.md
 
 %build
 %py3_build
