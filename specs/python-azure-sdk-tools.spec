@@ -23,6 +23,7 @@ License:        MIT
 URL:            https://github.com/Azure/azure-sdk-for-python/
 Source0:        azure-sdk-tools-%{commit}.tar.gz
 Source1:        generate-sdk-tools-tarball.sh
+Patch0:         python-azure-sdk-tools-sane-requirements.patch
 
 BuildArch:      noarch
 
@@ -35,9 +36,14 @@ BuildRequires:  python3-dotenv
 
 %if %{with tests}
 BuildRequires:  python-azure-mgmt-keyvault
+BuildRequires:  python-azure-mgmt-resource
 BuildRequires:  python-azure-mgmt-storage
+BuildRequires:  python-azure-storage-common
+BuildRequires:  python3-pyOpenSSL
 BuildRequires:  python3-pytest
 BuildRequires:  python3-pytest-asyncio
+BuildRequires:  python3-pytest-cov
+BuildRequires:  python3-readme-renderer
 %endif
 
 
@@ -55,12 +61,6 @@ Summary:        %{summary}
 
 %prep
 %autosetup -c -n %{srcname}-%{commit}
-
-# There are jinja2 templates that end in .py in packaging_tools/templates and
-# they won't byte compile properly since they're templates and not true python
-# code. We can move them out of the way and move them back at the end.
-mkdir hold_templates
-mv packaging_tools/templates/*.py hold_templates/
 
 
 %build

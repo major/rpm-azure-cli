@@ -7,6 +7,7 @@ Summary:        Microsoft Azure Storage Management Client Library for Python
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version} zip}
+Patch0:         python-azure-mgmt-storage-sane-requirements.patch
 
 BuildArch:      noarch
 
@@ -30,7 +31,7 @@ Summary:        %{summary}
 
 
 %prep
-%autosetup -n %{srcname}-%{version}
+%autosetup -p0 -n %{srcname}-%{version}
 
 
 %build
