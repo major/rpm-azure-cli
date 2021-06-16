@@ -1,25 +1,33 @@
 diff -up ./setup.py.orig ./setup.py
---- ./setup.py.orig	2021-06-07 15:21:27.546701339 -0500
-+++ ./setup.py	2021-06-07 15:26:31.334901433 -0500
-@@ -45,10 +45,9 @@ CLASSIFIERS = [
+--- ./setup.py.orig	2021-06-16 13:41:06.680026528 -0500
++++ ./setup.py	2021-06-16 13:45:13.847444710 -0500
+@@ -45,21 +45,21 @@ CLASSIFIERS = [
  DEPENDENCIES = [
      'adal~=1.2.7',
      'argcomplete~=1.8',
 -    'azure-cli-telemetry==1.0.6.*',
++    'azure-cli-telemetry>=1.0.6.*',
      'azure-common~=1.1',
 -    'azure-mgmt-core>=1.2.0,<1.3.0',     # the preview version of azure-mgmt-core is 1.3.0b1, it cannot fit azure-core >=1.14.0
 -    'cryptography>=3.2,<3.4',
-+    'azure-mgmt-core',     # the preview version of azure-mgmt-core is 1.3.0b1, it cannot fit azure-core >=1.14.0
+-    'humanfriendly>=4.7,<10.0',
++    'azure-mgmt-core>=1.2.0',     # the preview version of azure-mgmt-core is 1.3.0b1, it cannot fit azure-core >=1.14.0
 +    'cryptography>=3.2',
-     'humanfriendly>=4.7,<10.0',
++    'humanfriendly>=4.7',
      'jmespath',
      'knack~=0.8.2',
-@@ -59,7 +58,7 @@ DEPENDENCIES = [
-     'msrestazure>=0.6.3',
-     'paramiko>=2.0.8,<3.0.0',
+-    'msal>=1.10.0,<2.0.0',
+-    'paramiko>=2.0.8,<3.0.0',
++    'msal>=1.10.0',
++    'paramiko>=2.0.80',
      'pkginfo>=1.5.0.1',
 -    'PyJWT==1.7.1',
 +    'PyJWT>=1.7.1',
      'pyopenssl>=17.1.0',  # https://github.com/pyca/pyopenssl/pull/612
      'requests~=2.22',
      'six~=1.12',
+-    'urllib3[secure]>=1.26.5',
++    'urllib3>=1.25.10',
+ ]
+ 
+ # dependencies for specific OSes

@@ -1,15 +1,13 @@
 %global         srcname     azure-cli-core
 
 Name:           python-%{srcname}
-Version:        2.24.2
+Version:        2.25.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools Core Module
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
-# Allow for newer versions of PyJWT + cryptography. Also remove the
-# azure-cli-telemetry dependency to avoid sending usage data to Microsoft
-# automatically.
+# Allow for newer versions of certain components.
 Patch0:         python-azure-cli-core-requirements-fix.patch
 
 BuildArch:      noarch
@@ -50,5 +48,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.24.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.25.0-1
 - First package.

@@ -6,10 +6,12 @@ rpmdev-spectool -R -g $SPEC
 rpmbuild -bs $SPEC | tee /tmp/srpm-name.txt
 SRPM_NAME=$(grep Wrote /tmp/srpm-name.txt | awk '{print $2}')
 
-# sudo mock -r /etc/mock/fedora-rawhide-x86_64.cfg \
-#     -a https://download.copr.fedorainfracloud.org/results/mhayden/azure-cli/fedora-rawhide-x86_64/ \
-#     --postinstall \
-#     $SRPM_NAME
+sudo mock -r /etc/mock/fedora-rawhide-x86_64.cfg \
+    -a https://download.copr.fedorainfracloud.org/results/mhayden/azure-cli/fedora-rawhide-x86_64/ \
+    --postinstall \
+    $SRPM_NAME
+
+# sudo mock -r /etc/mock/fedora-34-x86_64.cfg --postinstall $SRPM_NAME
 
 # sudo mock -r /etc/mock/fedora-rawhide-x86_64.cfg --postinstall $SRPM_NAME
 

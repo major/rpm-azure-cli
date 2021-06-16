@@ -1,7 +1,7 @@
 %global         srcname     azure-cli
 
 Name:           %{srcname}
-Version:        2.24.2
+Version:        2.25.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools
 License:        MIT
