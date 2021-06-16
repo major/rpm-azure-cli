@@ -1,0 +1,12 @@
+diff -up ./setup.py.orig ./setup.py
+--- ./setup.py.orig	2021-06-15 16:13:59.062026372 -0500
++++ ./setup.py	2021-06-15 16:14:19.120917317 -0500
+@@ -17,7 +17,7 @@ DEPENDENCIES = [
+     # 'azure-devtools>=0.4.1' override by packaging needs
+     "readme_renderer",
+     # 'azure-storage-file<2.0',
+-    "azure-storage-common<1.4.1",
++    "azure-storage-common",
+     "pyopenssl",
+     "azure-mgmt-resource",
+     "azure-mgmt-storage",
