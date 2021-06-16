@@ -1,6 +1,6 @@
 diff -up ./setup.py.orig ./setup.py
---- ./setup.py.orig	2021-06-16 13:41:06.680026528 -0500
-+++ ./setup.py	2021-06-16 13:45:13.847444710 -0500
+--- ./setup.py.orig	2021-06-16 13:58:06.420505812 -0500
++++ ./setup.py	2021-06-16 14:00:04.290848882 -0500
 @@ -45,21 +45,21 @@ CLASSIFIERS = [
  DEPENDENCIES = [
      'adal~=1.2.7',
@@ -17,17 +17,16 @@ diff -up ./setup.py.orig ./setup.py
      'jmespath',
      'knack~=0.8.2',
 -    'msal>=1.10.0,<2.0.0',
--    'paramiko>=2.0.8,<3.0.0',
 +    'msal>=1.10.0',
-+    'paramiko>=2.0.80',
+     # Dependencies of the vendored subscription SDK
+     # https://github.com/Azure/azure-sdk-for-python/blob/ab12b048ddf676fe0ccec16b2167117f0609700d/sdk/resources/azure-mgmt-resource/setup.py#L82-L86
+     'msrest>=0.5.0',
+     'msrestazure>=0.6.3',
+-    'paramiko>=2.0.8,<3.0.0',
++    'paramiko>=2.0.8',
      'pkginfo>=1.5.0.1',
 -    'PyJWT==1.7.1',
 +    'PyJWT>=1.7.1',
      'pyopenssl>=17.1.0',  # https://github.com/pyca/pyopenssl/pull/612
      'requests~=2.22',
      'six~=1.12',
--    'urllib3[secure]>=1.26.5',
-+    'urllib3>=1.25.10',
- ]
- 
- # dependencies for specific OSes
