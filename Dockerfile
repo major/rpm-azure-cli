@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:34
+FROM registry.fedoraproject.org/fedora:rawhide
 RUN echo "fastestmirror=1" >> /etc/dnf/dnf.conf
 RUN dnf -y upgrade
 RUN dnf -y install dnf-plugins-core
