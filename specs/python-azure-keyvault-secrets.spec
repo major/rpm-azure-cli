@@ -10,11 +10,10 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
 
 
 %global _description %{expand:
@@ -33,23 +32,21 @@ Summary:        %{summary}
 %autosetup -n %{srcname}-%{version}
 
 
+%generate_buildrequires
+%pyproject_buildrequires -r
+
+
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files azure
 
-# Clean up files left at the base package directory.
-rm -f %{buildroot}%{python3_sitelib}/azure/__init__.py \
-    %{buildroot}%{python3_sitelib}/azure/__pycache__/__init__.cpython-*.pyc
 
-%files -n python3-%{srcname}
+%files -n python3-%{srcname} -f %{pyproject_files}
 %doc README.md
-# Co-owned namespace package directory
-%dir %{python3_sitelib}/azure
-%{python3_sitelib}/azure/keyvault/secrets
-%{python3_sitelib}/azure_keyvault_secrets-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

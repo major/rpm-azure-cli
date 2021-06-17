@@ -11,8 +11,8 @@ Patch0:         azure-cli-sane-versions.patch
 
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
 
 %description
 Microsoft Azure Command-Line Tools
@@ -21,12 +21,18 @@ Microsoft Azure Command-Line Tools
 %prep
 %autosetup -n %{srcname}-%{version}
 
+
+%generate_buildrequires
+%pyproject_buildrequires -r
+
+
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files azure
 
 # Batch scripts are only for windows.
 rm -f %{buildroot}%{_bindir}/az.bat
@@ -37,11 +43,9 @@ install -D -p -m 0644 %{buildroot}%{_bindir}/az.completion.sh \
 rm -f %{buildroot}%{_bindir}/az.completion.sh
 
 
-%files
+%files -f %{pyproject_files}
 %doc README.rst
 %license LICENSE.txt
-%{python3_sitelib}/azure/cli/
-%{python3_sitelib}/azure_cli-%{version}-py%{python3_version}.egg-info
 %{_bindir}/az
 %{_sysconfdir}/bash-completion.d/%{srcname}
 

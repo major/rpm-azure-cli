@@ -10,11 +10,10 @@ Source0:        %pypi_source
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
 
 
 %global _description %{expand:
@@ -23,38 +22,35 @@ Azure Data Lake Store Filesystem Client Library for Python}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep
 %autosetup -n %{srcname}-%{version}
 
 
+%generate_buildrequires
+%pyproject_buildrequires -r
+
+
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files azure
 
 # Remove the samples since many of them are empty or have wrong line endings.
 rm -rf %{buildroot}%{python3_sitelib}/samples
 
-# Clean up files left at the base package directory.
-rm -f %{buildroot}%{python3_sitelib}/azure/datalake/__init__.py \
-    %{buildroot}%{python3_sitelib}/azure/datalake/__pycache__/__init__.cpython-*.pyc
 
-
-%files -n python3-%{srcname}
+%files -n python3-%{srcname} -f %{pyproject_files}
 %doc README.rst
 %license LICENSE.txt
-# Co-owned namespace package directory
-%dir %{python3_sitelib}/azure
-%{python3_sitelib}/azure/datalake/store
-%{python3_sitelib}/azure_datalake_store-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

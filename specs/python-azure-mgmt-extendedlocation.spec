@@ -10,7 +10,7 @@ Source0:        %{pypi_source %{srcname} %{version} zip}
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  pyproject-rpm-macros
@@ -46,7 +46,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname} -f %{pyproject_files}
-%doc README.md
+%doc README.*
 
 
 %changelog
