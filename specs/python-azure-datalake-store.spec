@@ -31,6 +31,8 @@ Summary:        %{summary}
 %prep
 %autosetup -n %{srcname}-%{version}
 
+# Fix incorrect line endings in the README.
+sed -i 's/\r$//' README.rst
 
 %generate_buildrequires
 %pyproject_buildrequires -r

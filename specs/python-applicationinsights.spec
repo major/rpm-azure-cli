@@ -10,10 +10,11 @@ Source0:        %{pypi_source %{srcname} %{version}}
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
+
 
 %global _description %{expand:
 This project extends the Application Insights API surface to support Python}
@@ -21,29 +22,32 @@ This project extends the Application Insights API surface to support Python}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep
 %autosetup -n %{srcname}-%{version}
 
 
+%generate_buildrequires
+%pyproject_buildrequires -r
+
+
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files applicationinsights
 
 
-%files -n python3-%{srcname}
+%files -n python3-%{srcname} -f %{pyproject_files}
 %license LICENSE.txt
 %doc README.rst
-%{python3_sitelib}/applicationinsights
-%{python3_sitelib}/applicationinsights-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

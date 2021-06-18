@@ -8,16 +8,13 @@ License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
 # Allow for newer versions of most components, but allow for slightly older
-# urllib3. Remove the requirement for azure-cli-telemetry as well since we
-# disable it with the next patch.
+# urllib3.
 Patch0:         python-azure-cli-core-requirements-fix.patch
-# Disable sending telemetry events to Microsoft by default.
-Patch1:         python-azure-cli-core-disable-telemetry.patch
 
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
 
 %global _description %{expand:
 Microsoft Azure Command-Line Tools Core Module}
@@ -25,30 +22,31 @@ Microsoft Azure Command-Line Tools Core Module}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep
-%autosetup -p0 -n %{srcname}-%{version}
+%autosetup -n %{srcname}-%{version}
+
+
+%generate_buildrequires
+%pyproject_buildrequires -r
 
 
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files azure
 
 
-%files -n python3-%{srcname}
+%files -n python3-%{srcname} -f %{pyproject_files}
 %doc README.rst
-# Co-owned namespace package directory
-%dir %{python3_sitelib}/azure
-%{python3_sitelib}/azure/cli/core
-%{python3_sitelib}/azure_cli_core-%{version}-py%{python3_version}.egg-info
 
 
 %changelog
