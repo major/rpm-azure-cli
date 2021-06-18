@@ -1,13 +1,15 @@
 %global         srcname     azure-cli-core
 
 Name:           python-%{srcname}
-Version:        2.24.2
+Version:        2.25.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools Core Module
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
-# Allow for newer versions of certain components.
+# Allow for newer versions of most components, but allow for slightly older
+# urllib3. Remove the requirement for azure-cli-telemetry as well since we
+# disable it with the next patch.
 Patch0:         python-azure-cli-core-requirements-fix.patch
 # Disable sending telemetry events to Microsoft by default.
 Patch1:         python-azure-cli-core-disable-telemetry.patch
@@ -50,5 +52,5 @@ Summary:        %{summary}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.24.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.25.0-1
 - First package.

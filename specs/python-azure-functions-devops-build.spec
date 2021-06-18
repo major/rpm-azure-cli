@@ -22,10 +22,10 @@ Python package for integrating Azure Functions with Azure DevOps}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep

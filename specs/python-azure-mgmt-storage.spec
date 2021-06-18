@@ -11,11 +11,10 @@ Patch0:         python-azure-mgmt-storage-sane-requirements.patch
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  pyproject-rpm-macros
 
 
 %global _description %{expand:
@@ -24,30 +23,31 @@ Microsoft Azure Storage Management Client Library for Python}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep
-%autosetup -p0 -n %{srcname}-%{version}
+%autosetup -n %{srcname}-%{version}
+
+
+%generate_buildrequires
+%pyproject_buildrequires -r
 
 
 %build
-%py3_build
+%pyproject_wheel
 
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files azure
 
 
-%files -n python3-%{srcname}
+%files -n python3-%{srcname} -f %{pyproject_files}
 %doc README.md
-# Co-owned namespace package directory
-%dir %{python3_sitelib}/azure
-%{python3_sitelib}/azure/mgmt/storage
-%{python3_sitelib}/azure_mgmt_storage-%{version}-py%{python3_version}.egg-info
 
 
 %changelog

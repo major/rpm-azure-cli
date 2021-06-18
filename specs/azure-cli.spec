@@ -1,7 +1,7 @@
 %global         srcname     azure-cli
 
 Name:           %{srcname}
-Version:        2.24.2
+Version:        2.25.0
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools
 License:        MIT
@@ -51,5 +51,5 @@ rm -f %{buildroot}%{_bindir}/az.completion.sh
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.24.2-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.25.0-1
 - First package.
