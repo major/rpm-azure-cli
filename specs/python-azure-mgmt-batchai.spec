@@ -46,7 +46,7 @@ Summary:        %{summary}
 
 
 %files -n python3-%{srcname} -f %{pyproject_files}
-%doc README.rst
+%doc README.rst HISTORY.rst
 
 
 %changelog

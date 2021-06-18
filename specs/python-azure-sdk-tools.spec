@@ -1,16 +1,10 @@
-# The azure-sdk-tools package is used to help test various parts of the Azure
-# SDK components. It isn't released to pypi, but it is available from GitHub.
-# However, the git repository is huge (150MB) since it contains 220+ Python
-# packages.
-# Use the generate-sdk-tools-tarball.sh script to generate the source for this
-# package without all of the additional packages from the upstream repository.
 %global         srcname         azure-sdk-tools
-%global         commit          aa29c1cb5da14ab3efca04dc3838b473a88536d4
+%global         forgeurl        https://github.com/azure/azure-sdk-for-python
+%global         commit          d3930215a1bf184f3cb3f104884a46609cb85ef2
 %global         shortcommit     %(c=%{commit}; echo ${c:0:7})
 %global         distprefix      %{nil}
 %global         short_version   0.0.0
-
-%undefine py_auto_byte_compile
+%forgemeta
 
 # tests are enabled by default
 %bcond_without  tests
@@ -20,30 +14,29 @@ Version:        %{short_version}~git.1.%{shortcommit}
 Release:        1%{?dist}
 Summary:        Specific tools for Azure SDK for Python testing
 License:        MIT
-URL:            https://github.com/Azure/azure-sdk-for-python/
-Source0:        azure-sdk-tools-%{commit}.tar.gz
-Source1:        generate-sdk-tools-tarball.sh
-Patch0:         python-azure-sdk-tools-sane-requirements.patch
+URL:            %forgeurl
+Source0:        %forgesource
+# Patch0:         python-azure-sdk-tools-sane-requirements.patch
 
 BuildArch:      noarch
 
-Obsoletes: python-azure-sdk < 5.0.1
+Obsoletes:      python-azure-sdk < 5.0.1
 
+BuildRequires:  python%{python3_pkgversion}-devel
+BuildRequires:  python%{python3_pkgversion}-dotenv
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  make
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-dotenv
 
 %if %{with tests}
 BuildRequires:  python-azure-mgmt-keyvault
 BuildRequires:  python-azure-mgmt-resource
 BuildRequires:  python-azure-mgmt-storage
 BuildRequires:  python-azure-storage-common
-BuildRequires:  python3-pyOpenSSL
-BuildRequires:  python3-pytest
-BuildRequires:  python3-pytest-asyncio
-BuildRequires:  python3-pytest-cov
-BuildRequires:  python3-readme-renderer
+BuildRequires:  python%{python3_pkgversion}-pyOpenSSL
+BuildRequires:  python%{python3_pkgversion}-pytest
+BuildRequires:  python%{python3_pkgversion}-pytest-asyncio
+BuildRequires:  python%{python3_pkgversion}-pytest-cov
+BuildRequires:  python%{python3_pkgversion}-readme-renderer
 %endif
 
 
@@ -53,28 +46,32 @@ Specific tools for Azure SDK for Python testing}
 %description %{_description}
 
 
-%package -n python3-%{srcname}
+%package -n python%{python3_pkgversion}-%{srcname}
 Summary:        %{summary}
 
-%description -n python3-%{srcname} %{_description}
+%description -n python%{python3_pkgversion}-%{srcname} %{_description}
 
 
 %prep
-%autosetup -c -n %{srcname}-%{commit}
+%forgesetup
 
 
 %build
-%py3_build
+pushd tools/azure-sdk-tools
+    %pyproject_wheel
+popd
+
+
+%generate_buildrequires
+pushd tools/azure-sdk-tools
+    %pyproject_buildrequires
+popd
 
 
 %install
-python3 ./setup.py install --prefix=$RPM_BUILD_ROOT/%{_prefix}
-%py_byte_compile %{python3} %{buildroot}%{_datadir}/packaging_tools
-%py_byte_compile %{python3} %{buildroot}%{_datadir}/devtools_testutils
+%pyproject_install
+%pyproject_save_files azure
 
-# Move the templates back into place.
-mkdir -p %{buildroot}%{python3_sitelib}/packaging_tools/templates
-mv hold_templates/*.py %{buildroot}%{python3_sitelib}/packaging_tools/templates/
 
 %if %{with tests}
 %check
@@ -82,11 +79,9 @@ mv hold_templates/*.py %{buildroot}%{python3_sitelib}/packaging_tools/templates/
 %endif
 
 
-%files -n python3-%{srcname}
-%{python3_sitelib}/packaging_tools
-%{python3_sitelib}/devtools_testutils
+%files -n python3-%{srcname} -f %{pyproject_files}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.0.0~git.1.19e35d6
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 0.0.0~git.1.d393021
 - First package.
