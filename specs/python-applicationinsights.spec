@@ -3,7 +3,7 @@
 Name:           python-%{srcname}
 Version:        0.11.10
 Release:        1%{?dist}
-Summary:        This project extends the Application Insights API surface to support Python
+Summary:        Python support for Azure Application Insights API
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %{pypi_source %{srcname} %{version}}
@@ -30,6 +30,9 @@ Summary:        %{summary}
 
 %prep
 %autosetup -n %{srcname}-%{version}
+
+# Fix incorrect line endings in the README.
+sed -i 's/\r$//' README.rst
 
 
 %generate_buildrequires

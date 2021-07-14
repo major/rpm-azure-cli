@@ -1,18 +1,24 @@
 %global         srcname     azure-cli
 
 Name:           %{srcname}
-Version:        2.25.0
+Version:        2.26.1
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
-Patch0:         azure-cli-sane-versions.patch
+Patch0:         azure-cli-requirements-fix.patch
 
 BuildArch:      noarch
 
+# The telemetry library is an optional requirement in the python requirements
+# list, but the `az` command throws errors if it is not present.
+Requires:       python-azure-cli-telemetry
+
 BuildRequires:  python%{python3_pkgversion}-devel
 BuildRequires:  pyproject-rpm-macros
+
+Conflicts:      python3-azure-sdk
 
 %description
 Microsoft Azure Command-Line Tools
@@ -44,12 +50,12 @@ rm -f %{buildroot}%{_bindir}/az.completion.sh
 
 
 %files -f %{pyproject_files}
-%doc README.rst
+%doc README.rst HISTORY.rst
 %license LICENSE.txt
 %{_bindir}/az
 %{_sysconfdir}/bash-completion.d/%{srcname}
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.25.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.26.1-1
 - First package.

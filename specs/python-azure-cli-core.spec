@@ -1,14 +1,12 @@
 %global         srcname     azure-cli-core
 
 Name:           python-%{srcname}
-Version:        2.25.0
+Version:        2.26.1
 Release:        1%{?dist}
 Summary:        Microsoft Azure Command-Line Tools Core Module
 License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 Source0:        %pypi_source
-# Allow for newer versions of most components, but allow for slightly older
-# urllib3.
 Patch0:         python-azure-cli-core-requirements-fix.patch
 
 BuildArch:      noarch
@@ -45,10 +43,12 @@ Summary:        %{summary}
 %pyproject_save_files azure
 
 
+# License files are missing from some of the python packages. Filed a PR
+# upstream to get it fixed: https://github.com/Azure/azure-cli/pull/18749
 %files -n python3-%{srcname} -f %{pyproject_files}
-%doc README.rst
+%doc README.rst HISTORY.rst
 
 
 %changelog
-* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.25.0-1
+* Tue Jun 01 2021 Major Hayden <major@mhtx.net> - 2.26.1-1
 - First package.

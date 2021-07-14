@@ -42,8 +42,10 @@ Summary:        %{summary}
 %pyproject_save_files azure
 
 
+# License files are missing from some of the python packages. Filed a PR
+# upstream to get it fixed: https://github.com/Azure/azure-cli/pull/18749
 %files -n python3-%{srcname} -f %{pyproject_files}
-%doc README.rst
+%doc README.rst HISTORY.rst
 
 
 %changelog
