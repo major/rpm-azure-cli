@@ -1,4 +1,8 @@
-# Azure CLI/SDK RPM packaging
+# azure-cli is now a Fedora package! 🎉
+
+Install it in F35 or later with `dnf install azure-cli`. You can also view the [package source](https://src.fedoraproject.org/rpms/azure-cli).
+
+## Azure CLI/SDK RPM packaging
 
 This is a tracker for getting the Azure CLI and SDK packaged in Fedora.
 
